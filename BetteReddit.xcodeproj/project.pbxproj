@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CC39CE0BD86E77B43E0AEDD /* Pods_BetteReddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE27BAEEF85C051B33FEE417 /* Pods_BetteReddit.framework */; };
+		FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F394E20BB759C007CAC55 /* AppDelegate.m */; };
+		FA8F395220BB759C007CAC55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F395120BB759C007CAC55 /* ViewController.m */; };
+		FA8F395520BB759C007CAC55 /* BetteReddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8F395320BB759C007CAC55 /* BetteReddit.xcdatamodeld */; };
+		FA8F395720BB759E007CAC55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8F395620BB759E007CAC55 /* Assets.xcassets */; };
+		FA8F395A20BB759E007CAC55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8F395820BB759E007CAC55 /* Main.storyboard */; };
+		FA8F395D20BB759E007CAC55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F395C20BB759E007CAC55 /* main.m */; };
+		FA8F396820BB759E007CAC55 /* BetteRedditTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F396720BB759E007CAC55 /* BetteRedditTests.m */; };
+		FA8F397320BB759E007CAC55 /* BetteRedditUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F397220BB759E007CAC55 /* BetteRedditUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA8F396420BB759E007CAC55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA8F394220BB759C007CAC55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA8F394920BB759C007CAC55;
+			remoteInfo = BetteReddit;
+		};
+		FA8F396F20BB759E007CAC55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA8F394220BB759C007CAC55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA8F394920BB759C007CAC55;
+			remoteInfo = BetteReddit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B1F1C7AE92712433422E2C18 /* Pods-BetteReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.debug.xcconfig"; sourceTree = "<group>"; };
+		B45EE7449698409BFF8E89FB /* Pods-BetteReddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.release.xcconfig"; sourceTree = "<group>"; };
+		DE27BAEEF85C051B33FEE417 /* Pods_BetteReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetteReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8F394A20BB759C007CAC55 /* BetteReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetteReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8F394D20BB759C007CAC55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA8F394E20BB759C007CAC55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FA8F395020BB759C007CAC55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FA8F395120BB759C007CAC55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FA8F395420BB759C007CAC55 /* BetteReddit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BetteReddit.xcdatamodel; sourceTree = "<group>"; };
+		FA8F395620BB759E007CAC55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8F395920BB759E007CAC55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA8F395B20BB759E007CAC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8F395C20BB759E007CAC55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA8F395E20BB759E007CAC55 /* BetteReddit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetteReddit.entitlements; sourceTree = "<group>"; };
+		FA8F396320BB759E007CAC55 /* BetteRedditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetteRedditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8F396720BB759E007CAC55 /* BetteRedditTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetteRedditTests.m; sourceTree = "<group>"; };
+		FA8F396920BB759E007CAC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8F396E20BB759E007CAC55 /* BetteRedditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetteRedditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8F397220BB759E007CAC55 /* BetteRedditUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetteRedditUITests.m; sourceTree = "<group>"; };
+		FA8F397420BB759E007CAC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA8F394720BB759C007CAC55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC39CE0BD86E77B43E0AEDD /* Pods_BetteReddit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8F396020BB759E007CAC55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8F396B20BB759E007CAC55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53A031A7CCA280589387A174 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1F1C7AE92712433422E2C18 /* Pods-BetteReddit.debug.xcconfig */,
+				B45EE7449698409BFF8E89FB /* Pods-BetteReddit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A6DD5767417C2BC1512FDFC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE27BAEEF85C051B33FEE417 /* Pods_BetteReddit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA8F394120BB759C007CAC55 = {
+			isa = PBXGroup;
+			children = (
+				FA8F394C20BB759C007CAC55 /* BetteReddit */,
+				FA8F396620BB759E007CAC55 /* BetteRedditTests */,
+				FA8F397120BB759E007CAC55 /* BetteRedditUITests */,
+				FA8F394B20BB759C007CAC55 /* Products */,
+				53A031A7CCA280589387A174 /* Pods */,
+				A6DD5767417C2BC1512FDFC2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA8F394B20BB759C007CAC55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F394A20BB759C007CAC55 /* BetteReddit.app */,
+				FA8F396320BB759E007CAC55 /* BetteRedditTests.xctest */,
+				FA8F396E20BB759E007CAC55 /* BetteRedditUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA8F394C20BB759C007CAC55 /* BetteReddit */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F394D20BB759C007CAC55 /* AppDelegate.h */,
+				FA8F394E20BB759C007CAC55 /* AppDelegate.m */,
+				FA8F395020BB759C007CAC55 /* ViewController.h */,
+				FA8F395120BB759C007CAC55 /* ViewController.m */,
+				FA8F395620BB759E007CAC55 /* Assets.xcassets */,
+				FA8F395820BB759E007CAC55 /* Main.storyboard */,
+				FA8F395B20BB759E007CAC55 /* Info.plist */,
+				FA8F395C20BB759E007CAC55 /* main.m */,
+				FA8F395E20BB759E007CAC55 /* BetteReddit.entitlements */,
+				FA8F395320BB759C007CAC55 /* BetteReddit.xcdatamodeld */,
+			);
+			path = BetteReddit;
+			sourceTree = "<group>";
+		};
+		FA8F396620BB759E007CAC55 /* BetteRedditTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F396720BB759E007CAC55 /* BetteRedditTests.m */,
+				FA8F396920BB759E007CAC55 /* Info.plist */,
+			);
+			path = BetteRedditTests;
+			sourceTree = "<group>";
+		};
+		FA8F397120BB759E007CAC55 /* BetteRedditUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F397220BB759E007CAC55 /* BetteRedditUITests.m */,
+				FA8F397420BB759E007CAC55 /* Info.plist */,
+			);
+			path = BetteRedditUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA8F394920BB759C007CAC55 /* BetteReddit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8F397720BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteReddit" */;
+			buildPhases = (
+				EA455881899126D824B80EF6 /* [CP] Check Pods Manifest.lock */,
+				FA8F394620BB759C007CAC55 /* Sources */,
+				FA8F394720BB759C007CAC55 /* Frameworks */,
+				FA8F394820BB759C007CAC55 /* Resources */,
+				B1F59E899DAB16233E2E8D5C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetteReddit;
+			productName = BetteReddit;
+			productReference = FA8F394A20BB759C007CAC55 /* BetteReddit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA8F396220BB759E007CAC55 /* BetteRedditTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8F397A20BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteRedditTests" */;
+			buildPhases = (
+				FA8F395F20BB759E007CAC55 /* Sources */,
+				FA8F396020BB759E007CAC55 /* Frameworks */,
+				FA8F396120BB759E007CAC55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA8F396520BB759E007CAC55 /* PBXTargetDependency */,
+			);
+			name = BetteRedditTests;
+			productName = BetteRedditTests;
+			productReference = FA8F396320BB759E007CAC55 /* BetteRedditTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA8F396D20BB759E007CAC55 /* BetteRedditUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8F397D20BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteRedditUITests" */;
+			buildPhases = (
+				FA8F396A20BB759E007CAC55 /* Sources */,
+				FA8F396B20BB759E007CAC55 /* Frameworks */,
+				FA8F396C20BB759E007CAC55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA8F397020BB759E007CAC55 /* PBXTargetDependency */,
+			);
+			name = BetteRedditUITests;
+			productName = BetteRedditUITests;
+			productReference = FA8F396E20BB759E007CAC55 /* BetteRedditUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA8F394220BB759C007CAC55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Alex Taffe";
+				TargetAttributes = {
+					FA8F394920BB759C007CAC55 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					FA8F396220BB759E007CAC55 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = FA8F394920BB759C007CAC55;
+					};
+					FA8F396D20BB759E007CAC55 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = FA8F394920BB759C007CAC55;
+					};
+				};
+			};
+			buildConfigurationList = FA8F394520BB759C007CAC55 /* Build configuration list for PBXProject "BetteReddit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA8F394120BB759C007CAC55;
+			productRefGroup = FA8F394B20BB759C007CAC55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA8F394920BB759C007CAC55 /* BetteReddit */,
+				FA8F396220BB759E007CAC55 /* BetteRedditTests */,
+				FA8F396D20BB759E007CAC55 /* BetteRedditUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA8F394820BB759C007CAC55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8F395720BB759E007CAC55 /* Assets.xcassets in Resources */,
+				FA8F395A20BB759E007CAC55 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8F396120BB759E007CAC55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8F396C20BB759E007CAC55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1F59E899DAB16233E2E8D5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PXSourceList/PXSourceList.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PXSourceList.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA455881899126D824B80EF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BetteReddit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA8F394620BB759C007CAC55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8F395520BB759C007CAC55 /* BetteReddit.xcdatamodeld in Sources */,
+				FA8F395220BB759C007CAC55 /* ViewController.m in Sources */,
+				FA8F395D20BB759E007CAC55 /* main.m in Sources */,
+				FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8F395F20BB759E007CAC55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8F396820BB759E007CAC55 /* BetteRedditTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8F396A20BB759E007CAC55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8F397320BB759E007CAC55 /* BetteRedditUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA8F396520BB759E007CAC55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA8F394920BB759C007CAC55 /* BetteReddit */;
+			targetProxy = FA8F396420BB759E007CAC55 /* PBXContainerItemProxy */;
+		};
+		FA8F397020BB759E007CAC55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA8F394920BB759C007CAC55 /* BetteReddit */;
+			targetProxy = FA8F396F20BB759E007CAC55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA8F395820BB759E007CAC55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8F395920BB759E007CAC55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA8F397520BB759E007CAC55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FA8F397620BB759E007CAC55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FA8F397820BB759E007CAC55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1F1C7AE92712433422E2C18 /* Pods-BetteReddit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BetteReddit/BetteReddit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BetteReddit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alextaffe.BetteReddit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA8F397920BB759E007CAC55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B45EE7449698409BFF8E89FB /* Pods-BetteReddit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BetteReddit/BetteReddit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BetteReddit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alextaffe.BetteReddit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FA8F397B20BB759E007CAC55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BetteRedditTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alextaffe.BetteRedditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BetteReddit.app/Contents/MacOS/BetteReddit";
+			};
+			name = Debug;
+		};
+		FA8F397C20BB759E007CAC55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BetteRedditTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alextaffe.BetteRedditTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BetteReddit.app/Contents/MacOS/BetteReddit";
+			};
+			name = Release;
+		};
+		FA8F397E20BB759E007CAC55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BetteRedditUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alextaffe.BetteRedditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BetteReddit;
+			};
+			name = Debug;
+		};
+		FA8F397F20BB759E007CAC55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BetteRedditUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = alextaffe.BetteRedditUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BetteReddit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA8F394520BB759C007CAC55 /* Build configuration list for PBXProject "BetteReddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8F397520BB759E007CAC55 /* Debug */,
+				FA8F397620BB759E007CAC55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8F397720BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteReddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8F397820BB759E007CAC55 /* Debug */,
+				FA8F397920BB759E007CAC55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8F397A20BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteRedditTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8F397B20BB759E007CAC55 /* Debug */,
+				FA8F397C20BB759E007CAC55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8F397D20BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteRedditUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8F397E20BB759E007CAC55 /* Debug */,
+				FA8F397F20BB759E007CAC55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA8F395320BB759C007CAC55 /* BetteReddit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA8F395420BB759C007CAC55 /* BetteReddit.xcdatamodel */,
+			);
+			currentVersion = FA8F395420BB759C007CAC55 /* BetteReddit.xcdatamodel */;
+			path = BetteReddit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA8F394220BB759C007CAC55 /* Project object */;
+}
