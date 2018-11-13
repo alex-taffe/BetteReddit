@@ -3,4 +3,6 @@ use_frameworks!
 
 target 'BetteReddit' do
 	pod 'PXSourceList'
+	pod 'AppAuth'
+	pod 'AFNetworking'
 end
