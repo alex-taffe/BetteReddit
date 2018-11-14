@@ -339,6 +339,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Accounts" id="GJj-dt-715">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Accounts" id="keU-0M-lEL">
+                                    <items>
+                                        <menuItem title="Sign In" id="8eY-Iw-yuD">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="newSignin:" target="Voe-Tx-rLC" id="xhV-Df-nNg"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Format" id="jxT-CU-nIS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Format" id="GEO-Iw-cKr">
