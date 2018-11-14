@@ -38,7 +38,7 @@
 
 -(void)loadUserDetails:(void (^)(void))onComplete{
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        [[BRClient sharedInstance] makeRequestWithEndpoint:@"api/v1/me" withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
+        [[BRClient sharedInstance] makeRequestWithEndpoint:@"api/v1/me" withArguments:@{@"limit":@100} withToken:authToken success:^(id  _Nonnull result) {
             self.username = result[@"name"];
             onComplete();
         } failure:^(NSError * _Nonnull error) {

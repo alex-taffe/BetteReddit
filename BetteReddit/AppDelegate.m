@@ -25,7 +25,7 @@
     self.loggedinUsers = [[NSMutableArray alloc] init];
 
     NSArray *savedAccounts = [SAMKeychain accountsForService:@"reddit"];
-        if(savedAccounts){
+    if(savedAccounts){
         __weak __typeof(self) weakSelf = self;
 
         dispatch_semaphore_t semaphore = dispatch_semaphore_create(savedAccounts.count - 1);
@@ -94,10 +94,12 @@
                                                        // Processes the authorization response.
                                                        if (authState) {
                                                            BRUser *loggedInUser = [[BRUser alloc] initWithAccessToken:authState];
+                                                           weakSelf.currentUser = loggedInUser;
                                                            [loggedInUser loadUserDetails:^{
                                                                NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:authState];
-                                                               [SAMKeychain setPasswordData:serialized forService:@"reddit" account:loggedInUser.username];
                                                                [weakSelf.loggedinUsers addObject:loggedInUser];
+                                                               [SAMKeychain setPasswordData:serialized forService:@"reddit" account:loggedInUser.username];
+
                                                                [[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedInUserRefresh" object:weakSelf];
                                                            }];
 
