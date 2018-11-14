@@ -43,6 +43,7 @@ static BRClient *shared = nil;
     NSMutableDictionary *addedArguments = [[NSMutableDictionary alloc] initWithDictionary:arguments];
 
     [addedArguments setObject:@"json" forKey:@"api_type"];
+    [addedArguments setObject:@1 forKey:@"raw_json"];
 
     if(token){
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
