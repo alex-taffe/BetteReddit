@@ -20,8 +20,20 @@
 
 -(instancetype)initWithAccessToken:(OIDAuthState *)authState;
 
+
+/**
+ Loads in all of the user details
+
+ @param onComplete completion callback
+ */
 -(void)loadUserDetails:(void (^)(void))onComplete;
 
+
+/**
+ Loads in all of the subreddits the user is subscribed to
+
+ @param onComplete completion callback
+ */
 -(void)loadSubscriptions:(void (^)(void))onComplete;
 
 @end

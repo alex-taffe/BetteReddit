@@ -52,19 +52,33 @@
     [self performOAuthAction:^(NSString *authToken) {
         __block bool doneLoading = false;
         __block NSString *after = @"";
+
+        //keep requesting subreddits until we're done
         while(!doneLoading){
             dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
+            //run the request asyncrhonously
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
-                [[BRClient sharedInstance] makeRequestWithEndpoint:@"subreddits/mine/subscriber" withArguments:@{@"limit":@100, @"after" : after} withToken:authToken success:^(id  _Nonnull result) {
+                //get the current round of subscriptions
+                [[BRClient sharedInstance] makeRequestWithEndpoint:@"subreddits/mine/subscriber"
+                                                     withArguments:@{@"limit":@100, @"after" : after}
+                                                         withToken:authToken
+                                                           success:^(id  _Nonnull result) {
                     id subs = result[@"data"][@"children"];
                     for(id sub in subs){
                         BRSubreddit *subReddit = [[BRSubreddit alloc] initWithName:sub[@"data"][@"display_name"]];
                         subReddit.internalName = sub[@"data"][@"name"];
                         [self.subscriptions addObject:subReddit];
                     }
+
+                    //set the last item
                     after = self.subscriptions.lastObject.internalName;
+
+                    //if we have less than 100 items returned we're done
                     if([subs count] < 100)
                         doneLoading = true;
+
+                    //let the loop know this round of loading is done
                     dispatch_semaphore_signal(semaphore);
 
                 } failure:^(NSError * _Nonnull error) {
@@ -73,14 +87,17 @@
                     dispatch_semaphore_signal(semaphore);
                 }];
             });
+            //wait until  the request is  done and continue on
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         }
 
+        //sort the subscriptions in alphabetical order
         [self.subscriptions sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *name1 = ((BRSubreddit *)obj1).name;
             NSString *name2 = ((BRSubreddit *)obj2).name;
             return [name1 compare:name2];
         }];
+        //finally done
         onComplete();
     }];
 }
@@ -90,7 +107,9 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     __block NSString *authorizationToken = nil;
 
+    //we have auth
     if(self.authState){
+        //get a fresh token
         [self.authState performActionWithFreshTokens:^(NSString * _Nullable accessToken, NSString * _Nullable idToken, NSError * _Nullable error) {
             authorizationToken = accessToken;
             dispatch_semaphore_signal(semaphore);
@@ -99,6 +118,7 @@
         dispatch_semaphore_signal(semaphore);
     }
 
+    //let the client know they're good to make a request
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         onComplete(authorizationToken);
