@@ -70,6 +70,7 @@
                         BRSubreddit *subReddit = [[BRSubreddit alloc] initWithTitle:sub[@"data"][@"display_name"]];
                         subReddit.internalName = sub[@"data"][@"name"];
                         subReddit.itemID = sub[@"data"][@"id"];
+                        subReddit.endpoint = sub[@"data"][@"url"];
                         [self.subscriptions addObject:subReddit];
                     }
 
@@ -99,6 +100,12 @@
             NSString *name2 = ((BRSubreddit *)obj2).title;
             return [name1 compare:name2];
         }];
+
+        BRSubreddit *home = [[BRSubreddit alloc] initWithTitle:@"Home"];
+        home.endpoint = @"/";
+
+        [self.subscriptions insertObject:home atIndex:0];
+
         //finally done
         onComplete();
     }];

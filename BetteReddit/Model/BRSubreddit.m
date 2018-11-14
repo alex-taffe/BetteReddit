@@ -32,8 +32,7 @@
 -(void)loadSubredditPosts:(void (^)(void))onComplete{
     [self.posts removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        NSString  *endpoint = [NSString stringWithFormat:@"r/%@", self.title];
-        [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
+        [[BRClient sharedInstance] makeRequestWithEndpoint:self.endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             id postList = result[@"data"][@"children"];
             for(id postDict in postList){
                 BRPost *post = [[BRPost alloc] initWithTitle:postDict[@"data"][@"title"]];

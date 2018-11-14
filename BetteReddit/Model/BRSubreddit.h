@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *internalName;
 @property (strong, nonatomic) NSString *itemID;
-
+@property (strong, nonatomic) NSString *endpoint;
 @property (strong, nonatomic) NSMutableArray<BRPost *> *posts;
 
 -(instancetype)initWithTitle:(NSString *)title;
