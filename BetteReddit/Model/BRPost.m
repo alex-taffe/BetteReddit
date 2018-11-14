@@ -26,7 +26,7 @@
 -(void)loadPostComments:(void (^)(void))onComplete{
     [self.children removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        NSString  *endpoint = [NSString stringWithFormat:@"r/%@/comments/%@", self.parent.name, self.itemID];
+        NSString  *endpoint = [NSString stringWithFormat:@"r/%@/comments/%@", self.parent.title, self.itemID];
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             for(id listing in result){
                 id comments = listing[@"data"][@"children"];

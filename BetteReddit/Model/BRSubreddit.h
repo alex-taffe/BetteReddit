@@ -18,13 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BRSubreddit : NSObject
 
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *internalName;
 @property (strong, nonatomic) NSString *itemID;
 
 @property (strong, nonatomic) NSMutableArray<BRPost *> *posts;
 
--(instancetype)initWithName:(NSString *)name;
+-(instancetype)initWithTitle:(NSString *)title;
 
 /**
  Loads in the current posts of the subreddit

@@ -19,6 +19,12 @@
 		FA8F395D20BB759E007CAC55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F395C20BB759E007CAC55 /* main.m */; };
 		FA8F396820BB759E007CAC55 /* BetteRedditTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F396720BB759E007CAC55 /* BetteRedditTests.m */; };
 		FA8F397320BB759E007CAC55 /* BetteRedditUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F397220BB759E007CAC55 /* BetteRedditUITests.m */; };
+		FAAC7CC9219C9B7000E9219D /* PostListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CC8219C9B7000E9219D /* PostListViewController.m */; };
+		FAAC7CCC219C9BBD00E9219D /* SubredditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CCB219C9BBD00E9219D /* SubredditListViewController.m */; };
+		FAAC7CCF219C9BD100E9219D /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CCE219C9BD100E9219D /* ContentViewController.m */; };
+		FAAC7CD2219C9C0E00E9219D /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CD1219C9C0E00E9219D /* MainSplitViewController.m */; };
+		FAAC7CD5219C9EFD00E9219D /* SubredditTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CD4219C9EFD00E9219D /* SubredditTableCellView.m */; };
+		FAAC7CDB219CA83300E9219D /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CDA219CA83300E9219D /* PostTableViewCell.m */; };
 		FAE23916219B239300C9F683 /* BRSubreddit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE23914219B239300C9F683 /* BRSubreddit.m */; };
 		FAE23917219B239300C9F683 /* BRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE23915219B239300C9F683 /* BRUser.m */; };
 		FAE2391A219B239900C9F683 /* BRClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE23918219B239900C9F683 /* BRClient.m */; };
@@ -69,6 +75,18 @@
 		FA8F396E20BB759E007CAC55 /* BetteRedditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetteRedditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8F397220BB759E007CAC55 /* BetteRedditUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetteRedditUITests.m; sourceTree = "<group>"; };
 		FA8F397420BB759E007CAC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAC7CC7219C9B7000E9219D /* PostListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostListViewController.h; sourceTree = "<group>"; };
+		FAAC7CC8219C9B7000E9219D /* PostListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostListViewController.m; sourceTree = "<group>"; };
+		FAAC7CCA219C9BBD00E9219D /* SubredditListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubredditListViewController.h; sourceTree = "<group>"; };
+		FAAC7CCB219C9BBD00E9219D /* SubredditListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubredditListViewController.m; sourceTree = "<group>"; };
+		FAAC7CCD219C9BD100E9219D /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		FAAC7CCE219C9BD100E9219D /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		FAAC7CD0219C9C0E00E9219D /* MainSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSplitViewController.h; sourceTree = "<group>"; };
+		FAAC7CD1219C9C0E00E9219D /* MainSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSplitViewController.m; sourceTree = "<group>"; };
+		FAAC7CD3219C9EFD00E9219D /* SubredditTableCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubredditTableCellView.h; sourceTree = "<group>"; };
+		FAAC7CD4219C9EFD00E9219D /* SubredditTableCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubredditTableCellView.m; sourceTree = "<group>"; };
+		FAAC7CD9219CA83300E9219D /* PostTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		FAAC7CDA219CA83300E9219D /* PostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		FAE23912219B239300C9F683 /* BRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRUser.h; sourceTree = "<group>"; };
 		FAE23913219B239300C9F683 /* BRSubreddit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSubreddit.h; sourceTree = "<group>"; };
 		FAE23914219B239300C9F683 /* BRSubreddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSubreddit.m; sourceTree = "<group>"; };
@@ -143,7 +161,10 @@
 		FA050B8820BC690D00904041 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA8F395820BB759E007CAC55 /* Main.storyboard */,
+				FAAC7CD3219C9EFD00E9219D /* SubredditTableCellView.h */,
+				FAAC7CD4219C9EFD00E9219D /* SubredditTableCellView.m */,
+				FAAC7CD9219CA83300E9219D /* PostTableViewCell.h */,
+				FAAC7CDA219CA83300E9219D /* PostTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +174,14 @@
 			children = (
 				FAE2391B219B245300C9F683 /* MainViewController.h */,
 				FAE2391C219B245300C9F683 /* MainViewController.m */,
+				FAAC7CCA219C9BBD00E9219D /* SubredditListViewController.h */,
+				FAAC7CCB219C9BBD00E9219D /* SubredditListViewController.m */,
+				FAAC7CC7219C9B7000E9219D /* PostListViewController.h */,
+				FAAC7CC8219C9B7000E9219D /* PostListViewController.m */,
+				FAAC7CCD219C9BD100E9219D /* ContentViewController.h */,
+				FAAC7CCE219C9BD100E9219D /* ContentViewController.m */,
+				FAAC7CD0219C9C0E00E9219D /* MainSplitViewController.h */,
+				FAAC7CD1219C9C0E00E9219D /* MainSplitViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,12 +231,13 @@
 		FA8F394C20BB759C007CAC55 /* BetteReddit */ = {
 			isa = PBXGroup;
 			children = (
+				FA050B8820BC690D00904041 /* View */,
 				FA050B9020BC6B9200904041 /* Application */,
 				FA050B8920BC691800904041 /* Controller */,
-				FA050B8820BC690D00904041 /* View */,
 				FA050B8720BC68FE00904041 /* Model */,
 				FA8F394D20BB759C007CAC55 /* AppDelegate.h */,
 				FA8F394E20BB759C007CAC55 /* AppDelegate.m */,
+				FA8F395820BB759E007CAC55 /* Main.storyboard */,
 				FA8F395620BB759E007CAC55 /* Assets.xcassets */,
 				FA8F395B20BB759E007CAC55 /* Info.plist */,
 				FA8F395C20BB759E007CAC55 /* main.m */,
@@ -426,8 +456,14 @@
 				FAE2391D219B245300C9F683 /* MainViewController.m in Sources */,
 				FA08A276219B8E7100E49E71 /* BRSourceListItem.m in Sources */,
 				FAE2391A219B239900C9F683 /* BRClient.m in Sources */,
+				FAAC7CDB219CA83300E9219D /* PostTableViewCell.m in Sources */,
+				FAAC7CCF219C9BD100E9219D /* ContentViewController.m in Sources */,
+				FAAC7CC9219C9B7000E9219D /* PostListViewController.m in Sources */,
+				FAAC7CCC219C9BBD00E9219D /* SubredditListViewController.m in Sources */,
 				FA08A27B219BC36500E49E71 /* BRPost.m in Sources */,
+				FAAC7CD5219C9EFD00E9219D /* SubredditTableCellView.m in Sources */,
 				FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */,
+				FAAC7CD2219C9C0E00E9219D /* MainSplitViewController.m in Sources */,
 				FA0C4A74219C68180022FEA2 /* BRComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

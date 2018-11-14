@@ -32,10 +32,7 @@
     // Do view setup here.
     self.appDelegate = [[NSApplication sharedApplication] delegate];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(newLoggedInUser)
-                                                 name:@"LoggedInUserRefresh"
-                                               object:nil];
+    
 
     self.sourceItems = [[NSMutableArray alloc] init];
     self.posts = [[NSMutableArray alloc] init];
@@ -47,21 +44,7 @@
     self.postListView.dataSource = self;
 }
 
--(void)newLoggedInUser{
-    [self.sourceItems removeAllObjects];
-    [self.appDelegate.currentUser loadSubscriptions:^{
-        for(BRSubreddit *subreddit in self.appDelegate.currentUser.subscriptions){
-            [self.sourceItems addObject:[BRSourceListItem itemWithTitle:subreddit.name identifier:subreddit.name]];
-        }
-        dispatch_async(dispatch_get_main_queue(),^(void){
-            [self.outlineView reloadData];
-        });
 
-    }];
-
-
-
-}
 
 - (IBAction)loginAction:(id)sender {
     static NSString *const kSuccessURLString = @"alextaffe.BetteReddit://oauth2redirect/example-provider";
@@ -189,26 +172,6 @@
     [self.appDelegate.currentUser.subscriptions[selectedIndex] loadSubredditPosts:^{
         [self.posts addObjectsFromArray:self.appDelegate.currentUser.subscriptions[selectedIndex].posts];
         [self.postListView reloadData];
-    }];
-}
-
-#pragma mark - PostView data
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
-    return self.posts.count;
-}
-
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"postCell" owner:nil];
-    cell.textField.stringValue = self.posts[row].title;
-
-    return cell;
-}
-
-- (void)tableViewSelectionDidChange:(NSNotification *)notification{
-    NSInteger selection = self.postListView.selectedRow;
-    [self.posts[selection] loadPostComments:^{
-
     }];
 }
 

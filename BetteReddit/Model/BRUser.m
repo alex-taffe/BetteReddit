@@ -67,7 +67,7 @@
                                                            success:^(id  _Nonnull result) {
                     id subs = result[@"data"][@"children"];
                     for(id sub in subs){
-                        BRSubreddit *subReddit = [[BRSubreddit alloc] initWithName:sub[@"data"][@"display_name"]];
+                        BRSubreddit *subReddit = [[BRSubreddit alloc] initWithTitle:sub[@"data"][@"display_name"]];
                         subReddit.internalName = sub[@"data"][@"name"];
                         subReddit.itemID = sub[@"data"][@"id"];
                         [self.subscriptions addObject:subReddit];
@@ -95,8 +95,8 @@
 
         //sort the subscriptions in alphabetical order
         [self.subscriptions sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-            NSString *name1 = ((BRSubreddit *)obj1).name;
-            NSString *name2 = ((BRSubreddit *)obj2).name;
+            NSString *name1 = ((BRSubreddit *)obj1).title;
+            NSString *name2 = ((BRSubreddit *)obj2).title;
             return [name1 compare:name2];
         }];
         //finally done

@@ -18,10 +18,10 @@
 
 @implementation BRSubreddit
 
--(instancetype)initWithName:(NSString *)name{
+-(instancetype)initWithTitle:(NSString *)title{
     self = [super init];
     if(self){
-        self.name = name;
+        self.title = title;
         self.appDelegate = [[NSApplication sharedApplication] delegate];
         self.posts = [[NSMutableArray alloc] init];
     }
@@ -32,7 +32,7 @@
 -(void)loadSubredditPosts:(void (^)(void))onComplete{
     [self.posts removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        NSString  *endpoint = [NSString stringWithFormat:@"r/%@", self.name];
+        NSString  *endpoint = [NSString stringWithFormat:@"r/%@", self.title];
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             id postList = result[@"data"][@"children"];
             for(id postDict in postList){
