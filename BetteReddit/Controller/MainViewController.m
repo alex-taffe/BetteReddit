@@ -19,10 +19,6 @@
 @interface MainViewController ()<NSOutlineViewDelegate, NSOutlineViewDataSource, NSTableViewDelegate, NSTableViewDataSource>
 @property (strong, nonatomic) OIDRedirectHTTPHandler *redirectHTTPHandler;
 @property (strong, nonatomic) AppDelegate *appDelegate;
-@property (strong, nonatomic) NSMutableArray<BRSourceListItem *> *sourceItems;
-@property (strong, nonatomic) NSMutableArray<BRPost *> *posts;
-@property (strong) IBOutlet NSOutlineView *outlineView;
-@property (strong) IBOutlet NSTableView *postListView;
 @end
 
 @implementation MainViewController
@@ -31,17 +27,6 @@
     [super viewDidLoad];
     // Do view setup here.
     self.appDelegate = [[NSApplication sharedApplication] delegate];
-
-    
-
-    self.sourceItems = [[NSMutableArray alloc] init];
-    self.posts = [[NSMutableArray alloc] init];
-
-    self.outlineView.delegate = self;
-    self.outlineView.dataSource = self;
-
-    self.postListView.delegate = self;
-    self.postListView.dataSource = self;
 }
 
 
@@ -104,75 +89,6 @@
                                                        }
                                                        //[weakSelf setAuthState:authState];
                                                    }];
-}
-
-#pragma mark - OutlineView data
-
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item{
-    if(item == nil){
-        return [self.sourceItems count];
-    } else {
-        return [[item children] count];
-    }
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item{
-    return [item hasChildren];
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item{
-    if(item == nil){
-        return [self.sourceItems objectAtIndex:index];
-    } else {
-        return [[item children] objectAtIndex:index];
-    }
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item{
-    return [item title];
-}
-
-- (void)outlineView:(NSOutlineView *)outlineView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn byItem:(id)item{
-    // This method needs to be implemented if the SourceList is editable. e.g Changing the name of a Playlist in iTunes
-    //[item setTitle:object];
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item{
-    //Making the Source List Items Non Editable
-    return NO;
-}
-
-- (NSCell *)outlineView:(NSOutlineView *)outlineView dataCellForTableColumn:(NSTableColumn *)tableColumn item:(id)item{
-    NSInteger row = [outlineView rowForItem:item];
-    return [tableColumn dataCellForRow:row];
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item{
-    return NO;
-
-}
-
-- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
-    // Different Source List Items can have completely different UI based on the Item Type. In this sample we have only two types of views (Header and Data Cell). One can have multiple types of data cells.
-    // If there is a need to have more than one type of Data Cells. It can be done in this method
-    NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
-    [[view imageView] setImage:[item icon]];
-    [[view textField] setStringValue:[item title]];
-    return view;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item{
-    //Here we are restricting users for selecting the Header/ Groups. Only the Data Cell Items can be selected. The group headers can only be shown or hidden.
-    return YES;
-}
-
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification{
-    NSInteger selectedIndex = [self.outlineView selectedRow];
-    [self.posts removeAllObjects];
-    [self.appDelegate.currentUser.subscriptions[selectedIndex] loadSubredditPosts:^{
-        [self.posts addObjectsFromArray:self.appDelegate.currentUser.subscriptions[selectedIndex].posts];
-        [self.postListView reloadData];
-    }];
 }
 
 @end
