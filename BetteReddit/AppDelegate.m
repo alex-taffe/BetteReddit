@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+@import SAMKeychain;
+@import AppAuth;
 
 @interface AppDelegate ()
 
@@ -18,6 +20,21 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+
+    self.loggedinUsers = [[NSMutableArray alloc] init];
+
+    NSArray *test = [SAMKeychain accountsForService:@"reddit"];
+    __weak __typeof(self) weakSelf = self;
+    for(NSDictionary *account in test){
+        NSData *authStateData = [SAMKeychain passwordDataForService:@"reddit" account:account[@"acct"]];
+        OIDAuthState *authState = (OIDAuthState *) [NSKeyedUnarchiver unarchiveObjectWithData:authStateData];
+
+        BRUser *user = [[BRUser alloc] initWithAccessToken:authState];
+        [user loadUserDetails:^{
+            [weakSelf.loggedinUsers addObject:user];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedInUserRefresh" object:weakSelf];
+        }];
+    }
 }
 
 

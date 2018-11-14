@@ -5,4 +5,5 @@ target 'BetteReddit' do
 	pod 'PXSourceList'
 	pod 'AppAuth'
 	pod 'AFNetworking'
+	pod 'SAMKeychain'
 end

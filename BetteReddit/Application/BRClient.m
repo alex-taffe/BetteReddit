@@ -8,10 +8,10 @@
 #import "BRClient.h"
 @import AFNetworking;
 
-const NSString *API_BASE = @"https://ssl.reddit.com/api/";
+const NSString *API_BASE = @"https://reddit.com/";
+const NSString *OAUTH_BASE = @"https://oauth.reddit.com/";
 
 @interface BRClient()
-@property (strong, nonatomic) AFHTTPSessionManager *manager;
 @end
 
 @implementation BRClient
@@ -31,25 +31,57 @@ static BRClient *shared = nil;
     self = [super init];
 
     if(self){
-        self.manager = [[AFHTTPSessionManager alloc] init];
     }
 
     return self;
 }
 
 
--(void)makeRequestWithEndpoint:(NSString *)endpoint withArguments:(NSDictionary *)arguments success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock{
-    NSString *url = [[NSString alloc] initWithFormat:@"%@%@", API_BASE, endpoint];
+
+
+-(void)makeRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock{
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    NSString *url = [[NSString alloc] initWithFormat:@"%@%@", token ? OAUTH_BASE : API_BASE, endpoint];
 
     NSMutableDictionary *addedArguments = [[NSMutableDictionary alloc] initWithDictionary:arguments];
 
     [addedArguments setObject:@"json" forKey:@"api_type"];
 
-    [self.manager POST:url parameters:addedArguments progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        successBlock(responseObject[@"json"]);
+    if(token){
+        [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+        [manager.requestSerializer setValue:[NSString stringWithFormat:@"oauth.reddit.com"] forHTTPHeaderField:@"Host"];
+    }
+
+
+    [manager GET:url parameters:addedArguments progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        successBlock(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", [task.currentRequest allHTTPHeaderFields]);
+        failureBlock(error);
+    }];
+}
+
+-(void)makePostRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock{
+
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    NSString *url = [[NSString alloc] initWithFormat:@"%@%@", token ? OAUTH_BASE : API_BASE, endpoint];
+
+    NSMutableDictionary *addedArguments = [[NSMutableDictionary alloc] initWithDictionary:arguments];
+
+    [addedArguments setObject:@"json" forKey:@"api_type"];
+
+    if(token){
+        [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+        [manager.requestSerializer setValue:[NSString stringWithFormat:@"oauth.reddit.com"] forHTTPHeaderField:@"Host"];
+    }
+
+
+    [manager POST:url parameters:addedArguments progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        successBlock(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failureBlock(error);
     }];
+
 }
 
 @end

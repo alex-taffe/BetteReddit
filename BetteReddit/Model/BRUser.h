@@ -6,21 +6,22 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BRSubreddit.h"
+@import AppAuth;
 
 @interface BRUser : NSObject
 
 @property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSMutableArray<BRSubreddit *> *subscriptions;
+
+
+
+-(instancetype)init;
+
+-(instancetype)initWithAccessToken:(OIDAuthState *)authState;
 
 -(void)loadUserDetails:(void (^)(void))onComplete;
 
-
-/**
- Tries to log the current user in with a provided password
-
- @param password the password to log the user in with
- @param onComplete completion handler when the request returns
- */
--(void)loginUserWithPassword:(NSString  *)password onComplete:(void (^)(bool didLogin, bool needsMFA, NSError *error))onComplete;
+-(void)loadSubscriptions:(void (^)(void))onComplete;
 
 @end

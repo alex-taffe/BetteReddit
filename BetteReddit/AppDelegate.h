@@ -8,11 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CoreData/CoreData.h>
+#import "BRUser.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
-
+@property (strong, nonatomic) NSMutableArray<BRUser *> *loggedinUsers;
 
 @end
 
