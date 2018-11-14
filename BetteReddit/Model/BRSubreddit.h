@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *endpoint;
 @property (strong, nonatomic) NSMutableArray<BRPost *> *posts;
 
--(instancetype)initWithTitle:(NSString *)title;
+-(instancetype)initWithDictionary:(id)dict;
 
 /**
  Loads in the current posts of the subreddit

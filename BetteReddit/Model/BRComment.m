@@ -10,12 +10,13 @@
 
 @implementation BRComment
 
--(instancetype)initWithTitle:(NSString *)title{
+-(instancetype)initWithDictionary:(id)dict{
     self = [super init];
 
     if(self){
         self.children = [[NSMutableArray alloc] init];
-        self.title = title;
+        self.body = dict[@"data"][@"body"];
+        self.itemID = dict[@"data"][@"id"];
     }
     return self;
 }

@@ -11,12 +11,8 @@
 
 #import <Foundation/Foundation.h>
 #import "BRComment.h"
-#import "BRSubreddit.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-//Forward declare the BRSubreddit class here
-@class BRSubreddit;
 
 @interface BRPost : NSObject
 
@@ -25,9 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *internalName;
 @property (strong, nonatomic) NSString *itemID;
 @property (strong, nonatomic) NSMutableArray<BRComment *> *children;
-@property (weak, nonatomic) BRSubreddit *parent;
+@property (strong, nonatomic) NSString *permalink;
 
--(instancetype)initWithTitle:(NSString *)title;
+-(instancetype)initWithDictionary:(id)dict;
 
 -(void)loadPostComments:(void (^)(void))onComplete;
 

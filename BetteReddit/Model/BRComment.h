@@ -15,11 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BRComment : NSObject
 
-@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *body;
 @property (strong, nonatomic) NSMutableArray<BRComment *> *children;
 @property (strong, nonatomic) NSString *itemID;
 
--(instancetype)initWithTitle:(NSString *)title;
+-(instancetype)initWithDictionary:(id)dict;
 
 @end
 

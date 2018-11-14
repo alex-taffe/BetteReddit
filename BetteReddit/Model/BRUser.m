@@ -67,10 +67,7 @@
                                                            success:^(id  _Nonnull result) {
                     id subs = result[@"data"][@"children"];
                     for(id sub in subs){
-                        BRSubreddit *subReddit = [[BRSubreddit alloc] initWithTitle:sub[@"data"][@"display_name"]];
-                        subReddit.internalName = sub[@"data"][@"name"];
-                        subReddit.itemID = sub[@"data"][@"id"];
-                        subReddit.endpoint = sub[@"data"][@"url"];
+                        BRSubreddit *subReddit = [[BRSubreddit alloc] initWithDictionary:sub];
                         [self.subscriptions addObject:subReddit];
                     }
 
@@ -101,7 +98,8 @@
             return [name1 compare:name2];
         }];
 
-        BRSubreddit *home = [[BRSubreddit alloc] initWithTitle:@"Home"];
+        BRSubreddit *home = [[BRSubreddit alloc] init];
+        home.title = @"Home";
         home.endpoint = @"/";
 
         [self.subscriptions insertObject:home atIndex:0];

@@ -13,12 +13,15 @@
 
 @implementation BRPost
 
--(instancetype)initWithTitle:(NSString *)title{
+-(instancetype)initWithDictionary:(id)dict{
     self = [super init];
 
     if(self){
         self.children = [[NSMutableArray alloc] init];
-        self.title = title;
+        self.title = dict[@"data"][@"title"];
+        self.internalName = dict[@"data"][@"name"];
+        self.itemID = dict[@"data"][@"id"];
+        self.permalink = dict[@"data"][@"permalink"];
     }
     return self;
 }
@@ -26,14 +29,14 @@
 -(void)loadPostComments:(void (^)(void))onComplete{
     [self.children removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        NSString  *endpoint = [NSString stringWithFormat:@"r/%@/comments/%@", self.parent.title, self.itemID];
+        NSString  *endpoint = [NSString stringWithFormat:@"%@/comments/", self.permalink];
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             for(id listing in result){
                 id comments = listing[@"data"][@"children"];
                 for(id commentDict in comments){
                     if(!commentDict[@"data"][@"body"])
                         continue;
-                    BRComment *comment = [[BRComment alloc] initWithTitle:commentDict[@"data"][@"body"]];
+                    BRComment *comment = [[BRComment alloc] initWithDictionary:commentDict];
 
                     [self.children addObject:comment];
                 }

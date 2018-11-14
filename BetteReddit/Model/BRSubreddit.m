@@ -18,12 +18,25 @@
 
 @implementation BRSubreddit
 
--(instancetype)initWithTitle:(NSString *)title{
+-(instancetype)init{
     self = [super init];
     if(self){
-        self.title = title;
+        self.posts = [[NSMutableArray alloc] init];
+    }
+
+    return self;
+}
+
+-(instancetype)initWithDictionary:(id)dict{
+    self = [super init];
+    if(self){
+        //self.title = title;
         self.appDelegate = [[NSApplication sharedApplication] delegate];
         self.posts = [[NSMutableArray alloc] init];
+        self.title = dict[@"data"][@"display_name"];
+        self.internalName = dict[@"data"][@"name"];
+        self.itemID = dict[@"data"][@"id"];
+        self.endpoint = dict[@"data"][@"url"];
     }
 
     return self;
@@ -35,10 +48,7 @@
         [[BRClient sharedInstance] makeRequestWithEndpoint:self.endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             id postList = result[@"data"][@"children"];
             for(id postDict in postList){
-                BRPost *post = [[BRPost alloc] initWithTitle:postDict[@"data"][@"title"]];
-                post.internalName = postDict[@"data"][@"name"];
-                post.parent = self;
-                post.itemID = postDict[@"data"][@"id"];
+                BRPost *post = [[BRPost alloc] initWithDictionary:postDict];
                 [self.posts addObject:post];
             }
             onComplete();
