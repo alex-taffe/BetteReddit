@@ -62,7 +62,7 @@
     // Starts a loopback HTTP redirect listener to receive the code.  This needs to be started first,
     // as the exact redirect URI (including port) must be passed in the authorization request.
     self.redirectHTTPHandler = [[OIDRedirectHTTPHandler alloc] initWithSuccessURL:successURL];
-    NSURL *redirectURI = [self.redirectHTTPHandler startHTTPListener:nil];
+    NSURL *redirectURI = [self.redirectHTTPHandler startHTTPListener:nil withPort:35482];
     NSLog(@"%@", redirectURI);
 
     NSBundle *bundle = [NSBundle mainBundle];

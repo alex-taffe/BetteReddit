@@ -407,7 +407,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/PXSourceList/PXSourceList.framework",
@@ -426,7 +426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F27456B90D3392B0F17399AF /* [CP] Check Pods Manifest.lock */ = {
