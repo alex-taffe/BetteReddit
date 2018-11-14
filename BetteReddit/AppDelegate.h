@@ -14,6 +14,7 @@
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 @property (strong, nonatomic) NSMutableArray<BRUser *> *loggedinUsers;
+@property (strong, nonatomic) BRUser *currentUser;
 
 @end
 

@@ -11,15 +11,18 @@
 #import "BRSubreddit.h"
 #import "AppDelegate.h"
 #import "BRSourceListItem.h"
+#import "BRPost.h"
 
 @import AppAuth;
 @import SAMKeychain;
 
-@interface MainViewController ()<NSOutlineViewDelegate, NSOutlineViewDataSource>
+@interface MainViewController ()<NSOutlineViewDelegate, NSOutlineViewDataSource, NSTableViewDelegate, NSTableViewDataSource>
 @property (strong, nonatomic) OIDRedirectHTTPHandler *redirectHTTPHandler;
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSMutableArray<BRSourceListItem *> *sourceItems;
+@property (strong, nonatomic) NSMutableArray<BRPost *> *posts;
 @property (strong) IBOutlet NSOutlineView *outlineView;
+@property (strong) IBOutlet NSTableView *postListView;
 @end
 
 @implementation MainViewController
@@ -34,26 +37,29 @@
                                                  name:@"LoggedInUserRefresh"
                                                object:nil];
 
+    self.sourceItems = [[NSMutableArray alloc] init];
+    self.posts = [[NSMutableArray alloc] init];
+
     self.outlineView.delegate = self;
     self.outlineView.dataSource = self;
-    self.sourceItems = [[NSMutableArray alloc] init];
+
+    self.postListView.delegate = self;
+    self.postListView.dataSource = self;
 }
 
 -(void)newLoggedInUser{
     [self.sourceItems removeAllObjects];
-    for(__block BRUser *user in self.appDelegate.loggedinUsers){
-        [user loadSubscriptions:^{
-            for(BRSubreddit *subreddit in user.subscriptions){
-                [self.sourceItems addObject:[BRSourceListItem itemWithTitle:subreddit.name identifier:subreddit.name]];
-            }
-            dispatch_async(dispatch_get_main_queue(),^(void){
-                [self.outlineView reloadData];
-            });
+    [self.appDelegate.currentUser loadSubscriptions:^{
+        for(BRSubreddit *subreddit in self.appDelegate.currentUser.subscriptions){
+            [self.sourceItems addObject:[BRSourceListItem itemWithTitle:subreddit.name identifier:subreddit.name]];
+        }
+        dispatch_async(dispatch_get_main_queue(),^(void){
+            [self.outlineView reloadData];
+        });
 
-        }];
+    }];
 
 
-    }
 
 }
 
@@ -117,6 +123,8 @@
                                                    }];
 }
 
+#pragma mark - OutlineView data
+
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item{
     if(item == nil){
         return [self.sourceItems count];
@@ -164,42 +172,37 @@
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
     // Different Source List Items can have completely different UI based on the Item Type. In this sample we have only two types of views (Header and Data Cell). One can have multiple types of data cells.
     // If there is a need to have more than one type of Data Cells. It can be done in this method
-    NSTableCellView *view = nil;
-    if ([[item identifier] isEqualToString:@"headerOne"] || [[item identifier] isEqualToString:@"headerTwo"])
-    {
-        view = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
-    }
-    else {
-        view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
-        [[view imageView] setImage:[item icon]];
-    }
+    NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+    [[view imageView] setImage:[item icon]];
     [[view textField] setStringValue:[item title]];
     return view;
 }
 
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
-{
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item{
     //Here we are restricting users for selecting the Header/ Groups. Only the Data Cell Items can be selected. The group headers can only be shown or hidden.
-    if ([outlineView parentForItem:item])
-    {
-        return YES;
-    }
-    return NO;
+    return YES;
 }
 
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification
-{
-    NSIndexSet *selectedIndexes = [self.outlineView selectedRowIndexes];
-    if([selectedIndexes count]>1)
-    {
-        //This is required only when multi-select is enabled in the SourceList/ Outline View and we are allowing users to do an action on multiple items
-    }
-    else {
-        //Add code here for triggering an action on change of SourceList selection.
-        //e.g: Loading the list of songs on changing the playlist selection
-    }
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification{
+    NSInteger selectedIndex = [self.outlineView selectedRow];
+    [self.posts removeAllObjects];
+    [self.appDelegate.currentUser.subscriptions[selectedIndex] loadSubredditPosts:^{
+        [self.posts addObjectsFromArray:self.appDelegate.currentUser.subscriptions[selectedIndex].posts];
+        [self.postListView reloadData];
+    }];
 }
 
+#pragma mark - PostView data
 
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
+    return self.posts.count;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"postCell" owner:nil];
+    cell.textField.stringValue = self.posts[row].title;
+
+    return cell;
+}
 
 @end

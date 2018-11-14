@@ -9,7 +9,7 @@
 #import "BRClient.h"
 
 @interface BRUser()
-@property (strong, nonatomic, nullable) OIDAuthState *authState;
+
 @end
 
 @implementation BRUser

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BRPost.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *internalName;
 
+@property (strong, nonatomic) NSMutableArray<BRPost *> *posts;
+
 -(instancetype)initWithName:(NSString *)name;
+
+/**
+ Loads in the current posts of the subreddit
+
+ @param onComplete completion callback
+ */
+-(void)loadSubredditPosts:(void (^)(void))onComplete;
 
 @end
 

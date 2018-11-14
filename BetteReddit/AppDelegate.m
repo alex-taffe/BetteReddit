@@ -25,6 +25,8 @@
 
     NSArray *test = [SAMKeychain accountsForService:@"reddit"];
     __weak __typeof(self) weakSelf = self;
+
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(test.count - 1);
     for(NSDictionary *account in test){
         NSData *authStateData = [SAMKeychain passwordDataForService:@"reddit" account:account[@"acct"]];
         OIDAuthState *authState = (OIDAuthState *) [NSKeyedUnarchiver unarchiveObjectWithData:authStateData];
@@ -32,9 +34,16 @@
         BRUser *user = [[BRUser alloc] initWithAccessToken:authState];
         [user loadUserDetails:^{
             [weakSelf.loggedinUsers addObject:user];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedInUserRefresh" object:weakSelf];
+            dispatch_semaphore_signal(semaphore);
         }];
     }
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        self.currentUser = self.loggedinUsers.firstObject;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedInUserRefresh" object:weakSelf];
+    });
+
+
 }
 
 
