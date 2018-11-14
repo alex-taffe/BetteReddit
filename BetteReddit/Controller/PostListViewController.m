@@ -58,9 +58,7 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.postListView.selectedRow;
-    //    [self.appDelegate.currentUser.subscriptions[selection] loadSubredditPosts:^{
-    //        <#code#>
-    //    };
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangedPost" object:self.current.posts[selection]];
 }
 
 @end

@@ -23,6 +23,7 @@
         self.itemID = dict[@"data"][@"id"];
         self.permalink = dict[@"data"][@"permalink"];
         self.thumbnailURL = dict[@"data"][@"thumbnail"];
+        self.url = dict[@"data"][@"url"];
     }
     return self;
 }

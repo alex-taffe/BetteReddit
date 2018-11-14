@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray<BRComment *> *children;
 @property (strong, nonatomic) NSString *permalink;
 @property (strong, nonatomic, nullable) NSString *thumbnailURL;
+@property (strong, nonatomic, nullable) NSString *url;
 
 -(instancetype)initWithDictionary:(id)dict;
 

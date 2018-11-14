@@ -1,5 +1,5 @@
 //
-//  ContentViewController.h
+//  CommentViewController.h
 //  BetteReddit
 //
 //  Created by Alex Taffe on 11/14/18.
@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ContentViewController : NSViewController
-@property (strong) IBOutlet NSImageView *imageView;
+@interface CommentViewController : NSViewController
 
 @end
 

@@ -723,7 +723,7 @@
                     <splitViewItems>
                         <splitViewItem id="JtS-Yb-021"/>
                         <splitViewItem id="jfe-aW-9jg"/>
-                        <splitViewItem id="erl-2I-0J1"/>
+                        <splitViewItem id="CFh-nq-AHn"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="jTF-es-hpV">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -736,7 +736,7 @@
                         <outlet property="splitView" destination="jTF-es-hpV" id="LbA-z6-TAM"/>
                         <segue destination="R3b-y3-Yqf" kind="relationship" relationship="splitItems" id="XPC-KW-N32"/>
                         <segue destination="OOq-Be-2Am" kind="relationship" relationship="splitItems" id="b9O-HD-dtG"/>
-                        <segue destination="JZp-Kg-ZUJ" kind="relationship" relationship="splitItems" id="GcE-u6-TlM"/>
+                        <segue destination="MI2-Rn-xq3" kind="relationship" relationship="splitItems" id="3rm-CT-0cD"/>
                     </connections>
                 </splitViewController>
                 <customObject id="par-U6-ltP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -781,7 +781,7 @@
                             <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="iL8-Gt-Y8n">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <subviews>
-                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-mO-bvL">
+                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-mO-bvL">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="275"/>
                                         <clipView key="contentView" drawsBackground="NO" id="aEN-zR-GaR">
                                             <rect key="frame" x="1" y="1" width="448" height="273"/>
@@ -794,7 +794,7 @@
                                                     <color key="backgroundColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="346" minWidth="40" maxWidth="1000" id="RoI-rm-viw">
+                                                        <tableColumn width="150" minWidth="40" maxWidth="1000" id="RoI-rm-viw">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -808,7 +808,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView identifier="subscriptionCell" id="RUz-PT-ehA" customClass="SubredditTableCellView">
-                                                                    <rect key="frame" x="1" y="1" width="346" height="17"/>
+                                                                    <rect key="frame" x="1" y="1" width="150" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rL4-UD-qLF">
@@ -1247,18 +1247,75 @@
             </objects>
             <point key="canvasLocation" x="225" y="720"/>
         </scene>
-        <!--Content View Controller-->
-        <scene sceneID="pHI-aD-vW5">
+        <!--Content Split View Controller-->
+        <scene sceneID="ASa-rE-1LM">
             <objects>
-                <viewController id="JZp-Kg-ZUJ" customClass="ContentViewController" sceneMemberID="viewController">
-                    <view key="view" id="ogb-tb-jAn">
+                <splitViewController id="MI2-Rn-xq3" customClass="ContentSplitViewController" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="uYQ-hD-B4W"/>
+                        <splitViewItem id="bAW-BP-YbQ"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" id="ci0-CK-e0e">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="MI2-Rn-xq3" id="WZb-Zb-6gh"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="ci0-CK-e0e" id="cs6-16-mxF"/>
+                        <segue destination="9DA-OG-A47" kind="relationship" relationship="splitItems" id="jaw-kd-jW1"/>
+                        <segue destination="cw8-cu-ojJ" kind="relationship" relationship="splitItems" id="PzP-d9-bSa"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="cza-Ry-sFB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="933"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="THU-yS-jC5">
+            <objects>
+                <viewController id="9DA-OG-A47" customClass="ContentViewController" sceneMemberID="viewController">
+                    <view key="view" id="9tJ-ZJ-1ac">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBY-hK-zkE">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="5du-XL-JxV"/>
+                                    <constraint firstAttribute="width" constant="450" id="Tmm-vK-3Ub"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="P0Q-sq-2YA"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KBY-hK-zkE" secondAttribute="bottom" id="Ak7-xW-YIt"/>
+                            <constraint firstAttribute="trailing" secondItem="KBY-hK-zkE" secondAttribute="trailing" id="Xgm-tJ-XIB"/>
+                            <constraint firstItem="KBY-hK-zkE" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="ijY-Kj-jzh"/>
+                            <constraint firstItem="KBY-hK-zkE" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="rfS-i4-kpV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="KBY-hK-zkE" id="YUE-zi-E7W"/>
+                    </connections>
+                </viewController>
+                <customObject id="XFS-Yv-WJc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2384" y="673"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="xjM-1h-nlA">
+            <objects>
+                <viewController id="cw8-cu-ojJ" customClass="CommentViewController" sceneMemberID="viewController">
+                    <view key="view" id="vNt-zI-2WV">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="NeE-zJ-VwY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Fae-sx-pRr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="968"/>
+            <point key="canvasLocation" x="2384" y="1045"/>
         </scene>
     </scenes>
 </document>

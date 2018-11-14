@@ -106,7 +106,6 @@
                                                        } else {
                                                            NSLog(@"Authorization error: %@", error.localizedDescription);
                                                        }
-                                                       //[weakSelf setAuthState:authState];
                                                    }];
 }
 
