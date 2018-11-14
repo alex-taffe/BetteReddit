@@ -22,6 +22,7 @@
         self.internalName = dict[@"data"][@"name"];
         self.itemID = dict[@"data"][@"id"];
         self.permalink = dict[@"data"][@"permalink"];
+        self.thumbnailURL = dict[@"data"][@"thumbnail"];
     }
     return self;
 }
@@ -29,7 +30,7 @@
 -(void)loadPostComments:(void (^)(void))onComplete{
     [self.children removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        NSString  *endpoint = [NSString stringWithFormat:@"%@/comments/", self.permalink];
+        NSString  *endpoint = [NSString stringWithFormat:@"%@", self.permalink];
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             for(id listing in result){
                 id comments = listing[@"data"][@"children"];

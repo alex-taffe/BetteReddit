@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "BRSubreddit.h"
 #import "PostTableViewCell.h"
+@import SDWebImage;
 
 @interface PostListViewController ()<NSTableViewDataSource, NSTableViewDelegate>
 @property (strong, nonatomic) AppDelegate *appDelegate;
@@ -48,7 +49,9 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     PostTableViewCell *cell = [tableView makeViewWithIdentifier:@"postCell" owner:nil];
-    cell.postTitle.stringValue = self.current.posts[row].title;
+    BRPost *item = self.current.posts[row];
+    cell.postTitle.stringValue = item.title;
+    [cell.postImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnailURL]];
 
     return cell;
 }

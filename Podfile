@@ -6,4 +6,5 @@ target 'BetteReddit' do
 	pod 'AppAuth'
 	pod 'AFNetworking'
 	pod 'SAMKeychain'
+	pod 'SDWebImage'
 end

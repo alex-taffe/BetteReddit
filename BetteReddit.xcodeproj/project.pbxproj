@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8CC39CE0BD86E77B43E0AEDD /* Pods_BetteReddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE27BAEEF85C051B33FEE417 /* Pods_BetteReddit.framework */; };
+		A79948ABA324FA79CA0C8941 /* Pods_BetteReddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4752DAD7739720E13D9FBFA1 /* Pods_BetteReddit.framework */; };
 		FA08A276219B8E7100E49E71 /* BRSourceListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08A275219B8E7100E49E71 /* BRSourceListItem.m */; };
 		FA08A278219BB65E00E49E71 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA08A277219BB65E00E49E71 /* config.plist */; };
 		FA08A27B219BC36500E49E71 /* BRPost.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08A27A219BC36500E49E71 /* BRPost.m */; };
@@ -50,9 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B1F1C7AE92712433422E2C18 /* Pods-BetteReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.debug.xcconfig"; sourceTree = "<group>"; };
-		B45EE7449698409BFF8E89FB /* Pods-BetteReddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.release.xcconfig"; sourceTree = "<group>"; };
-		DE27BAEEF85C051B33FEE417 /* Pods_BetteReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetteReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0345EEC649B896378499BF31 /* Pods-BetteReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.debug.xcconfig"; sourceTree = "<group>"; };
+		2494A04DC9BCEB2670A8085F /* Pods-BetteReddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.release.xcconfig"; sourceTree = "<group>"; };
+		4752DAD7739720E13D9FBFA1 /* Pods_BetteReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetteReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA08A274219B8E7100E49E71 /* BRSourceListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSourceListItem.h; sourceTree = "<group>"; };
 		FA08A275219B8E7100E49E71 /* BRSourceListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSourceListItem.m; sourceTree = "<group>"; };
 		FA08A277219BB65E00E49E71 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CC39CE0BD86E77B43E0AEDD /* Pods_BetteReddit.framework in Frameworks */,
+				A79948ABA324FA79CA0C8941 /* Pods_BetteReddit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,19 +125,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53A031A7CCA280589387A174 /* Pods */ = {
+		46B73CB14FAB2C5D4B96A6F1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B1F1C7AE92712433422E2C18 /* Pods-BetteReddit.debug.xcconfig */,
-				B45EE7449698409BFF8E89FB /* Pods-BetteReddit.release.xcconfig */,
+				0345EEC649B896378499BF31 /* Pods-BetteReddit.debug.xcconfig */,
+				2494A04DC9BCEB2670A8085F /* Pods-BetteReddit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A6DD5767417C2BC1512FDFC2 /* Frameworks */ = {
+		C23F51B0AFC600BF17FD2A38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE27BAEEF85C051B33FEE417 /* Pods_BetteReddit.framework */,
+				4752DAD7739720E13D9FBFA1 /* Pods_BetteReddit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,8 +213,8 @@
 				FA8F396620BB759E007CAC55 /* BetteRedditTests */,
 				FA8F397120BB759E007CAC55 /* BetteRedditUITests */,
 				FA8F394B20BB759C007CAC55 /* Products */,
-				53A031A7CCA280589387A174 /* Pods */,
-				A6DD5767417C2BC1512FDFC2 /* Frameworks */,
+				46B73CB14FAB2C5D4B96A6F1 /* Pods */,
+				C23F51B0AFC600BF17FD2A38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,11 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8F397720BB759E007CAC55 /* Build configuration list for PBXNativeTarget "BetteReddit" */;
 			buildPhases = (
-				EA455881899126D824B80EF6 /* [CP] Check Pods Manifest.lock */,
+				F27456B90D3392B0F17399AF /* [CP] Check Pods Manifest.lock */,
 				FA8F394620BB759C007CAC55 /* Sources */,
 				FA8F394720BB759C007CAC55 /* Frameworks */,
 				FA8F394820BB759C007CAC55 /* Resources */,
-				B1F59E899DAB16233E2E8D5C /* [CP] Embed Pods Frameworks */,
+				3335F0C1F5FAC623955944F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,10 +399,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B1F59E899DAB16233E2E8D5C /* [CP] Embed Pods Frameworks */ = {
+		3335F0C1F5FAC623955944F9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
@@ -410,29 +412,37 @@
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/PXSourceList/PXSourceList.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PXSourceList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EA455881899126D824B80EF6 /* [CP] Check Pods Manifest.lock */ = {
+		F27456B90D3392B0F17399AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BetteReddit-checkManifestLockResult.txt",
 			);
@@ -622,7 +632,7 @@
 		};
 		FA8F397820BB759E007CAC55 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1F1C7AE92712433422E2C18 /* Pods-BetteReddit.debug.xcconfig */;
+			baseConfigurationReference = 0345EEC649B896378499BF31 /* Pods-BetteReddit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BetteReddit/BetteReddit.entitlements;
@@ -643,7 +653,7 @@
 		};
 		FA8F397920BB759E007CAC55 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B45EE7449698409BFF8E89FB /* Pods-BetteReddit.release.xcconfig */;
+			baseConfigurationReference = 2494A04DC9BCEB2670A8085F /* Pods-BetteReddit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BetteReddit/BetteReddit.entitlements;
