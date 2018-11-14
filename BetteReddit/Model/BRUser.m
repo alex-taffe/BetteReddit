@@ -69,6 +69,7 @@
                     for(id sub in subs){
                         BRSubreddit *subReddit = [[BRSubreddit alloc] initWithName:sub[@"data"][@"display_name"]];
                         subReddit.internalName = sub[@"data"][@"name"];
+                        subReddit.itemID = sub[@"data"][@"id"];
                         [self.subscriptions addObject:subReddit];
                     }
 

@@ -5,6 +5,9 @@
 //  Created by Alex Taffe on 6/2/18.
 //
 
+#ifndef __BRUSER_H
+#define __BRUSER_H
+
 #import <Foundation/Foundation.h>
 #import "BRSubreddit.h"
 @import AppAuth;
@@ -37,3 +40,4 @@
 -(void)loadSubscriptions:(void (^)(void))onComplete;
 
 @end
+#endif

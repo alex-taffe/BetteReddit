@@ -36,8 +36,10 @@
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             id postList = result[@"data"][@"children"];
             for(id postDict in postList){
-                BRPost *post = [[BRPost alloc] init];
-                post.title = postDict[@"data"][@"title"];
+                BRPost *post = [[BRPost alloc] initWithTitle:postDict[@"data"][@"title"]];
+                post.internalName = postDict[@"data"][@"name"];
+                post.parent = self;
+                post.itemID = postDict[@"data"][@"id"];
                 [self.posts addObject:post];
             }
             onComplete();

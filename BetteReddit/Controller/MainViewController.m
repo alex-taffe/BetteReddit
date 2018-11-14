@@ -205,4 +205,11 @@
     return cell;
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification{
+    NSInteger selection = self.postListView.selectedRow;
+    [self.posts[selection] loadPostComments:^{
+
+    }];
+}
+
 @end
