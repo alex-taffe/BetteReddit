@@ -6,6 +6,7 @@
 //
 
 #import "BRUser.h"
+#import "BROAuthHelper.h"
 #import "BRClient.h"
 
 @interface BRUser()
@@ -36,7 +37,7 @@
 }
 
 -(void)loadUserDetails:(void (^)(void))onComplete{
-    [self performOAuthAction:^(NSString *authToken) {
+    [BROAuthHelper performOAuthAction:^(NSString *authToken) {
         [[BRClient sharedInstance] makeRequestWithEndpoint:@"api/v1/me" withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             self.username = result[@"name"];
             onComplete();
@@ -49,7 +50,7 @@
 
 -(void)loadSubscriptions:(void (^)(void))onComplete{
     [self.subscriptions removeAllObjects];
-    [self performOAuthAction:^(NSString *authToken) {
+    [BROAuthHelper performOAuthAction:^(NSString *authToken) {
         __block bool doneLoading = false;
         __block NSString *after = @"";
 
@@ -100,29 +101,6 @@
         //finally done
         onComplete();
     }];
-}
-
-
--(void)performOAuthAction:(void (^)(NSString *authToken))onComplete{
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    __block NSString *authorizationToken = nil;
-
-    //we have auth
-    if(self.authState){
-        //get a fresh token
-        [self.authState performActionWithFreshTokens:^(NSString * _Nullable accessToken, NSString * _Nullable idToken, NSError * _Nullable error) {
-            authorizationToken = accessToken;
-            dispatch_semaphore_signal(semaphore);
-        }];
-    } else {
-        dispatch_semaphore_signal(semaphore);
-    }
-
-    //let the client know they're good to make a request
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        onComplete(authorizationToken);
-    });
 }
 
 @end

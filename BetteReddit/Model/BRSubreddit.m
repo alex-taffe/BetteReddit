@@ -7,6 +7,7 @@
 
 #import "BRSubreddit.h"
 #import "AppDelegate.h"
+#import "BROAuthHelper.h"
 #import "BRUser.h"
 #import "BRClient.h"
 
@@ -30,7 +31,7 @@
 
 -(void)loadSubredditPosts:(void (^)(void))onComplete{
     [self.posts removeAllObjects];
-    [self performOAuthAction:^(NSString *authToken) {
+    [BROAuthHelper performOAuthAction:^(NSString *authToken) {
         NSString  *endpoint = [NSString stringWithFormat:@"r/%@", self.name];
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             id postList = result[@"data"][@"children"];
@@ -47,28 +48,6 @@
     }];
 }
 
--(void)performOAuthAction:(void (^)(NSString *authToken))onComplete{
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    __block NSString *authorizationToken = nil;
 
-    BRUser *current = self.appDelegate.currentUser;
-
-    //we have auth
-    if(current.authState){
-        //get a fresh token
-        [current.authState performActionWithFreshTokens:^(NSString * _Nullable accessToken, NSString * _Nullable idToken, NSError * _Nullable error) {
-            authorizationToken = accessToken;
-            dispatch_semaphore_signal(semaphore);
-        }];
-    } else {
-        dispatch_semaphore_signal(semaphore);
-    }
-
-    //let the client know they're good to make a request
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        onComplete(authorizationToken);
-    });
-}
 
 @end
