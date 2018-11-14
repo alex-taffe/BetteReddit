@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostListViewController : NSViewController
+@property (strong) IBOutlet NSTableView *postListView;
+
 
 @end
 

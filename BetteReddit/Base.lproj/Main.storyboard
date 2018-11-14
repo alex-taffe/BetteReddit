@@ -866,7 +866,7 @@
                                     <rect key="frame" x="1" y="1" width="448" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" rowSizeStyle="automatic" viewBased="YES" id="WJG-rC-Oec">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" usesAutomaticRowHeights="YES" viewBased="YES" id="WJG-rC-Oec">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -899,8 +899,8 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JKM-gf-7l3"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XAH-uN-ZsH">
-                                                                    <rect key="frame" x="7" y="22" width="96" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="LvP-si-GQe">
+                                                                    <rect key="frame" x="7" y="22" width="379" height="17"/>
+                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="LvP-si-GQe">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -910,7 +910,9 @@
                                                             <constraints>
                                                                 <constraint firstItem="XAH-uN-ZsH" firstAttribute="top" secondItem="306-zg-plh" secondAttribute="top" constant="11" id="6Rl-wS-6os"/>
                                                                 <constraint firstItem="VPa-Ss-8h4" firstAttribute="centerY" secondItem="306-zg-plh" secondAttribute="centerY" id="9bx-5G-Zab"/>
+                                                                <constraint firstItem="VPa-Ss-8h4" firstAttribute="leading" secondItem="XAH-uN-ZsH" secondAttribute="trailing" constant="10" id="MB0-Ul-SFz"/>
                                                                 <constraint firstItem="XAH-uN-ZsH" firstAttribute="leading" secondItem="306-zg-plh" secondAttribute="leading" constant="9" id="TlN-k9-Rhm"/>
+                                                                <constraint firstAttribute="bottom" secondItem="XAH-uN-ZsH" secondAttribute="bottom" constant="22" id="ZUv-OI-ap4"/>
                                                                 <constraint firstAttribute="trailing" secondItem="VPa-Ss-8h4" secondAttribute="trailing" constant="3" id="xW5-Bn-E7C"/>
                                                             </constraints>
                                                             <connections>
@@ -942,6 +944,9 @@
                             <constraint firstItem="xrh-HJ-CGk" firstAttribute="leading" secondItem="Kuu-G2-EGR" secondAttribute="leading" id="NNF-6U-fmL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postListView" destination="WJG-rC-Oec" id="kQ9-2o-pjU"/>
+                    </connections>
                 </viewController>
                 <customObject id="ZD4-R1-Yc6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

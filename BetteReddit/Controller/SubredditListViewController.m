@@ -53,9 +53,8 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.subscriptionListView.selectedRow;
-//    [self.appDelegate.currentUser.subscriptions[selection] loadSubredditPosts:^{
-//        <#code#>
-//    };
+    BRSubreddit *current = self.appDelegate.currentUser.subscriptions[selection];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangedSubreddit" object:current];
 }
 
 @end
