@@ -24,6 +24,14 @@
         self.permalink = dict[@"data"][@"permalink"];
         self.thumbnailURL = dict[@"data"][@"thumbnail"];
         self.url = dict[@"data"][@"url"];
+        self.postHint = dict[@"data"][@"post_hint"];
+        if([self.postHint isEqualToString:@"rich:video"]){
+            self.postPreviewLink = dict[@"data"][@"preview"][@"reddit_video_preview"][@"fallback_url"];
+        } else if([self.postHint isEqualToString:@"image"] || [self.url containsString:@"imgur"]){
+            self.postPreviewLink = dict[@"data"][@"preview"][@"images"][0][@"source"][@"url"];
+        }
+
+        
     }
     return self;
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="14460.31"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1288,16 +1289,24 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="P0Q-sq-2YA"/>
                             </imageView>
+                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-3n-Uxp">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            </avPlayerView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="KBY-hK-zkE" secondAttribute="bottom" id="Ak7-xW-YIt"/>
+                            <constraint firstItem="gF5-3n-Uxp" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="EXo-A2-gM6"/>
+                            <constraint firstAttribute="trailing" secondItem="gF5-3n-Uxp" secondAttribute="trailing" id="Pjd-pF-GL2"/>
                             <constraint firstAttribute="trailing" secondItem="KBY-hK-zkE" secondAttribute="trailing" id="Xgm-tJ-XIB"/>
                             <constraint firstItem="KBY-hK-zkE" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="ijY-Kj-jzh"/>
                             <constraint firstItem="KBY-hK-zkE" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="rfS-i4-kpV"/>
+                            <constraint firstAttribute="bottom" secondItem="gF5-3n-Uxp" secondAttribute="bottom" id="sPh-t8-ybp"/>
+                            <constraint firstItem="gF5-3n-Uxp" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="ukW-9z-VwY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="KBY-hK-zkE" id="YUE-zi-E7W"/>
+                        <outlet property="videoView" destination="gF5-3n-Uxp" id="7Jo-mM-cdE"/>
                     </connections>
                 </viewController>
                 <customObject id="XFS-Yv-WJc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -23,18 +23,26 @@
                                              selector:@selector(changedPost:)
                                                  name:@"ChangedPost"
                                                object:nil];
+    self.videoView.hidden = true;
 }
 
 -(void)changedPost:(NSNotification *)notification{
     self.current = notification.object;
     if(self.current.url){
-        NSRange range = NSMakeRange(0, self.current.url.length);
-        NSString *pattern = @"\\.(jpg|png|gif|jpeg)$";
-
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: pattern options:NSRegularExpressionCaseInsensitive error:nil];
-        NSArray *matches = [regex matchesInString:self.current.url options:0 range: range];
-        if(matches.count > 0){
-            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.url]];
+        if([self.current.postHint isEqualToString:@"rich:video"]){
+            self.videoView.hidden = false;
+            self.imageView.hidden = true;
+            self.videoView.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
+            return;
+        } else if([self.current.postHint isEqualToString:@"image"]){
+            self.videoView.hidden = true;
+            self.imageView.hidden = false;
+            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
+            return;
+        } else if([self.current.postHint isEqualToString:@"link"] && [self.current.url containsString:@"imgur"]){
+            self.videoView.hidden = true;
+            self.imageView.hidden = false;
+            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
             return;
         }
     }
