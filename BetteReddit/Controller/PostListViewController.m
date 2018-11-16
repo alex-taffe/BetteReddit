@@ -53,7 +53,8 @@
     cell.postTitle.stringValue = item.title;
     cell.postLikes.stringValue = [NSString stringWithFormat:@"%@", item.score];
     [cell.postImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnailURL]];
-
+    cell.post = item;
+    [cell updateColorScheme];
     return cell;
 }
 

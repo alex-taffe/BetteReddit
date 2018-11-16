@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)makeRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock;
 
+-(void)makePostRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

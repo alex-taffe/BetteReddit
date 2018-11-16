@@ -16,4 +16,29 @@
     // Drawing code here.
 }
 
+- (IBAction)upArrowPressed:(id)sender {
+    if(self.post.likes == 1)
+        [self.post updateVote:0 onComplete:^{
+            [self updateColorScheme];
+        }];
+    else
+        [self.post updateVote:1 onComplete:^{
+            [self updateColorScheme];
+        }];
+}
+
+- (IBAction)downArrowPressed:(id)sender {
+    if(self.post.likes == -1)
+        [self.post updateVote:0 onComplete:^{
+            [self updateColorScheme];
+        }];
+    else
+        [self.post updateVote:-1 onComplete:^{
+            [self updateColorScheme];
+        }];
+}
+
+-(void)updateColorScheme{
+    
+}
 @end

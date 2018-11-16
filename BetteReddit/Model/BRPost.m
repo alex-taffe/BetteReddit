@@ -32,15 +32,41 @@
         }
 
         self.score = dict[@"data"][@"score"];
+
+        if(![dict[@"data"][@"likes"] isEqual:[NSNull null]]){
+            self.likes = [dict[@"data"][@"likes"] isEqualToNumber:@1] ? 1 : -1;
+        } else {
+            self.likes = 0;
+        }
+
         
     }
     return self;
 }
 
+-(void)updateVote:(int)likes onComplete:(void (^)(void))onComplete{
+    __weak __typeof(self) weakSelf = self;
+    [BROAuthHelper performOAuthAction:^(NSString *authToken) {
+        NSString  *endpoint = [NSString stringWithFormat:@"/api/vote"];
+        [[BRClient sharedInstance] makePostRequestWithEndpoint:endpoint withArguments:@{
+            @"id": weakSelf.internalName,
+            @"dir": [NSNumber numberWithInt: likes]
+        } withToken:authToken success:^(id  _Nonnull result) {
+            weakSelf.likes = likes;
+            onComplete();
+        } failure:^(NSError * _Nonnull error) {
+            NSLog(@"Failed to load post comments: %@", error);
+            onComplete();
+        }];
+    }];
+}
+
+
 -(void)loadPostComments:(void (^)(void))onComplete{
     [self.children removeAllObjects];
+    __weak __typeof(self) weakSelf = self;
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        NSString  *endpoint = [NSString stringWithFormat:@"%@", self.permalink];
+        NSString  *endpoint = [NSString stringWithFormat:@"%@", weakSelf.permalink];
         [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             for(id listing in result){
                 id comments = listing[@"data"][@"children"];
@@ -49,7 +75,7 @@
                         continue;
                     BRComment *comment = [[BRComment alloc] initWithDictionary:commentDict];
 
-                    [self.children addObject:comment];
+                    [weakSelf.children addObject:comment];
                 }
             }
 //            for(id postDict in postList){

@@ -36,6 +36,10 @@ static BRClient *shared = nil;
     return self;
 }
 
+-(void)makeRequestWithEndpoint:(NSString *)endpoint withMethod:(NSString *)method withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock{
+
+}
+
 -(void)makeRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock{
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
     NSString *url = [[NSString alloc] initWithFormat:@"%@%@", token ? OAUTH_BASE : API_BASE, endpoint];

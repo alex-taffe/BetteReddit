@@ -27,9 +27,26 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *postHint;
 @property (strong, nonatomic) NSString *postPreviewLink;
 @property (strong, nonatomic) NSNumber *score;
+@property (nonatomic) int likes;
 
 -(instancetype)initWithDictionary:(id)dict;
 
+
+
+
+/**
+ Updates the current value of the votes
+
+ @param likes the new like status
+ @param onComplete on complete callback
+ */
+-(void)updateVote:(int)likes onComplete:(void (^)(void))onComplete;
+
+/**
+ Retrieve the comments on the post
+
+ @param onComplete on complete callback
+ */
 -(void)loadPostComments:(void (^)(void))onComplete;
 
 @end
