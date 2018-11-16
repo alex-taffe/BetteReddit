@@ -38,7 +38,7 @@
 
 -(void)loadUserDetails:(void (^)(void))onComplete{
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        [[BRClient sharedInstance] makeRequestWithEndpoint:@"api/v1/me" withArguments:@{@"limit":@100} withToken:authToken success:^(id  _Nonnull result) {
+        [[BRClient sharedInstance] makeRequestWithEndpoint:@"api/v1/me" withMethod:@"GET" withArguments:@{@"limit":@100} withToken:authToken success:^(id  _Nonnull result) {
             self.username = result[@"name"];
             onComplete();
         } failure:^(NSError * _Nonnull error) {
@@ -62,6 +62,7 @@
             dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
                 //get the current round of subscriptions
                 [[BRClient sharedInstance] makeRequestWithEndpoint:@"subreddits/mine/subscriber"
+                                                        withMethod:@"GET"
                                                      withArguments:@{@"limit":@100, @"after" : after}
                                                          withToken:authToken
                                                            success:^(id  _Nonnull result) {

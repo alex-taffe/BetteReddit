@@ -23,13 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
  Make a request to reddit
 
  @param endpoint the end point to request with no leading /
+ @param method the HTTP method to use, current GET and POST are supported
  @param arguments any arguments that need to be passsed to the endpoint
  @param successBlock on success
  @param failureBlock on failure
  */
--(void)makeRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock;
-
--(void)makePostRequestWithEndpoint:(NSString *)endpoint withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock;
+-(void)makeRequestWithEndpoint:(NSString *)endpoint withMethod:(NSString *)method withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 @end
 

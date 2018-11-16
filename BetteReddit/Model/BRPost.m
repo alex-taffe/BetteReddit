@@ -48,7 +48,7 @@
     __weak __typeof(self) weakSelf = self;
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
         NSString  *endpoint = [NSString stringWithFormat:@"/api/vote"];
-        [[BRClient sharedInstance] makePostRequestWithEndpoint:endpoint withArguments:@{
+        [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withMethod:@"POST" withArguments:@{
             @"id": weakSelf.internalName,
             @"dir": [NSNumber numberWithInt: likes]
         } withToken:authToken success:^(id  _Nonnull result) {
@@ -77,7 +77,7 @@
     __weak __typeof(self) weakSelf = self;
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
         NSString  *endpoint = [NSString stringWithFormat:@"%@", weakSelf.permalink];
-        [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
+        [[BRClient sharedInstance] makeRequestWithEndpoint:endpoint withMethod:@"GET" withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
             for(id listing in result){
                 id comments = listing[@"data"][@"children"];
                 for(id commentDict in comments){
