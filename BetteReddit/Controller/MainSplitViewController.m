@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-//    [self.splitView setPosition:200 ofDividerAtIndex:0];
+    [self.splitView setPosition:200 ofDividerAtIndex:0];
 //    [self.splitView setPosition:600 ofDividerAtIndex:1];
 }
 

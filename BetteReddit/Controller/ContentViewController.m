@@ -29,20 +29,25 @@
 -(void)changedPost:(NSNotification *)notification{
     self.current = notification.object;
     if(self.current.url){
-        if([self.current.postHint isEqualToString:@"rich:video"]){
+        if([self.current.postHint isEqualToString:@"rich:video"] || [self.current.postHint isEqualToString:@"video"]){
+            self.webView.hidden = true;
             self.videoView.hidden = false;
             self.imageView.hidden = true;
             self.videoView.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
+            [self.videoView.player play];
             return;
-        } else if([self.current.postHint isEqualToString:@"image"]){
+        } else if([self.current.postHint isEqualToString:@"image"] ||
+                  ([self.current.postHint isEqualToString:@"link"] && [self.current.url containsString:@"imgur"] && ![self.current.url containsString:@"gifv"])){
+            self.webView.hidden = true;
             self.videoView.hidden = true;
             self.imageView.hidden = false;
             [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
             return;
-        } else if([self.current.postHint isEqualToString:@"link"] && [self.current.url containsString:@"imgur"]){
+        } else if([self.current.postHint isEqualToString:@"link"]){
+            self.webView.hidden = false;
             self.videoView.hidden = true;
-            self.imageView.hidden = false;
-            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
+            self.imageView.hidden = true;
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.current.url]]];
             return;
         }
     }
