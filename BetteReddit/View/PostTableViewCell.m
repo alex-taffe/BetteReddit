@@ -69,5 +69,6 @@
     self.downArrow.attributedTitle = downTitle;
 
     self.postLikes.textColor = labelColor;
+    self.postLikes.stringValue = [NSString stringWithFormat:@"%@", self.post.score];
 }
 @end

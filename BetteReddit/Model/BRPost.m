@@ -52,7 +52,17 @@
             @"id": weakSelf.internalName,
             @"dir": [NSNumber numberWithInt: likes]
         } withToken:authToken success:^(id  _Nonnull result) {
+            if(likes == 1){
+                weakSelf.score = [NSNumber numberWithInteger:(self.score.integerValue + 1)];
+            } else if(likes == 0 && weakSelf.likes == 1){
+                weakSelf.score = [NSNumber numberWithInteger:(self.score.integerValue - 1)];
+            } else if(likes == 0 && weakSelf.likes == -1){
+                weakSelf.score = [NSNumber numberWithInteger:(self.score.integerValue + 1)];
+            } else{
+                weakSelf.score = [NSNumber numberWithInteger:(self.score.integerValue - 1)];
+            }
             weakSelf.likes = likes;
+
             onComplete();
         } failure:^(NSError * _Nonnull error) {
             NSLog(@"Failed to load post comments: %@", error);
