@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CommentViewController : NSViewController
+@property (strong) IBOutlet NSOutlineView *outlineView;
 
 @end
 

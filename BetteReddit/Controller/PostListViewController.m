@@ -59,7 +59,11 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.postListView.selectedRow;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangedPost" object:self.current.posts[selection]];
+    __block BRPost *selectedItem = self.current.posts[selection];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangedPost" object:selectedItem];
+    [self.current.posts[selection] loadPostComments:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CommentsLoaded" object:selectedItem];
+    }];
 }
 
 @end
