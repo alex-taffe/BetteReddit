@@ -967,7 +967,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="VPa-Ss-8h4" secondAttribute="trailing" constant="3" id="xW5-Bn-E7C"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="downButton" destination="sBM-OM-ywo" id="Tu8-39-OUq"/>
+                                                                <outlet property="downArrow" destination="sBM-OM-ywo" id="Tu8-39-OUq"/>
                                                                 <outlet property="postImage" destination="VPa-Ss-8h4" id="the-YI-udE"/>
                                                                 <outlet property="postLikes" destination="PM8-hz-XZy" id="OO9-vi-1ZX"/>
                                                                 <outlet property="postTitle" destination="XAH-uN-ZsH" id="zEb-zM-a0d"/>

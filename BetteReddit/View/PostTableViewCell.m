@@ -58,7 +58,7 @@
     }
 
     NSMutableAttributedString *upTitle = [[NSMutableAttributedString alloc] initWithAttributedString:self.upArrow.attributedTitle];
-    NSMutableAttributedString *downTitle = [[NSMutableAttributedString alloc] initWithAttributedString:self.downButton.attributedTitle];
+    NSMutableAttributedString *downTitle = [[NSMutableAttributedString alloc] initWithAttributedString:self.downArrow.attributedTitle];
     NSRange upRange = NSMakeRange(0, upTitle.length);
     NSRange downRange = NSMakeRange(0, downTitle.length);
 
@@ -66,7 +66,7 @@
     [downTitle addAttribute:NSForegroundColorAttributeName value:downColor range:downRange];
 
     self.upArrow.attributedTitle = upTitle;
-    self.downButton.attributedTitle = downTitle;
+    self.downArrow.attributedTitle = downTitle;
 
     self.postLikes.textColor = labelColor;
 }

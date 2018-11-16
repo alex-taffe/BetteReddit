@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) IBOutlet NSTextField *postTitle;
 @property (strong) IBOutlet NSTextField *postLikes;
 @property (strong) IBOutlet NSButton *upArrow;
-@property (strong) IBOutlet NSButton *downButton;
+@property (strong) IBOutlet NSButton *downArrow;
 - (IBAction)upArrowPressed:(id)sender;
 - (IBAction)downArrowPressed:(id)sender;
 -(void)updateColorScheme;
