@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) IBOutlet NSButton *downArrow;
 - (IBAction)upArrowPressed:(id)sender;
 - (IBAction)downArrowPressed:(id)sender;
+
+
+/**
+ Updates the color scheme of the up arrow, down arrow, and post likes label based
+ on the number of likes in the current post
+ */
 -(void)updateColorScheme;
 
 

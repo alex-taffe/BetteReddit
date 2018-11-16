@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BROAuthHelper : NSObject
 
+
+/**
+ Gets a fresh OAuth access token then notifies the callback that
+ we can use it
+
+ @param onComplete callback when we have a fresh access token
+ */
 +(void)performOAuthAction:(void (^)(NSString *authToken))onComplete;
 
 @end
