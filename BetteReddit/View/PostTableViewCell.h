@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PostTableViewCell : NSTableCellView
 @property (strong) IBOutlet NSImageView *postImage;
 @property (strong) IBOutlet NSTextField *postTitle;
+@property (strong) IBOutlet NSTextField *postLikes;
 
 @end
 

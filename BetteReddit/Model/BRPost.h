@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) NSString *url;
 @property (strong, nonatomic) NSString *postHint;
 @property (strong, nonatomic) NSString *postPreviewLink;
+@property (strong, nonatomic) NSNumber *score;
 
 -(instancetype)initWithDictionary:(id)dict;
 

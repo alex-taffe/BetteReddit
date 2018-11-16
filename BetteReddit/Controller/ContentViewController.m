@@ -43,7 +43,8 @@
             self.imageView.hidden = false;
             [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
             return;
-        } else if([self.current.postHint isEqualToString:@"link"]){
+        } else if([self.current.postHint isEqualToString:@"link"] ||
+                  [self.current.postHint isEqualToString:@"hosted:video"]){
             self.webView.hidden = false;
             self.videoView.hidden = true;
             self.imageView.hidden = true;

@@ -903,7 +903,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="postCell" id="306-zg-plh" customClass="PostTableViewCell">
+                                                        <tableCellView identifier="postCell" misplaced="YES" id="306-zg-plh" customClass="PostTableViewCell">
                                                             <rect key="frame" x="1" y="1" width="445" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -916,24 +916,35 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JKM-gf-7l3"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XAH-uN-ZsH">
-                                                                    <rect key="frame" x="7" y="22" width="379" height="17"/>
+                                                                    <rect key="frame" x="56" y="16" width="330" height="17"/>
                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="LvP-si-GQe">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-hz-XZy">
+                                                                    <rect key="frame" x="13" y="16" width="37" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="wrX-Vl-AK1">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="XAH-uN-ZsH" firstAttribute="top" secondItem="306-zg-plh" secondAttribute="top" constant="11" id="6Rl-wS-6os"/>
+                                                                <constraint firstItem="XAH-uN-ZsH" firstAttribute="top" secondItem="306-zg-plh" secondAttribute="top" constant="16" id="6Rl-wS-6os"/>
                                                                 <constraint firstItem="VPa-Ss-8h4" firstAttribute="centerY" secondItem="306-zg-plh" secondAttribute="centerY" id="9bx-5G-Zab"/>
+                                                                <constraint firstItem="PM8-hz-XZy" firstAttribute="leading" secondItem="306-zg-plh" secondAttribute="leading" constant="15" id="A6F-dl-3Yw"/>
                                                                 <constraint firstItem="VPa-Ss-8h4" firstAttribute="leading" secondItem="XAH-uN-ZsH" secondAttribute="trailing" constant="10" id="MB0-Ul-SFz"/>
-                                                                <constraint firstItem="XAH-uN-ZsH" firstAttribute="leading" secondItem="306-zg-plh" secondAttribute="leading" constant="9" id="TlN-k9-Rhm"/>
-                                                                <constraint firstAttribute="bottom" secondItem="XAH-uN-ZsH" secondAttribute="bottom" constant="22" id="ZUv-OI-ap4"/>
+                                                                <constraint firstAttribute="bottom" secondItem="XAH-uN-ZsH" secondAttribute="bottom" constant="16" id="ZUv-OI-ap4"/>
+                                                                <constraint firstItem="PM8-hz-XZy" firstAttribute="centerY" secondItem="306-zg-plh" secondAttribute="centerY" id="c3j-Qd-bGe"/>
+                                                                <constraint firstItem="XAH-uN-ZsH" firstAttribute="leading" secondItem="PM8-hz-XZy" secondAttribute="trailing" constant="10" id="q12-s9-ZPp"/>
                                                                 <constraint firstAttribute="trailing" secondItem="VPa-Ss-8h4" secondAttribute="trailing" constant="3" id="xW5-Bn-E7C"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="postImage" destination="VPa-Ss-8h4" id="the-YI-udE"/>
+                                                                <outlet property="postLikes" destination="PM8-hz-XZy" id="OO9-vi-1ZX"/>
                                                                 <outlet property="postTitle" destination="XAH-uN-ZsH" id="zEb-zM-a0d"/>
                                                                 <outlet property="textField" destination="XAH-uN-ZsH" id="45r-nh-CaJ"/>
                                                             </connections>

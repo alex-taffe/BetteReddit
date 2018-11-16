@@ -31,6 +31,7 @@
             self.postPreviewLink = dict[@"data"][@"preview"][@"images"][0][@"source"][@"url"];
         }
 
+        self.score = dict[@"data"][@"score"];
         
     }
     return self;
