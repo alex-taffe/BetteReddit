@@ -26,7 +26,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(commentsLoaded:)
-                                                 name:@"CommentsLoaded"
+                                                 name:COMMENTS_LOADED
                                                object:nil];
 }
 

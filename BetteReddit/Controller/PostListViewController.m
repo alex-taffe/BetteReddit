@@ -30,7 +30,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(changedSubreddit:)
-                                                 name:@"ChangedSubreddit"
+                                                 name:CHANGED_SUBREDDIT
                                                object:nil];
 }
 
@@ -60,9 +60,9 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.postListView.selectedRow;
     __block BRPost *selectedItem = self.current.posts[selection];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangedPost" object:selectedItem];
+    [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_POST object:selectedItem];
     [self.current.posts[selection] loadPostComments:^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"CommentsLoaded" object:selectedItem];
+        [[NSNotificationCenter defaultCenter] postNotificationName:COMMENTS_LOADED object:selectedItem];
     }];
 }
 

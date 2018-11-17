@@ -28,7 +28,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(newLoggedInUser)
-                                                 name:@"LoggedInUserRefresh"
+                                                 name:LOGGED_IN
                                                object:nil];
 }
 
@@ -54,7 +54,7 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.subscriptionListView.selectedRow;
     BRSubreddit *current = self.appDelegate.currentUser.subscriptions[selection];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangedSubreddit" object:current];
+    [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_SUBREDDIT object:current];
 }
 
 @end

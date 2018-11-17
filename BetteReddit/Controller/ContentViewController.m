@@ -21,7 +21,7 @@
     // Do view setup here.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(changedPost:)
-                                                 name:@"ChangedPost"
+                                                 name:CHANGED_POST
                                                object:nil];
     self.videoView.hidden = true;
 }

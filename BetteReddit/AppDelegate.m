@@ -42,7 +42,7 @@
         dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
             self.currentUser = self.loggedinUsers.firstObject;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedInUserRefresh" object:weakSelf];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LOGGED_IN object:weakSelf];
         });
     }
 
@@ -109,6 +109,12 @@
                                                    }];
 }
 
+- (IBAction)refreshFeed:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_FEED object:nil];
+}
+- (IBAction)refreshPost:(id)sender {
+    
+}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application

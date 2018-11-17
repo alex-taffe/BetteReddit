@@ -96,6 +96,8 @@
 		FAAC7CD4219C9EFD00E9219D /* SubredditTableCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubredditTableCellView.m; sourceTree = "<group>"; };
 		FAAC7CD9219CA83300E9219D /* PostTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		FAAC7CDA219CA83300E9219D /* PostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		FAB3276821A061AA00406CEE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FAB3276921A062CC00406CEE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FAE23912219B239300C9F683 /* BRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRUser.h; sourceTree = "<group>"; };
 		FAE23913219B239300C9F683 /* BRSubreddit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSubreddit.h; sourceTree = "<group>"; };
 		FAE23914219B239300C9F683 /* BRSubreddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSubreddit.m; sourceTree = "<group>"; };
@@ -259,6 +261,8 @@
 				FA8F395E20BB759E007CAC55 /* BetteReddit.entitlements */,
 				FA8F395320BB759C007CAC55 /* BetteReddit.xcdatamodeld */,
 				FA08A277219BB65E00E49E71 /* config.plist */,
+				FAB3276821A061AA00406CEE /* Constants.h */,
+				FAB3276921A062CC00406CEE /* PrefixHeader.pch */,
 			);
 			path = BetteReddit;
 			sourceTree = "<group>";
@@ -658,6 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4JEZRL8YY;
+				GCC_PREFIX_HEADER = BetteReddit/PrefixHeader.pch;
 				INFOPLIST_FILE = BetteReddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,6 +685,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4JEZRL8YY;
+				GCC_PREFIX_HEADER = BetteReddit/PrefixHeader.pch;
 				INFOPLIST_FILE = BetteReddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

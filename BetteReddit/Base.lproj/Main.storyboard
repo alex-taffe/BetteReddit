@@ -353,6 +353,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Feed" id="hTX-EK-wI6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Feed" id="cRc-QB-m9x">
+                                    <items>
+                                        <menuItem title="Refesh Feed" keyEquivalent="r" id="cEt-F1-1KV">
+                                            <connections>
+                                                <action selector="refreshFeed:" target="Voe-Tx-rLC" id="krN-YU-76P"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Refresh Post" keyEquivalent="R" id="4Wt-bF-V9L">
+                                            <connections>
+                                                <action selector="refreshPost:" target="Voe-Tx-rLC" id="FZq-jN-FLA"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Format" id="jxT-CU-nIS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Format" id="GEO-Iw-cKr">
@@ -694,7 +711,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-366" y="-59"/>
+            <point key="canvasLocation" x="-365" y="-182"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -1087,23 +1104,23 @@
             <objects>
                 <viewController id="cw8-cu-ojJ" customClass="CommentViewController" sceneMemberID="viewController">
                     <view key="view" id="vNt-zI-2WV">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="635" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-T4-AvG">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="635" height="300"/>
                                 <clipView key="contentView" id="C6W-96-mlM">
-                                    <rect key="frame" x="1" y="0.0" width="448" height="299"/>
+                                    <rect key="frame" x="1" y="1" width="633" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" usesAutomaticRowHeights="YES" headerView="nDV-z2-6ll" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="UDh-r0-hvm" id="lwI-vE-R2L">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="274"/>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" usesAutomaticRowHeights="YES" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="UDh-r0-hvm" id="lwI-vE-R2L">
+                                            <rect key="frame" x="0.0" y="0.0" width="633" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="411" minWidth="40" maxWidth="1000" id="UDh-r0-hvm">
+                                                <tableColumn width="630" minWidth="40" maxWidth="1000" id="UDh-r0-hvm">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1117,11 +1134,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="commentCell" misplaced="YES" id="Ec5-Rx-BXE" customClass="CommentTableViewCell">
-                                                            <rect key="frame" x="1" y="1" width="411" height="17"/>
+                                                            <rect key="frame" x="1" y="1" width="630" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nOo-EW-VNh">
-                                                                    <rect key="frame" x="1" y="3" width="409" height="17"/>
+                                                                    <rect key="frame" x="1" y="6" width="628" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="6Td-ll-3Db">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1131,8 +1148,8 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="nOo-EW-VNh" secondAttribute="trailing" constant="3" id="2ZQ-om-gWn"/>
-                                                                <constraint firstItem="nOo-EW-VNh" firstAttribute="top" secondItem="Ec5-Rx-BXE" secondAttribute="top" constant="3" id="aYQ-GW-8HJ"/>
-                                                                <constraint firstAttribute="bottom" secondItem="nOo-EW-VNh" secondAttribute="bottom" constant="3" id="jNq-JP-CaP"/>
+                                                                <constraint firstItem="nOo-EW-VNh" firstAttribute="top" secondItem="Ec5-Rx-BXE" secondAttribute="top" constant="6" id="aYQ-GW-8HJ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="nOo-EW-VNh" secondAttribute="bottom" constant="6" id="jNq-JP-CaP"/>
                                                                 <constraint firstItem="nOo-EW-VNh" firstAttribute="leading" secondItem="Ec5-Rx-BXE" secondAttribute="leading" constant="3" id="sF1-jS-LZF"/>
                                                             </constraints>
                                                             <connections>
@@ -1147,17 +1164,13 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Nxg-XP-Rmh">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                    <rect key="frame" x="1" y="283" width="355" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ymA-1G-7LS">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="ymA-1G-7LS">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <tableHeaderView key="headerView" id="nDV-z2-6ll">
-                                    <rect key="frame" x="0.0" y="0.0" width="448" height="25"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableHeaderView>
                             </scrollView>
                         </subviews>
                         <constraints>
@@ -1173,7 +1186,7 @@
                 </viewController>
                 <customObject id="Fae-sx-pRr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2384" y="1045"/>
+            <point key="canvasLocation" x="2476.5" y="1045"/>
         </scene>
     </scenes>
 </document>
