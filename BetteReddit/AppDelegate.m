@@ -31,7 +31,7 @@
         dispatch_semaphore_t semaphore = dispatch_semaphore_create(savedAccounts.count - 1);
         for(NSDictionary *account in savedAccounts){
             NSData *authStateData = [SAMKeychain passwordDataForService:@"reddit" account:account[@"acct"]];
-            OIDAuthState *authState = (OIDAuthState *) [NSKeyedUnarchiver unarchiveObjectWithData:authStateData];
+            OIDAuthState *authState = [NSKeyedUnarchiver unarchivedObjectOfClass:[OIDAuthState class] fromData:authStateData error:nil];
 
             BRUser *user = [[BRUser alloc] initWithAccessToken:authState];
             [user loadUserDetails:^{
@@ -96,7 +96,7 @@
                                                            BRUser *loggedInUser = [[BRUser alloc] initWithAccessToken:authState];
                                                            weakSelf.currentUser = loggedInUser;
                                                            [loggedInUser loadUserDetails:^{
-                                                               NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:authState];
+                                                               NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:authState requiringSecureCoding:true error:nil];
                                                                [weakSelf.loggedinUsers addObject:loggedInUser];
                                                                [SAMKeychain setPasswordData:serialized forService:@"reddit" account:loggedInUser.username];
 
