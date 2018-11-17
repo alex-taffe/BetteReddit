@@ -728,7 +728,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="c3x-ab-ycQ" kind="relationship" relationship="window.shadowedContentViewController" id="gE1-Kc-Gri"/>
+                        <segue destination="c3x-ab-ycQ" kind="relationship" relationship="window.shadowedContentViewController" id="tgy-Hw-z7X"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

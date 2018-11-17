@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A79948ABA324FA79CA0C8941 /* Pods_BetteReddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4752DAD7739720E13D9FBFA1 /* Pods_BetteReddit.framework */; };
-		FA08A276219B8E7100E49E71 /* BRSourceListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08A275219B8E7100E49E71 /* BRSourceListItem.m */; };
 		FA08A278219BB65E00E49E71 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA08A277219BB65E00E49E71 /* config.plist */; };
 		FA08A27B219BC36500E49E71 /* BRPost.m in Sources */ = {isa = PBXBuildFile; fileRef = FA08A27A219BC36500E49E71 /* BRPost.m */; };
 		FA0C4A74219C68180022FEA2 /* BRComment.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0C4A73219C68180022FEA2 /* BRComment.m */; };
@@ -28,6 +27,8 @@
 		FAAC7CD2219C9C0E00E9219D /* MainSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CD1219C9C0E00E9219D /* MainSplitViewController.m */; };
 		FAAC7CD5219C9EFD00E9219D /* SubredditTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CD4219C9EFD00E9219D /* SubredditTableCellView.m */; };
 		FAAC7CDB219CA83300E9219D /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAC7CDA219CA83300E9219D /* PostTableViewCell.m */; };
+		FAB3276B21A0B6CA00406CEE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB3276A21A0B6CA00406CEE /* WebKit.framework */; };
+		FAB3276D21A0B6D000406CEE /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB3276C21A0B6CF00406CEE /* AVKit.framework */; };
 		FAE23916219B239300C9F683 /* BRSubreddit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE23914219B239300C9F683 /* BRSubreddit.m */; };
 		FAE23917219B239300C9F683 /* BRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE23915219B239300C9F683 /* BRUser.m */; };
 		FAE2391A219B239900C9F683 /* BRClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE23918219B239900C9F683 /* BRClient.m */; };
@@ -56,8 +57,6 @@
 		0345EEC649B896378499BF31 /* Pods-BetteReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.debug.xcconfig"; sourceTree = "<group>"; };
 		2494A04DC9BCEB2670A8085F /* Pods-BetteReddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetteReddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit.release.xcconfig"; sourceTree = "<group>"; };
 		4752DAD7739720E13D9FBFA1 /* Pods_BetteReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetteReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA08A274219B8E7100E49E71 /* BRSourceListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSourceListItem.h; sourceTree = "<group>"; };
-		FA08A275219B8E7100E49E71 /* BRSourceListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSourceListItem.m; sourceTree = "<group>"; };
 		FA08A277219BB65E00E49E71 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		FA08A279219BC36500E49E71 /* BRPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRPost.h; sourceTree = "<group>"; };
 		FA08A27A219BC36500E49E71 /* BRPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRPost.m; sourceTree = "<group>"; };
@@ -98,6 +97,8 @@
 		FAAC7CDA219CA83300E9219D /* PostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		FAB3276821A061AA00406CEE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FAB3276921A062CC00406CEE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FAB3276A21A0B6CA00406CEE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FAB3276C21A0B6CF00406CEE /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		FAE23912219B239300C9F683 /* BRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRUser.h; sourceTree = "<group>"; };
 		FAE23913219B239300C9F683 /* BRSubreddit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSubreddit.h; sourceTree = "<group>"; };
 		FAE23914219B239300C9F683 /* BRSubreddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSubreddit.m; sourceTree = "<group>"; };
@@ -115,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB3276D21A0B6D000406CEE /* AVKit.framework in Frameworks */,
+				FAB3276B21A0B6CA00406CEE /* WebKit.framework in Frameworks */,
 				A79948ABA324FA79CA0C8941 /* Pods_BetteReddit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +151,8 @@
 		C23F51B0AFC600BF17FD2A38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAB3276C21A0B6CF00406CEE /* AVKit.framework */,
+				FAB3276A21A0B6CA00406CEE /* WebKit.framework */,
 				4752DAD7739720E13D9FBFA1 /* Pods_BetteReddit.framework */,
 			);
 			name = Frameworks;
@@ -156,7 +161,6 @@
 		FA050B8720BC68FE00904041 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA08A273219B8E4A00E49E71 /* CellModel */,
 				FAE23912219B239300C9F683 /* BRUser.h */,
 				FAE23915219B239300C9F683 /* BRUser.m */,
 				FAE23913219B239300C9F683 /* BRSubreddit.h */,
@@ -212,15 +216,6 @@
 				FAEB4B9D219C698500E29E78 /* BROAuthHelper.m */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		FA08A273219B8E4A00E49E71 /* CellModel */ = {
-			isa = PBXGroup;
-			children = (
-				FA08A274219B8E7100E49E71 /* BRSourceListItem.h */,
-				FA08A275219B8E7100E49E71 /* BRSourceListItem.m */,
-			);
-			path = CellModel;
 			sourceTree = "<group>";
 		};
 		FA8F394120BB759C007CAC55 = {
@@ -486,7 +481,6 @@
 				FAEB4B9E219C698500E29E78 /* BROAuthHelper.m in Sources */,
 				FA0D1B2C219CE7CA00050BB0 /* CommentViewController.m in Sources */,
 				FAE2391D219B245300C9F683 /* MainViewController.m in Sources */,
-				FA08A276219B8E7100E49E71 /* BRSourceListItem.m in Sources */,
 				FA0D1B30219CE8A600050BB0 /* ContentViewController.m in Sources */,
 				FAE2391A219B239900C9F683 /* BRClient.m in Sources */,
 				FAAC7CDB219CA83300E9219D /* PostTableViewCell.m in Sources */,
