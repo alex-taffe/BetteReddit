@@ -34,6 +34,7 @@
             OIDAuthState *authState = [NSKeyedUnarchiver unarchivedObjectOfClass:[OIDAuthState class] fromData:authStateData error:nil];
 
             BRUser *user = [[BRUser alloc] initWithAccessToken:authState];
+            weakSelf.currentUser = user;
             [user loadUserDetails:^{
                 [weakSelf.loggedinUsers addObject:user];
                 dispatch_semaphore_signal(semaphore);
