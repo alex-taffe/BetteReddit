@@ -88,11 +88,6 @@
                     [weakSelf.children addObject:comment];
                 }
             }
-//            for(id postDict in postList){
-//                BRPost *post = [[BRPost alloc] initWithTitle:postDict[@"data"][@"title"]];
-//                post.internalName = postDict[@"data"][@"name"];
-//                [self.posts addObject:post];
-//            }
             onComplete();
         } failure:^(NSError * _Nonnull error) {
             NSLog(@"Failed to load post comments: %@", error);

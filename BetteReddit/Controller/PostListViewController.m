@@ -15,6 +15,7 @@
 @interface PostListViewController ()<NSTableViewDataSource, NSTableViewDelegate>
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) BRSubreddit *current;
+@property (strong, nonatomic) NSNumber *isLoading;
 @end
 
 @implementation PostListViewController
@@ -32,11 +33,21 @@
                                              selector:@selector(changedSubreddit:)
                                                  name:CHANGED_SUBREDDIT
                                                object:nil];
+
+    id clipView = self.postListView.enclosingScrollView.contentView;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(boundsDidChange:)
+                                                 name:NSViewBoundsDidChangeNotification
+                                               object:clipView];
+
+    self.isLoading = [NSNumber numberWithBool:false];
+
 }
 
 -(void)changedSubreddit:(NSNotification *)notification{
     self.current = notification.object;
-    [self.current loadSubredditPosts:^{
+    [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.postListView reloadData];
         });
@@ -65,5 +76,47 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:COMMENTS_LOADED object:selectedItem];
     }];
 }
+
+
+-(void)boundsDidChange:(NSNotification *)notification{
+    if (notification.object == self.postListView.enclosingScrollView.contentView){
+        //dont try to load if one is already loading
+        @synchronized (self.isLoading) {
+            if([self.isLoading boolValue]) return;
+        }
+
+        //get the sizes of the scroll
+        NSClipView *clipView = notification.object;
+        NSRect visibleBounds = clipView.documentVisibleRect;
+        NSRect documentBounds = clipView.documentRect;
+        CGFloat difference = documentBounds.size.height - visibleBounds.size.height - visibleBounds.origin.y;
+
+        //only load more if there are 700 px left
+        if(difference < 700){
+            //set the loading to start
+            @synchronized (self.isLoading) {
+                self.isLoading = [NSNumber numberWithBool:true];
+            }
+            //start the new items async
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSInteger currentRows = self.current.posts.count;
+                //load more items
+                [self.current loadMoreSubredditPosts:true onComplete:^(NSArray * _Nullable newPosts) {
+                    //if we have more, animate them in
+                    if(newPosts){
+                        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(currentRows, newPosts.count)];
+                        [self.postListView insertRowsAtIndexes:indexSet withAnimation:NSTableViewAnimationEffectFade];
+                    }
+                    //indicate the loading is done
+                    @synchronized (self.isLoading) {
+                        self.isLoading = [NSNumber numberWithBool:false];
+                    }
+                }];
+            });
+        }
+    }
+}
+
+
 
 @end

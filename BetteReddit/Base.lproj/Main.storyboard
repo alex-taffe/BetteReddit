@@ -1097,7 +1097,7 @@
                 </viewController>
                 <customObject id="XFS-Yv-WJc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2384" y="646"/>
+            <point key="canvasLocation" x="1925" y="771"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="xjM-1h-nlA">
@@ -1186,7 +1186,7 @@
                 </viewController>
                 <customObject id="Fae-sx-pRr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476.5" y="1045"/>
+            <point key="canvasLocation" x="1908" y="1250"/>
         </scene>
     </scenes>
 </document>

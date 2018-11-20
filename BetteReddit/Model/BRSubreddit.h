@@ -26,12 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)initWithDictionary:(id)dict;
 
+
+
 /**
  Loads in the current posts of the subreddit
 
- @param onComplete completion callback
+ @param more If true, the existing posts will not be cleared
+ @param onComplete onComplete callback
  */
--(void)loadSubredditPosts:(void (^)(void))onComplete;
+-(void)loadMoreSubredditPosts:(bool)more onComplete:(void (^)(NSArray * _Nullable newPosts))onComplete;
 
 @end
 

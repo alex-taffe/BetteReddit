@@ -42,19 +42,27 @@
     return self;
 }
 
--(void)loadSubredditPosts:(void (^)(void))onComplete{
-    [self.posts removeAllObjects];
+-(void)loadMoreSubredditPosts:(bool)more onComplete:(void (^)(NSArray * _Nullable newPosts))onComplete{
+    if(!more)
+        [self.posts removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
-        [[BRClient sharedInstance] makeRequestWithEndpoint:self.endpoint withMethod:@"GET" withArguments:nil withToken:authToken success:^(id  _Nonnull result) {
+        NSDictionary *after = nil;
+        if(more)
+            after = @{
+                      @"after": self.posts.lastObject.internalName
+                      };
+        [[BRClient sharedInstance] makeRequestWithEndpoint:self.endpoint withMethod:@"GET" withArguments:after withToken:authToken success:^(id  _Nonnull result) {
+            NSMutableArray *newItems = [[NSMutableArray alloc] init];
             id postList = result[@"data"][@"children"];
             for(id postDict in postList){
                 BRPost *post = [[BRPost alloc] initWithDictionary:postDict];
                 [self.posts addObject:post];
+                [newItems addObject:post];
             }
-            onComplete();
+            onComplete(newItems);
         } failure:^(NSError * _Nonnull error) {
             NSLog(@"Failed to load user details: %@", error);
-            onComplete();
+            onComplete(nil);
         }];
     }];
 }
