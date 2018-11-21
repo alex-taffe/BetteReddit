@@ -889,24 +889,24 @@
         <scene sceneID="ryL-w9-Xym">
             <objects>
                 <viewController id="OOq-Be-2Am" customClass="PostListViewController" sceneMemberID="viewController">
-                    <view key="view" id="Kuu-G2-EGR">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                    <view key="view" misplaced="YES" id="Kuu-G2-EGR">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrh-HJ-CGk">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
                                 <clipView key="contentView" id="FYT-r0-cWv">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
+                                    <rect key="frame" x="1" y="1" width="348" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" usesAutomaticRowHeights="YES" viewBased="YES" id="WJG-rC-Oec">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="445" minWidth="40" maxWidth="1000" id="mxm-lh-RUv">
+                                                <tableColumn width="345" minWidth="40" maxWidth="1000" id="mxm-lh-RUv">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -920,11 +920,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="postCell" misplaced="YES" id="306-zg-plh" customClass="PostTableViewCell">
-                                                            <rect key="frame" x="1" y="1" width="445" height="69"/>
+                                                            <rect key="frame" x="1" y="1" width="345" height="69"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPa-Ss-8h4">
-                                                                    <rect key="frame" x="394" y="10" width="48" height="48"/>
+                                                                    <rect key="frame" x="294" y="10" width="48" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="48" id="GLH-3h-63h"/>
                                                                         <constraint firstAttribute="height" constant="48" id="tnp-l7-3rs"/>
@@ -932,7 +932,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JKM-gf-7l3"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XAH-uN-ZsH">
-                                                                    <rect key="frame" x="56" y="25" width="330" height="17"/>
+                                                                    <rect key="frame" x="56" y="25" width="230" height="17"/>
                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="LvP-si-GQe">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -997,6 +997,9 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="aKe-DP-6TX"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="xdU-IU-XGA">
                                     <rect key="frame" x="-100" y="-100" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1028,7 +1031,7 @@
                 <splitViewController id="MI2-Rn-xq3" customClass="ContentSplitViewController" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="uYQ-hD-B4W"/>
-                        <splitViewItem id="bAW-BP-YbQ"/>
+                        <splitViewItem holdingPriority="255" behavior="contentList" id="bAW-BP-YbQ"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" id="ci0-CK-e0e">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -1058,8 +1061,8 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBY-hK-zkE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="5du-XL-JxV"/>
-                                    <constraint firstAttribute="width" constant="600" id="Tmm-vK-3Ub"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="5du-XL-JxV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="Tmm-vK-3Ub"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" id="P0Q-sq-2YA"/>
                             </imageView>
