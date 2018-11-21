@@ -34,6 +34,11 @@
                                                  name:CHANGED_SUBREDDIT
                                                object:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshFeed)
+                                                 name:REFRESH_FEED
+                                               object:nil];
+
     id clipView = self.postListView.enclosingScrollView.contentView;
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -47,6 +52,14 @@
 
 -(void)changedSubreddit:(NSNotification *)notification{
     self.current = notification.object;
+    [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
+        dispatch_async(dispatch_get_main_queue(),^(void){
+            [self.postListView reloadData];
+        });
+    }];
+}
+
+-(void)refreshFeed{
     [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.postListView reloadData];
