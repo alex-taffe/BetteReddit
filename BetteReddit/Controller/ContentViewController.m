@@ -24,6 +24,7 @@
                                                  name:CHANGED_POST
                                                object:nil];
     self.videoView.hidden = true;
+    self.webView.hidden = true;
 }
 
 -(void)changedPost:(NSNotification *)notification{
