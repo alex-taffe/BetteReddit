@@ -10,6 +10,7 @@
 #import "BRPost.h"
 #import "BRComment.h"
 #import "CommentTableViewCell.h"
+@import TSMarkdownParser;
 
 @interface CommentViewController () <NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (strong, nonatomic) BRPost *current;
@@ -63,7 +64,11 @@
     CommentTableViewCell *cell =  [outlineView makeViewWithIdentifier:@"commentCell" owner:self];
 
     BRComment *temp = item;
-    cell.commentText.stringValue = temp.body;
+
+    NSAttributedString *attributedString = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:temp.body];
+
+
+    cell.commentText.attributedStringValue = attributedString;
 
     return cell;
 
