@@ -121,6 +121,17 @@
     // Insert code here to tear down your application
 }
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag{
+    if(flag){
+        return false;
+    } else {
+        NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+        NSWindowController *window = [storyBoard instantiateInitialController];
+        [window showWindow:self];
+        return true;
+    }
+}
+
 
 #pragma mark - Core Data stack
 
