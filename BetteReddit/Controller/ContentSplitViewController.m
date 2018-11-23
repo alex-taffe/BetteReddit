@@ -17,6 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideContentView)
+                                                 name:HIDE_CONTENT_VIEW
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showContentView)
+                                                 name:SHOW_CONTENT_VIEW
+                                               object:nil];
+}
+
+-(void)hideContentView{
+    //((NSView *)self.splitViewItems[0]).hidden = true;
+    NSLog(@"Hide Content View");
+}
+
+-(void)showContentView{
+    NSLog(@"Show Content View");
 }
 
 @end

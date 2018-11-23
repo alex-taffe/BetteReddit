@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) IBOutlet NSImageView *postImage;
 @property (strong) IBOutlet NSTextField *postTitle;
 @property (strong) IBOutlet NSTextField *postLikes;
+@property (strong) IBOutlet NSTextField *postParent;
 @property (strong) IBOutlet NSButton *upArrow;
 @property (strong) IBOutlet NSButton *downArrow;
 - (IBAction)upArrowPressed:(id)sender;

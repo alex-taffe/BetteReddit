@@ -37,6 +37,7 @@
         self.internalName = dict[@"data"][@"name"];
         self.itemID = dict[@"data"][@"id"];
         self.endpoint = dict[@"data"][@"url"];
+        self.communityIcon = dict[@"data"][@"community_icon"];
     }
 
     return self;

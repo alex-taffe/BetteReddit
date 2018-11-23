@@ -39,6 +39,9 @@
             self.likes = 0;
         }
 
+        self.isSelf = dict[@"data"][@"is_self"];
+        self.prefixedSubredditName = dict[@"data"][@"subreddit_name_prefixed"];
+
         
     }
     return self;

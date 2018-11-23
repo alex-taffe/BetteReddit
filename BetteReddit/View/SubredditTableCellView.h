@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SubredditTableCellView : NSTableCellView
 @property (strong) IBOutlet NSTextField *label;
+@property (strong) IBOutlet NSImageView *icon;
 
 @end
 

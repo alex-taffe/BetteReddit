@@ -10,6 +10,7 @@
 #import "SubredditTableCellView.h"
 #import "BRSubreddit.h"
 #import "AppDelegate.h"
+@import SDWebImage;
 
 @interface SubredditListViewController () <NSTableViewDelegate, NSTableViewDataSource>
 @property (strong, nonatomic) AppDelegate *appDelegate;
@@ -47,6 +48,10 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     SubredditTableCellView *cell = [tableView makeViewWithIdentifier:@"subscriptionCell" owner:nil];
     cell.label.stringValue = self.appDelegate.currentUser.subscriptions[row].title;
+    [cell.icon sd_setImageWithURL:[NSURL URLWithString:self.appDelegate.currentUser.subscriptions[row].communityIcon]];
+    cell.icon.wantsLayer = true;
+    cell.icon.layer.cornerRadius = cell.icon.frame.size.width / 2;
+    cell.icon.layer.masksToBounds = true;
 
     return cell;
 }

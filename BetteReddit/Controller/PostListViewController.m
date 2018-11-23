@@ -75,6 +75,7 @@
     PostTableViewCell *cell = [tableView makeViewWithIdentifier:@"postCell" owner:nil];
     BRPost *item = self.current.posts[row];
     cell.postTitle.stringValue = item.title;
+    cell.postParent.stringValue = item.prefixedSubredditName;
     [cell.postImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnailURL]];
     cell.post = item;
     [cell updateColorScheme];

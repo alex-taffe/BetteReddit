@@ -25,11 +25,13 @@
                                                object:nil];
     self.videoView.hidden = true;
     self.webView.hidden = true;
+
 }
 
 -(void)changedPost:(NSNotification *)notification{
     self.current = notification.object;
     if(self.current.url){
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_CONTENT_VIEW object:nil];
         if([self.current.postHint isEqualToString:@"rich:video"] || [self.current.postHint isEqualToString:@"video"]){
             self.webView.hidden = true;
             self.videoView.hidden = false;
@@ -52,8 +54,20 @@
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.current.url]]];
             return;
         }
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:HIDE_CONTENT_VIEW object:nil];
     }
     [self.imageView setImage:nil];
+}
+- (IBAction)rightClickImage:(id)sender {
+
+    NSMenu *theMenu = [[NSMenu alloc] initWithTitle:@"Contextual Menu"];
+
+    [theMenu insertItemWithTitle:@"Beep" action:@selector(beep:) keyEquivalent:@"" atIndex:0];
+
+    [theMenu insertItemWithTitle:@"Honk" action:@selector(honk:) keyEquivalent:@"" atIndex:1];
+
+    [NSMenu popUpContextMenu:theMenu withEvent:nil forView:self.view];
 }
 
 @end

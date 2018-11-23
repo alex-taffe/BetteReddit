@@ -27,7 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *postHint;
 @property (strong, nonatomic) NSString *postPreviewLink;
 @property (strong, nonatomic) NSNumber *score;
+@property (strong, nonatomic) NSString *prefixedSubredditName;
 @property (nonatomic) int likes;
+@property (nonatomic) bool isSelf;
 
 -(instancetype)initWithDictionary:(id)dict;
 

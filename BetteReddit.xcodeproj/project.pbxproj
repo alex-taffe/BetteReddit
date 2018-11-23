@@ -14,6 +14,7 @@
 		FA0D1B29219CE75D00050BB0 /* ContentSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B28219CE75D00050BB0 /* ContentSplitViewController.m */; };
 		FA0D1B2C219CE7CA00050BB0 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B2B219CE7CA00050BB0 /* CommentViewController.m */; };
 		FA0D1B30219CE8A600050BB0 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B2E219CE8A600050BB0 /* ContentViewController.m */; };
+		FA4CA82321A8871600181389 /* NSString+NumberShortner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82221A8871600181389 /* NSString+NumberShortner.m */; };
 		FA4FE6E8219F5264004CC677 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */; };
 		FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F394E20BB759C007CAC55 /* AppDelegate.m */; };
 		FA8F395520BB759C007CAC55 /* BetteReddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8F395320BB759C007CAC55 /* BetteReddit.xcdatamodeld */; };
@@ -68,13 +69,15 @@
 		FA0D1B2B219CE7CA00050BB0 /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		FA0D1B2D219CE8A600050BB0 /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		FA0D1B2E219CE8A600050BB0 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		FA4CA82121A8871600181389 /* NSString+NumberShortner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NumberShortner.h"; sourceTree = "<group>"; };
+		FA4CA82221A8871600181389 /* NSString+NumberShortner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NumberShortner.m"; sourceTree = "<group>"; };
 		FA4FE6E6219F5264004CC677 /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		FA8F394A20BB759C007CAC55 /* BetteReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetteReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8F394D20BB759C007CAC55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA8F394E20BB759C007CAC55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA8F395420BB759C007CAC55 /* BetteReddit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BetteReddit.xcdatamodel; sourceTree = "<group>"; };
-		FA8F395620BB759E007CAC55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8F395620BB759E007CAC55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = BetteReddit/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		FA8F395920BB759E007CAC55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA8F395B20BB759E007CAC55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8F395C20BB759E007CAC55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -218,6 +221,15 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		FA4CA82021A8868900181389 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CA82121A8871600181389 /* NSString+NumberShortner.h */,
+				FA4CA82221A8871600181389 /* NSString+NumberShortner.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		FA8F394120BB759C007CAC55 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +255,7 @@
 		FA8F394C20BB759C007CAC55 /* BetteReddit */ = {
 			isa = PBXGroup;
 			children = (
+				FA4CA82021A8868900181389 /* Utility */,
 				FA050B8820BC690D00904041 /* View */,
 				FA050B9020BC6B9200904041 /* Application */,
 				FA050B8920BC691800904041 /* Controller */,
@@ -421,12 +434,12 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/PXSourceList/PXSourceList.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TSMarkdownParser/TSMarkdownParser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -434,13 +447,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PXSourceList.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSMarkdownParser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F27456B90D3392B0F17399AF /* [CP] Check Pods Manifest.lock */ = {
@@ -489,6 +502,7 @@
 				FA08A27B219BC36500E49E71 /* BRPost.m in Sources */,
 				FAAC7CD5219C9EFD00E9219D /* SubredditTableCellView.m in Sources */,
 				FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */,
+				FA4CA82321A8871600181389 /* NSString+NumberShortner.m in Sources */,
 				FAAC7CD2219C9C0E00E9219D /* MainSplitViewController.m in Sources */,
 				FA0C4A74219C68180022FEA2 /* BRComment.m in Sources */,
 			);

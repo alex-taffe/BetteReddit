@@ -7,6 +7,7 @@
 //
 
 #import "PostTableViewCell.h"
+#import "NSString+NumberShortner.h"
 
 @implementation PostTableViewCell
 
@@ -57,18 +58,11 @@
         labelColor = NSColor.textColor;
     }
 
-    NSMutableAttributedString *upTitle = [[NSMutableAttributedString alloc] initWithAttributedString:self.upArrow.attributedTitle];
-    NSMutableAttributedString *downTitle = [[NSMutableAttributedString alloc] initWithAttributedString:self.downArrow.attributedTitle];
-    NSRange upRange = NSMakeRange(0, upTitle.length);
-    NSRange downRange = NSMakeRange(0, downTitle.length);
 
-    [upTitle addAttribute:NSForegroundColorAttributeName value:upColor range:upRange];
-    [downTitle addAttribute:NSForegroundColorAttributeName value:downColor range:downRange];
-
-    self.upArrow.attributedTitle = upTitle;
-    self.downArrow.attributedTitle = downTitle;
+    self.upArrow.contentTintColor = upColor;
+    self.downArrow.contentTintColor = downColor;
 
     self.postLikes.textColor = labelColor;
-    self.postLikes.stringValue = [NSString stringWithFormat:@"%@", self.post.score];
+    self.postLikes.stringValue = [NSString shortenedStringWithInt:[self.post.score integerValue]];
 }
 @end
