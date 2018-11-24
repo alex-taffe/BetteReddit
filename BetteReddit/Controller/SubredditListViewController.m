@@ -11,6 +11,7 @@
 #import "BRSubreddit.h"
 #import "AppDelegate.h"
 @import SDWebImage;
+#import "NSImage+Resize.h"
 
 @interface SubredditListViewController () <NSTableViewDelegate, NSTableViewDataSource>
 @property (strong, nonatomic) AppDelegate *appDelegate;
@@ -48,11 +49,17 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     SubredditTableCellView *cell = [tableView makeViewWithIdentifier:@"subscriptionCell" owner:nil];
     cell.label.stringValue = self.appDelegate.currentUser.subscriptions[row].title;
-    [cell.icon sd_setImageWithURL:[NSURL URLWithString:self.appDelegate.currentUser.subscriptions[row].communityIcon]];
+    if([self.appDelegate.currentUser.subscriptions[row].communityIcon isEqualToString:@""])
+        cell.icon.image = [NSImage imageNamed:@"DefaultSubredditIcon"];
+    else
+        [cell.icon sd_setImageWithURL:[NSURL URLWithString:self.appDelegate.currentUser.subscriptions[row].communityIcon] placeholderImage:[NSImage imageNamed:@"DefaultSubredditIcon"] completed:^(NSImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            cell.icon.image = [NSImage resizedImage:image toPixelDimensions:NSMakeSize(cell.icon.frame.size.width * 2, cell.icon.frame.size.height * 2)];
+        }];
     cell.icon.wantsLayer = true;
     cell.icon.layer.cornerRadius = cell.icon.frame.size.width / 2;
     cell.icon.layer.masksToBounds = true;
 
+    //NSLog(@"%@", self.appDelegate.currentUser.subscriptions[row].communityIcon);
     return cell;
 }
 
