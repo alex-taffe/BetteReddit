@@ -92,8 +92,14 @@
 
         BRComment *temp = item;
         NSData *data = [temp.body dataUsingEncoding:NSUTF8StringEncoding];
-        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithHTML:data
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithHTML:data
                                                                      documentAttributes:nil];
+
+        NSRange range = NSMakeRange(0, attributedString.length - 1);
+        [attributedString addAttributes:@{
+                                          NSFontAttributeName: [NSFont systemFontOfSize:12],
+                                          NSForegroundColorAttributeName: NSColor.textColor
+                                          } range:range];
 
 
         //NSAttributedString *attributedString = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:temp.body];

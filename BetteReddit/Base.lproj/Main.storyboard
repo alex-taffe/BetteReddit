@@ -1135,7 +1135,6 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="KBY-hK-zkE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="5du-XL-JxV"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="Tmm-vK-3Ub"/>
                                 </constraints>
                                 <gestureRecognizers>
@@ -1247,7 +1246,7 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="iaP-OR-jWw">
-                                                                    <rect key="frame" x="13" y="5" width="15" height="15"/>
+                                                                    <rect key="frame" x="15" y="5" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="15" id="jhR-dN-MPv"/>
                                                                         <constraint firstAttribute="height" constant="15" id="zJr-Hv-76l"/>
@@ -1261,7 +1260,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="EYg-Ic-CiA">
-                                                                    <rect key="frame" x="13" y="45" width="15" height="15"/>
+                                                                    <rect key="frame" x="15" y="45" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="15" id="2u9-vo-3wI"/>
                                                                         <constraint firstAttribute="height" constant="15" id="gaG-2V-zqr"/>
@@ -1275,7 +1274,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v8t-mv-5tM">
-                                                                    <rect key="frame" x="3" y="23" width="34" height="17"/>
+                                                                    <rect key="frame" x="6" y="23" width="34" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="suV-Dx-fhC"/>
                                                                     </constraints>
@@ -1298,13 +1297,13 @@
                                                                 <constraint firstItem="v8t-mv-5tM" firstAttribute="top" secondItem="EYg-Ic-CiA" secondAttribute="bottom" constant="5" id="AuZ-Nd-3Sj"/>
                                                                 <constraint firstItem="iaP-OR-jWw" firstAttribute="top" secondItem="v8t-mv-5tM" secondAttribute="bottom" constant="3" id="FMw-mD-eeb"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GAa-4Q-Lek" secondAttribute="trailing" constant="5" id="GNS-qt-JL1"/>
-                                                                <constraint firstItem="v8t-mv-5tM" firstAttribute="leading" secondItem="Ec5-Rx-BXE" secondAttribute="leading" constant="5" id="KIq-DH-78Z"/>
                                                                 <constraint firstAttribute="bottom" secondItem="GAa-4Q-Lek" secondAttribute="bottom" id="KsW-Sl-ZVq"/>
                                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iaP-OR-jWw" secondAttribute="bottom" constant="5" id="MDT-JN-J6h"/>
                                                                 <constraint firstItem="GAa-4Q-Lek" firstAttribute="top" secondItem="Ec5-Rx-BXE" secondAttribute="top" constant="5" id="jPU-qG-bYr"/>
                                                                 <constraint firstItem="iaP-OR-jWw" firstAttribute="leading" secondItem="EYg-Ic-CiA" secondAttribute="leading" id="ngV-1G-Xzl"/>
                                                                 <constraint firstItem="GAa-4Q-Lek" firstAttribute="leading" secondItem="v8t-mv-5tM" secondAttribute="trailing" constant="15" id="oXk-No-guz"/>
                                                                 <constraint firstItem="EYg-Ic-CiA" firstAttribute="centerX" secondItem="v8t-mv-5tM" secondAttribute="centerX" id="qbr-FL-Nqa"/>
+                                                                <constraint firstItem="EYg-Ic-CiA" firstAttribute="leading" secondItem="Ec5-Rx-BXE" secondAttribute="leading" constant="15" id="sd5-wf-CLf"/>
                                                                 <constraint firstItem="EYg-Ic-CiA" firstAttribute="top" secondItem="Ec5-Rx-BXE" secondAttribute="top" constant="5" id="zFN-yg-VmR"/>
                                                             </constraints>
                                                             <connections>

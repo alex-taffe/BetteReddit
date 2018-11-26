@@ -29,7 +29,8 @@
 }
 
 -(void)hideContentView{
-    //((NSView *)self.splitViewItems[0]).hidden = true;
+    ((NSView *)self.splitViewItems[0]).hidden = true;
+    [self.splitView setPosition:0 ofDividerAtIndex:0];
     NSLog(@"Hide Content View");
 }
 
