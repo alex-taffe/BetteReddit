@@ -13,8 +13,10 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
-    
-    // Drawing code here.
+    if(self.isSelected)
+        self.layer.backgroundColor = NSColor.selectedTextBackgroundColor.CGColor;
+    else
+        self.layer.backgroundColor = NSColor.controlBackgroundColor.CGColor;
 }
 
 - (IBAction)upArrowPressed:(id)sender {

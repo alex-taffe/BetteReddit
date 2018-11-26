@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) IBOutlet NSTextField *postComments;
 @property (strong) IBOutlet NSButton *upArrow;
 @property (strong) IBOutlet NSButton *downArrow;
+@property bool isSelected;
 - (IBAction)upArrowPressed:(id)sender;
 - (IBAction)downArrowPressed:(id)sender;
 

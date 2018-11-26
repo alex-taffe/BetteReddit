@@ -88,16 +88,18 @@
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row{
     if(tableView.numberOfSelectedRows > 0){
         NSInteger selected = self.postListView.selectedRow;
-        NSTableCellView *row = [self.postListView viewAtColumn:0 row:selected makeIfNecessary:false];
-        row.layer.backgroundColor = NSColor.controlBackgroundColor.CGColor;
+        PostTableViewCell *row = [self.postListView viewAtColumn:0 row:selected makeIfNecessary:false];
+        row.isSelected = false;
+        row.needsDisplay = true;
     }
     return true;
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.postListView.selectedRow;
-    NSTableCellView *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
-    row.layer.backgroundColor = NSColor.unemphasizedSelectedTextBackgroundColor.CGColor;
+    PostTableViewCell *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
+    row.isSelected = true;
+    row.needsDisplay = true;
     __block BRPost *selectedItem = self.current.posts[selection];
     [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_POST object:selectedItem];
     [self.current.posts[selection] loadPostComments:^{
