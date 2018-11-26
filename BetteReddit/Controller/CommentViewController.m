@@ -56,22 +56,32 @@
 }
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item{
-    if(item == nil)
-        return self.current.children.count * 2;
+    if(item == nil){
+        @synchronized (self.current) {
+            return self.current.children.count * 2;
+        }
+    }
+
     BRComment *temp = item;
     return temp.children.count;
 }
 
 - (void)outlineView:(NSOutlineView *)outlineView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row{
     BRComment *comment = [outlineView itemAtRow:row];
-    if(row % 2 == 0 || (comment != nil && ![self.current.children containsObject:comment]))
-        rowView.backgroundColor = NSColor.unemphasizedSelectedTextBackgroundColor;
+    @synchronized (self.current) {
+        if(row % 2 == 0 || (comment != nil && ![self.current.children containsObject:comment]))
+            rowView.backgroundColor = NSColor.unemphasizedSelectedTextBackgroundColor;
+    }
 }
 
 - (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item{
     if(item == nil){
         if(index % 2 == 0){
-            return self.current.children[index / 2];
+            @synchronized (self.current) {
+                if(self.current.children.count <= index / 2)
+                    return nil;
+                return self.current.children[index / 2];
+            }
         } else {
             return nil;
         }
