@@ -49,10 +49,9 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     SubredditTableCellView *cell = [tableView makeViewWithIdentifier:@"subscriptionCell" owner:nil];
     cell.label.stringValue = self.appDelegate.currentUser.subscriptions[row].title;
-    if([self.appDelegate.currentUser.subscriptions[row].communityIcon isEqualToString:@""])
-        cell.icon.image = [NSImage imageNamed:@"DefaultSubredditIcon"];
-    else
-        [cell.icon sd_setImageWithURL:[NSURL URLWithString:self.appDelegate.currentUser.subscriptions[row].communityIcon] placeholderImage:[NSImage imageNamed:@"DefaultSubredditIcon"] completed:^(NSImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+    cell.icon.image = [NSImage imageNamed:@"DefaultSubredditIcon"];
+    if(![self.appDelegate.currentUser.subscriptions[row].communityIcon isEqualToString:@""])
+        [SDWebImageDownloader.sharedDownloader downloadImageWithURL:[NSURL URLWithString:self.appDelegate.currentUser.subscriptions[row].communityIcon] options:SDWebImageDownloaderHighPriority progress:nil completed:^(NSImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
             cell.icon.image = [NSImage resizedImage:image toPixelDimensions:NSMakeSize(cell.icon.frame.size.width * 2, cell.icon.frame.size.height * 2)];
         }];
     cell.icon.wantsLayer = true;

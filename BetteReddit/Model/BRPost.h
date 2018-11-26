@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *prefixedSubredditName;
 @property (nonatomic) int likes;
 @property (nonatomic) bool isSelf;
+@property (nonatomic) int numComments;
 
 -(instancetype)initWithDictionary:(id)dict;
 

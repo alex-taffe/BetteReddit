@@ -15,6 +15,7 @@
 		FA0D1B2C219CE7CA00050BB0 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B2B219CE7CA00050BB0 /* CommentViewController.m */; };
 		FA0D1B30219CE8A600050BB0 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B2E219CE8A600050BB0 /* ContentViewController.m */; };
 		FA4CA82321A8871600181389 /* NSString+NumberShortner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82221A8871600181389 /* NSString+NumberShortner.m */; };
+		FA4CA82621A9195F00181389 /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82521A9195F00181389 /* NSImage+Resize.m */; };
 		FA4FE6E8219F5264004CC677 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */; };
 		FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F394E20BB759C007CAC55 /* AppDelegate.m */; };
 		FA8F395520BB759C007CAC55 /* BetteReddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA8F395320BB759C007CAC55 /* BetteReddit.xcdatamodeld */; };
@@ -71,6 +72,8 @@
 		FA0D1B2E219CE8A600050BB0 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		FA4CA82121A8871600181389 /* NSString+NumberShortner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NumberShortner.h"; sourceTree = "<group>"; };
 		FA4CA82221A8871600181389 /* NSString+NumberShortner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NumberShortner.m"; sourceTree = "<group>"; };
+		FA4CA82421A9195F00181389 /* NSImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+Resize.h"; sourceTree = "<group>"; };
+		FA4CA82521A9195F00181389 /* NSImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Resize.m"; sourceTree = "<group>"; };
 		FA4FE6E6219F5264004CC677 /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		FA8F394A20BB759C007CAC55 /* BetteReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetteReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +195,7 @@
 		FA050B8920BC691800904041 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA579F6D21AA426A006FE4F4 /* Embedded */,
 				FAE2391B219B245300C9F683 /* MainViewController.h */,
 				FAE2391C219B245300C9F683 /* MainViewController.m */,
 				FAAC7CCA219C9BBD00E9219D /* SubredditListViewController.h */,
@@ -226,8 +230,17 @@
 			children = (
 				FA4CA82121A8871600181389 /* NSString+NumberShortner.h */,
 				FA4CA82221A8871600181389 /* NSString+NumberShortner.m */,
+				FA4CA82421A9195F00181389 /* NSImage+Resize.h */,
+				FA4CA82521A9195F00181389 /* NSImage+Resize.m */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		FA579F6D21AA426A006FE4F4 /* Embedded */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Embedded;
 			sourceTree = "<group>";
 		};
 		FA8F394120BB759C007CAC55 = {
@@ -495,6 +508,7 @@
 				FA0D1B2C219CE7CA00050BB0 /* CommentViewController.m in Sources */,
 				FAE2391D219B245300C9F683 /* MainViewController.m in Sources */,
 				FA0D1B30219CE8A600050BB0 /* ContentViewController.m in Sources */,
+				FA4CA82621A9195F00181389 /* NSImage+Resize.m in Sources */,
 				FAE2391A219B239900C9F683 /* BRClient.m in Sources */,
 				FAAC7CDB219CA83300E9219D /* PostTableViewCell.m in Sources */,
 				FAAC7CC9219C9B7000E9219D /* PostListViewController.m in Sources */,

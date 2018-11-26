@@ -18,8 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *body;
 @property (strong, nonatomic) NSMutableArray<BRComment *> *children;
 @property (strong, nonatomic) NSString *itemID;
+@property (strong, nonatomic) NSNumber *score;
+@property (strong, nonatomic) NSString *internalName;
+@property (nonatomic) int likes;
 
 -(instancetype)initWithDictionary:(id)dict;
+-(void)updateVote:(int)likes onComplete:(void (^)(void))onComplete;
 
 @end
 

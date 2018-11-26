@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "BRSubreddit.h"
 #import "PostTableViewCell.h"
+#import "NSString+NumberShortner.h"
 @import SDWebImage;
 
 @interface PostListViewController ()<NSTableViewDataSource, NSTableViewDelegate>
@@ -78,19 +79,31 @@
     cell.postParent.stringValue = item.prefixedSubredditName;
     [cell.postImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnailURL]];
     cell.post = item;
+    cell.postComments.stringValue = [NSString stringWithFormat:@"%@ comments",[NSString shortenedStringWithInt:item.numComments]];
     [cell updateColorScheme];
+    cell.wantsLayer = true;
     return cell;
+}
+
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row{
+    if(tableView.numberOfSelectedRows > 0){
+        NSInteger selected = self.postListView.selectedRow;
+        NSTableCellView *row = [self.postListView viewAtColumn:0 row:selected makeIfNecessary:false];
+        row.layer.backgroundColor = NSColor.controlBackgroundColor.CGColor;
+    }
+    return true;
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.postListView.selectedRow;
+    NSTableCellView *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
+    row.layer.backgroundColor = NSColor.unemphasizedSelectedTextBackgroundColor.CGColor;
     __block BRPost *selectedItem = self.current.posts[selection];
     [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_POST object:selectedItem];
     [self.current.posts[selection] loadPostComments:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:COMMENTS_LOADED object:selectedItem];
     }];
 }
-
 
 -(void)boundsDidChange:(NSNotification *)notification{
     if (notification.object == self.postListView.enclosingScrollView.contentView){

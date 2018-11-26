@@ -42,6 +42,8 @@
         self.isSelf = dict[@"data"][@"is_self"];
         self.prefixedSubredditName = dict[@"data"][@"subreddit_name_prefixed"];
 
+        self.numComments = [dict[@"data"][@"num_comments"] integerValue];
+
         
     }
     return self;
