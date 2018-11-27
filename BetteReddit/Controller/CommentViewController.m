@@ -14,7 +14,7 @@
 
 @interface CommentViewController () <NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (strong) IBOutlet NSTextField *postTitle;
-@property (strong, nonatomic) BRPost *current;
+@property (strong, atomic) BRPost *current;
 @property (strong, nonatomic) NSProgressIndicator* indicator;
 @end
 

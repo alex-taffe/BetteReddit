@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BRComment : NSObject
 
 @property (strong, nonatomic) NSString *body;
-@property (strong, nonatomic) NSMutableArray<BRComment *> *children;
+@property (strong, atomic) NSMutableArray<BRComment *> *children;
 @property (strong, nonatomic) NSString *itemID;
 @property (strong, nonatomic) NSNumber *score;
 @property (strong, nonatomic) NSString *internalName;

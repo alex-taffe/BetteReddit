@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *internalName;
 @property (strong, nonatomic) NSString *itemID;
-@property (strong, nonatomic) NSMutableArray<BRComment *> *children;
+@property (strong, atomic) NSMutableArray<BRComment *> *children;
 @property (strong, nonatomic) NSString *permalink;
 @property (strong, nonatomic, nullable) NSString *thumbnailURL;
 @property (strong, nonatomic, nullable) NSString *url;

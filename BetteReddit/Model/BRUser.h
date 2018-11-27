@@ -12,7 +12,7 @@
 @interface BRUser : NSObject
 
 @property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSMutableArray<BRSubreddit *> *subscriptions;
+@property (strong, atomic) NSMutableArray<BRSubreddit *> *subscriptions;
 @property (strong, nonatomic, nullable) OIDAuthState *authState;
 
 

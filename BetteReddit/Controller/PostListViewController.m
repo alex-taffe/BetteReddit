@@ -15,7 +15,7 @@
 
 @interface PostListViewController ()<NSTableViewDataSource, NSTableViewDelegate>
 @property (strong, nonatomic) AppDelegate *appDelegate;
-@property (strong, nonatomic) BRSubreddit *current;
+@property (strong, atomic) BRSubreddit *current;
 @property (strong, nonatomic) NSNumber *isLoading;
 @end
 

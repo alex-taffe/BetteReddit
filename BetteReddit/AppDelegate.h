@@ -13,8 +13,8 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
-@property (strong, nonatomic) NSMutableArray<BRUser *> *loggedinUsers;
-@property (strong, nonatomic) BRUser *currentUser;
+@property (strong, atomic) NSMutableArray<BRUser *> *loggedinUsers;
+@property (strong, atomic) BRUser *currentUser;
 
 @end
 
