@@ -5,8 +5,6 @@
 //  Created by Alex Taffe on 6/2/18.
 //
 
-#ifndef __BRSUBREDDIT_H
-#define __BRSUBREDDIT_H
 
 #import <Foundation/Foundation.h>
 #import "BRPost.h"
@@ -41,4 +39,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 NS_ASSUME_NONNULL_END
-#endif

@@ -6,9 +6,6 @@
 //  Copyright © 2018 Alex Taffe. All rights reserved.
 //
 
-#ifndef __BRPOST_H
-#define __BRPOST_H
-
 #import <Foundation/Foundation.h>
 #import "BRComment.h"
 
@@ -56,4 +53,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#endif

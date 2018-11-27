@@ -6,9 +6,6 @@
 //  Copyright © 2018 Alex Taffe. All rights reserved.
 //
 
-#ifndef __BRCOMMENT_H
-#define __BRCOMMENT_H
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -28,5 +25,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif
