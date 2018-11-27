@@ -102,6 +102,7 @@
     row.needsDisplay = true;
     __block BRPost *selectedItem = self.current.posts[selection];
     [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_POST object:selectedItem];
+    [[NSNotificationCenter defaultCenter] postNotificationName:COMMENTS_START_LOAD object:selectedItem];
     [self.current.posts[selection] loadPostComments:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:COMMENTS_LOADED object:selectedItem];
     }];

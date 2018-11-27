@@ -6,5 +6,5 @@ target 'BetteReddit' do
 	pod 'AFNetworking'
 	pod 'SAMKeychain'
 	pod 'SDWebImage'
-	pod 'TSMarkdownParser'
+	pod 'Masonry'
 end

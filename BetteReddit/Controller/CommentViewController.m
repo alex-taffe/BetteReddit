@@ -10,11 +10,12 @@
 #import "BRPost.h"
 #import "BRComment.h"
 #import "CommentTableViewCell.h"
-@import TSMarkdownParser;
+@import Masonry;
 
 @interface CommentViewController () <NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (strong) IBOutlet NSTextField *postTitle;
 @property (strong, nonatomic) BRPost *current;
+@property (strong, nonatomic) NSProgressIndicator* indicator;
 @end
 
 @implementation CommentViewController
@@ -28,6 +29,11 @@
     self.outlineView.intercellSpacing = NSMakeSize(0, 0);
 
     [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(startCommentsLoading:)
+                                                 name:COMMENTS_START_LOAD
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(commentsLoaded:)
                                                  name:COMMENTS_LOADED
                                                object:nil];
@@ -36,9 +42,30 @@
                                              selector:@selector(changedPost:)
                                                  name:CHANGED_POST
                                                object:nil];
+
+    self.indicator = [[NSProgressIndicator alloc] init];
+    [self.indicator setStyle:NSProgressIndicatorStyleSpinning];
+    self.indicator.hidden = true;
+    [self.view addSubview:self.indicator];
+    //[indicator startAnimation:nil];
+
+    [self.indicator mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.equalTo(@50);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY);
+    }];
+
+}
+
+-(void)startCommentsLoading:(NSNotification *)notification{
+    [self.indicator startAnimation:nil];
+    self.indicator.hidden = false;
+    [self.outlineView reloadData];
 }
 
 -(void)commentsLoaded:(NSNotification *)notification{
+    [self.indicator stopAnimation:nil];
+    self.indicator.hidden = true;
     [self.outlineView reloadData];
     
 }

@@ -15,6 +15,7 @@ static NSString *const REFRESH_FEED = @"feedRefresh";
 static NSString *const LOGGED_IN = @"LoggedInUserRefresh";
 static NSString *const CHANGED_SUBREDDIT = @"ChangedSubreddit";
 static NSString *const CHANGED_POST = @"ChangedPost";
+static NSString *const COMMENTS_START_LOAD = @"CommentsStartLoad";
 static NSString *const COMMENTS_LOADED = @"CommentsLoaded";
 static NSString *const HIDE_CONTENT_VIEW = @"hideContentView";
 static NSString *const SHOW_CONTENT_VIEW = @"showContentView";
