@@ -2,9 +2,9 @@
 <channel>
 <title>BetteReddit</title>
 <item>
-<title>0.11</title>
-<pubDate>Tue, 27 Nov 2018 19:52:29 -0500</pubDate>
+<title>0.12</title>
+<pubDate>Tue, 27 Nov 2018 19:57:05 -0500</pubDate>
 <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
-<enclosure url="https://raw.githubusercontent.com/alex-taffe/BetteReddit/master/BetteReddit.zip" sparkle:version="2" sparkle:shortVersionString="0.11" length="3392051" type="application/octet-stream"/>
+<enclosure url="https://raw.githubusercontent.com/alex-taffe/BetteReddit/master/Updates/BetteReddit.zip" sparkle:version="3" sparkle:shortVersionString="0.12" length="3408153" type="application/octet-stream"/>
 </item>
 </channel></rss>
