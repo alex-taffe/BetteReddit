@@ -14,6 +14,7 @@
 		FA0D1B29219CE75D00050BB0 /* ContentSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B28219CE75D00050BB0 /* ContentSplitViewController.m */; };
 		FA0D1B2C219CE7CA00050BB0 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B2B219CE7CA00050BB0 /* CommentViewController.m */; };
 		FA0D1B30219CE8A600050BB0 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0D1B2E219CE8A600050BB0 /* ContentViewController.m */; };
+		FA26B8C421AE08BF006549B9 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA26B8C321AE08BF006549B9 /* Preferences.storyboard */; };
 		FA4CA82321A8871600181389 /* NSString+NumberShortner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82221A8871600181389 /* NSString+NumberShortner.m */; };
 		FA4CA82621A9195F00181389 /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82521A9195F00181389 /* NSImage+Resize.m */; };
 		FA4FE6E8219F5264004CC677 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */; };
@@ -70,6 +71,7 @@
 		FA0D1B2B219CE7CA00050BB0 /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		FA0D1B2D219CE8A600050BB0 /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		FA0D1B2E219CE8A600050BB0 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		FA26B8C321AE08BF006549B9 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		FA4CA82121A8871600181389 /* NSString+NumberShortner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NumberShortner.h"; sourceTree = "<group>"; };
 		FA4CA82221A8871600181389 /* NSString+NumberShortner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NumberShortner.m"; sourceTree = "<group>"; };
 		FA4CA82421A9195F00181389 /* NSImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+Resize.h"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				FA8F394D20BB759C007CAC55 /* AppDelegate.h */,
 				FA8F394E20BB759C007CAC55 /* AppDelegate.m */,
 				FA8F395820BB759E007CAC55 /* Main.storyboard */,
+				FA26B8C321AE08BF006549B9 /* Preferences.storyboard */,
 				FA8F395620BB759E007CAC55 /* Assets.xcassets */,
 				FA8F395B20BB759E007CAC55 /* Info.plist */,
 				FA8F395C20BB759E007CAC55 /* main.m */,
@@ -422,6 +425,7 @@
 				FA8F395720BB759E007CAC55 /* Assets.xcassets in Resources */,
 				FA8F395A20BB759E007CAC55 /* Main.storyboard in Resources */,
 				FA08A278219BB65E00E49E71 /* config.plist in Resources */,
+				FA26B8C421AE08BF006549B9 /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,12 +454,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -466,10 +471,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetteReddit/Pods-BetteReddit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F27456B90D3392B0F17399AF /* [CP] Check Pods Manifest.lock */ = {

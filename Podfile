@@ -7,4 +7,5 @@ target 'BetteReddit' do
 	pod 'SAMKeychain'
 	pod 'SDWebImage'
 	pod 'Masonry'
+	pod 'Sparkle'
 end

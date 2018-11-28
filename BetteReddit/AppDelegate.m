@@ -116,6 +116,11 @@
 - (IBAction)refreshPost:(id)sender {
     
 }
+- (IBAction)showPreferences:(id)sender {
+    NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Preferences" bundle:nil];
+    NSWindowController *window = [storyboard instantiateInitialController];
+    [window showWindow:self];
+}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
@@ -125,8 +130,8 @@
     if(flag){
         return false;
     } else {
-        NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-        NSWindowController *window = [storyBoard instantiateInitialController];
+        NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+        NSWindowController *window = [storyboard instantiateInitialController];
         [window showWindow:self];
         return true;
     }
