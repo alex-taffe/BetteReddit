@@ -8,9 +8,9 @@ This app is a fully featured Reddit client built for macOS. It is currently not 
 To run the project, clone the repo, and run `pod install`. Then, rename `config-example.plist` to `config.plist` and fill in your Reddit client ID.
 
 ## Requirements
-- Xcode 9.0
+- Xcode 10.0
 - ARC
-- macOS 10.13
+- macOS 10.14
 
 ## Author
 
