@@ -376,6 +376,9 @@
 					FA8F394920BB759C007CAC55 = {
 						CreatedOnToolsVersion = 9.3.1;
 						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -684,6 +687,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4JEZRL8YY;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PREFIX_HEADER = BetteReddit/PrefixHeader.pch;
 				INFOPLIST_FILE = BetteReddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -707,6 +711,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S4JEZRL8YY;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PREFIX_HEADER = BetteReddit/PrefixHeader.pch;
 				INFOPLIST_FILE = BetteReddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
