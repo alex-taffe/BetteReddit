@@ -114,7 +114,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_FEED object:nil];
 }
 - (IBAction)refreshPost:(id)sender {
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:REFRESH_POST object:nil];
 }
 - (IBAction)showPreferences:(id)sender {
     NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Preferences" bundle:nil];
