@@ -53,6 +53,12 @@
 
 -(void)changedSubreddit:(NSNotification *)notification{
     self.current = notification.object;
+    NSInteger selection = self.postListView.selectedRow;
+    if(selection != -1){
+        PostTableViewCell *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
+        row.isSelected = false;
+        row.needsDisplay = true;
+    }
     [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.postListView reloadData];
@@ -97,6 +103,8 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
     NSInteger selection = self.postListView.selectedRow;
+    if(selection == -1)
+        return;
     PostTableViewCell *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
     row.isSelected = true;
     row.needsDisplay = true;
