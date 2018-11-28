@@ -34,6 +34,8 @@
                     [self.children addObject:child];
             }
         }
+
+        self.poster = [[BRUser alloc] initWithUsername:dict[@"data"][@"author"] withInternalName:dict[@"data"][@"author_fullname"]];
     }
     return self;
 }

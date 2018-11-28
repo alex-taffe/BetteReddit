@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BRSubreddit : NSObject
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *internalName;
-@property (strong, nonatomic) NSString *itemID;
-@property (strong, nonatomic) NSString *endpoint;
-@property (strong, nonatomic) NSString *communityIcon;
+@property (strong, nonatomic) NSString *title; //example: programming
+@property (strong, nonatomic) NSString *internalName; //example: t5_2fwo
+@property (strong, nonatomic) NSString *itemID; //example: 2fwo
+@property (strong, nonatomic) NSString *endpoint; //example: /r/programming
+@property (strong, nonatomic) NSString *communityIcon; //example: https://styles.redditmedia.com/t5_2fwo/styles/communityIcon_1bqa1ibfp8q11.png
 @property (strong, atomic) NSMutableArray<BRPost *> *posts;
 
 -(instancetype)initWithDictionary:(id)dict;

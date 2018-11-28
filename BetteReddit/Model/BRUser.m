@@ -36,10 +36,23 @@
     return self;
 }
 
+-(instancetype)initWithUsername:(NSString *)username withInternalName:(NSString *)internalName{
+    self = [super init];
+
+    if(self){
+        self.username = username;
+        self.internalName = internalName;
+        self.subscriptions = [[NSMutableArray alloc] init];
+    }
+
+    return self;
+}
+
 -(void)loadUserDetails:(void (^)(void))onComplete{
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
         [[BRClient sharedInstance] makeRequestWithEndpoint:@"api/v1/me" withMethod:@"GET" withArguments:@{@"limit":@100} withToken:authToken success:^(id  _Nonnull result) {
             self.username = result[@"name"];
+            self.internalName = result[@"subreddit"][@"name"];
             onComplete();
         } failure:^(NSError * _Nonnull error) {
             NSLog(@"Failed to load user details: %@", error);
@@ -47,6 +60,8 @@
         }];
     }];
 }
+
+
 
 -(void)loadSubscriptions:(void (^)(void))onComplete{
     [self.subscriptions removeAllObjects];

@@ -44,7 +44,11 @@
 
         self.numComments = [dict[@"data"][@"num_comments"] integerValue];
 
-        
+        NSNumber *created = dict[@"data"][@"created_utc"];
+        self.dateCreated = [NSDate dateWithTimeIntervalSince1970:[created doubleValue]];
+
+        self.poster = [[BRUser alloc] initWithUsername:dict[@"data"][@"author"] withInternalName:dict[@"data"][@"author_fullname"]];
+
     }
     return self;
 }

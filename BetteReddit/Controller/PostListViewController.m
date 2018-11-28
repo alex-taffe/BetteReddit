@@ -11,6 +11,7 @@
 #import "BRSubreddit.h"
 #import "PostTableViewCell.h"
 #import "NSString+NumberShortner.h"
+#import "NSString+TimeSince.h"
 @import SDWebImage;
 
 @interface PostListViewController ()<NSTableViewDataSource, NSTableViewDelegate>
@@ -84,10 +85,13 @@
     cell.postTitle.stringValue = item.title;
     cell.postParent.stringValue = item.prefixedSubredditName;
     [cell.postImage sd_setImageWithURL:[NSURL URLWithString:item.thumbnailURL]];
+    cell.postTime.stringValue = [NSString timeSinceDate:item.dateCreated];
+    cell.postAuthor.stringValue = [NSString stringWithFormat:@"u/%@", item.poster.username];
     cell.post = item;
     cell.postComments.stringValue = [NSString stringWithFormat:@"%@ comments",[NSString shortenedStringWithInt:item.numComments]];
     [cell updateColorScheme];
     cell.wantsLayer = true;
+
     return cell;
 }
 
