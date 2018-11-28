@@ -27,6 +27,13 @@
                                         </menuItem>
                                         <menuItem title="Check for Updates..." id="vuy-64-F7j">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="xnH-i6-PHB" name="target" keyPath="self" id="Zcs-vv-oee">
+                                                    <dictionary key="options">
+                                                        <string key="NSSelectorName">checkForUpdates:</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
