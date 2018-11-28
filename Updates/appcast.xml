@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+<channel>
+<title>BetteReddit</title>
+<item>
+<title>0.11</title>
+<pubDate>Tue, 27 Nov 2018 19:52:29 -0500</pubDate>
+<sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
+<enclosure url="https://raw.githubusercontent.com/alex-taffe/BetteReddit/master/BetteReddit.zip" sparkle:version="2" sparkle:shortVersionString="0.11" length="3392051" type="application/octet-stream"/>
+</item>
+</channel></rss>
