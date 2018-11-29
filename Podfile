@@ -8,4 +8,6 @@ target 'BetteReddit' do
 	pod 'SDWebImage'
 	pod 'Masonry'
 	pod 'Sparkle'
+	pod 'Fabric'
+	pod 'Crashlytics'
 end

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 @import SAMKeychain;
 @import AppAuth;
+@import Fabric;
+@import Crashlytics;
 
 @interface AppDelegate ()
 
@@ -21,6 +23,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+
+    [Fabric with:@[[Crashlytics class]]];
+
 
     self.loggedinUsers = [[NSMutableArray alloc] init];
 
