@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int likes; //1 if signed in user has liked, 0 if not liked, -1 if disliked
 @property (nonatomic) bool isSelf; //posted to current subreddit
 @property (nonatomic) int numComments; //number of comments on this post
+@property (nonatomic) bool NSFW; //true if the post is NSFW
 @property (strong, nonatomic) BRUser *poster;
 
 -(instancetype)initWithDictionary:(id)dict;

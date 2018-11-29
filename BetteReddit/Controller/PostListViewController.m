@@ -89,6 +89,9 @@
     cell.postAuthor.stringValue = [NSString stringWithFormat:@"u/%@", item.poster.username];
     cell.post = item;
     cell.postComments.stringValue = [NSString stringWithFormat:@"%@ comments",[NSString shortenedStringWithInt:item.numComments]];
+    cell.NSFWLabel.wantsLayer = true;
+    cell.NSFWLabel.layer.cornerRadius = 4;
+    cell.NSFWLabel.hidden = !item.NSFW;
     [cell updateColorScheme];
     cell.wantsLayer = true;
 

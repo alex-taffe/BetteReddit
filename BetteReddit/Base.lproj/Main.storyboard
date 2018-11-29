@@ -970,28 +970,28 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="postCell" misplaced="YES" id="306-zg-plh" customClass="PostTableViewCell">
-                                                            <rect key="frame" x="1" y="1" width="345" height="69"/>
+                                                        <tableCellView identifier="postCell" id="306-zg-plh" customClass="PostTableViewCell">
+                                                            <rect key="frame" x="1" y="1" width="345" height="98"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPa-Ss-8h4">
-                                                                    <rect key="frame" x="294" y="11" width="48" height="48"/>
+                                                                    <rect key="frame" x="294" y="25" width="48" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="48" id="GLH-3h-63h"/>
                                                                         <constraint firstAttribute="height" constant="48" id="tnp-l7-3rs"/>
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JKM-gf-7l3"/>
                                                                 </imageView>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAH-uN-ZsH">
-                                                                    <rect key="frame" x="43" y="29" width="96" height="17"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XAH-uN-ZsH">
+                                                                    <rect key="frame" x="46" y="57" width="96" height="17"/>
                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="LvP-si-GQe">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-hz-XZy">
-                                                                    <rect key="frame" x="6" y="28" width="34" height="17"/>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-hz-XZy">
+                                                                    <rect key="frame" x="6" y="57" width="34" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="XLe-Sx-WbQ"/>
                                                                     </constraints>
@@ -1001,8 +1001,8 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="l5H-zx-OMt">
-                                                                    <rect key="frame" x="15" y="50" width="15" height="15"/>
+                                                                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5H-zx-OMt">
+                                                                    <rect key="frame" x="15" y="79" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="15" id="4eE-HW-2oo"/>
                                                                         <constraint firstAttribute="width" constant="15" id="C8d-Zt-ZuL"/>
@@ -1015,8 +1015,8 @@
                                                                         <action selector="upArrowPressed:" target="306-zg-plh" id="Pyg-RZ-MTc"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="JpP-0S-h1q">
-                                                                    <rect key="frame" x="15" y="10" width="15" height="15"/>
+                                                                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-0S-h1q">
+                                                                    <rect key="frame" x="15" y="39" width="15" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="15" id="UGA-KS-Mfb"/>
                                                                         <constraint firstAttribute="width" constant="15" id="zcH-V6-jCN"/>
@@ -1029,65 +1029,76 @@
                                                                         <action selector="downArrowPressed:" target="306-zg-plh" id="b8F-1g-vwZ"/>
                                                                     </connections>
                                                                 </button>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyW-Gs-kvU">
-                                                                    <rect key="frame" x="43" y="51" width="33" height="14"/>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eyW-Gs-kvU">
+                                                                    <rect key="frame" x="46" y="79" width="33" height="14"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="5Op-vW-ltI">
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wzi-GD-x17">
-                                                                    <rect key="frame" x="77" y="51" width="33" height="14"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Wzi-GD-x17">
+                                                                    <rect key="frame" x="80" y="79" width="33" height="14"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="lBW-Pa-SIS">
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-CH-Fxd">
-                                                                    <rect key="frame" x="43" y="4" width="248" height="17"/>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-CH-Fxd">
+                                                                    <rect key="frame" x="46" y="38" width="33" height="14"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="KKR-Qp-zso">
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JR0-NP-5AZ">
-                                                                    <rect key="frame" x="111" y="52" width="33" height="14"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JR0-NP-5AZ">
+                                                                    <rect key="frame" x="114" y="79" width="33" height="14"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="G8f-55-laN">
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJE-jT-bhF">
+                                                                    <rect key="frame" x="4" y="14" width="37" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="NSFW" drawsBackground="YES" id="1q3-0j-Dqc">
+                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JpP-0S-h1q" secondAttribute="bottom" constant="10" id="0ea-iN-HZ2"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JpP-0S-h1q" secondAttribute="bottom" priority="750" constant="10" id="0ea-iN-HZ2"/>
                                                                 <constraint firstItem="eyW-Gs-kvU" firstAttribute="top" secondItem="306-zg-plh" secondAttribute="top" constant="5" id="0vW-My-M09"/>
                                                                 <constraint firstItem="l5H-zx-OMt" firstAttribute="top" secondItem="306-zg-plh" secondAttribute="top" constant="5" id="2BG-zK-5we"/>
                                                                 <constraint firstItem="PM8-hz-XZy" firstAttribute="top" secondItem="l5H-zx-OMt" secondAttribute="bottom" constant="5" id="81N-U3-Fav"/>
+                                                                <constraint firstItem="SJE-jT-bhF" firstAttribute="top" secondItem="JpP-0S-h1q" secondAttribute="bottom" constant="8" id="8xl-ec-XjI"/>
                                                                 <constraint firstItem="VPa-Ss-8h4" firstAttribute="centerY" secondItem="306-zg-plh" secondAttribute="centerY" id="9bx-5G-Zab"/>
                                                                 <constraint firstItem="JR0-NP-5AZ" firstAttribute="leading" secondItem="Wzi-GD-x17" secondAttribute="trailing" constant="5" id="BVP-pO-t4j"/>
-                                                                <constraint firstAttribute="bottom" secondItem="IUd-CH-Fxd" secondAttribute="bottom" constant="5" id="DQS-xK-sdD"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IUd-CH-Fxd" secondAttribute="bottom" constant="5" id="DQS-xK-sdD"/>
                                                                 <constraint firstItem="JpP-0S-h1q" firstAttribute="top" secondItem="PM8-hz-XZy" secondAttribute="bottom" constant="3" id="DRf-IU-EfK"/>
                                                                 <constraint firstItem="Wzi-GD-x17" firstAttribute="leading" secondItem="eyW-Gs-kvU" secondAttribute="trailing" constant="5" id="E0Z-nT-XCS"/>
                                                                 <constraint firstItem="XAH-uN-ZsH" firstAttribute="top" secondItem="eyW-Gs-kvU" secondAttribute="bottom" constant="5" id="GcK-RL-ZNy"/>
                                                                 <constraint firstItem="VPa-Ss-8h4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XAH-uN-ZsH" secondAttribute="trailing" constant="10" id="MB0-Ul-SFz"/>
                                                                 <constraint firstItem="IUd-CH-Fxd" firstAttribute="top" secondItem="XAH-uN-ZsH" secondAttribute="bottom" constant="5" id="NCh-TV-b2E"/>
-                                                                <constraint firstItem="VPa-Ss-8h4" firstAttribute="leading" secondItem="IUd-CH-Fxd" secondAttribute="trailing" constant="5" id="NLY-5D-vzF"/>
                                                                 <constraint firstItem="IUd-CH-Fxd" firstAttribute="leading" secondItem="eyW-Gs-kvU" secondAttribute="leading" id="QYQ-Na-n5K"/>
                                                                 <constraint firstItem="Wzi-GD-x17" firstAttribute="centerY" secondItem="eyW-Gs-kvU" secondAttribute="centerY" id="V5s-gB-Gbw"/>
                                                                 <constraint firstItem="JpP-0S-h1q" firstAttribute="leading" secondItem="l5H-zx-OMt" secondAttribute="leading" id="Vxi-ed-ExW"/>
-                                                                <constraint firstItem="XAH-uN-ZsH" firstAttribute="leading" secondItem="l5H-zx-OMt" secondAttribute="trailing" constant="15" id="WLc-vX-fhA"/>
+                                                                <constraint firstItem="XAH-uN-ZsH" firstAttribute="leading" secondItem="l5H-zx-OMt" secondAttribute="trailing" constant="18" id="WLc-vX-fhA"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SJE-jT-bhF" secondAttribute="bottom" constant="5" id="aVP-UO-VSL"/>
                                                                 <constraint firstItem="l5H-zx-OMt" firstAttribute="centerX" secondItem="PM8-hz-XZy" secondAttribute="centerX" id="cpo-5V-9dn"/>
                                                                 <constraint firstItem="JR0-NP-5AZ" firstAttribute="centerY" secondItem="Wzi-GD-x17" secondAttribute="centerY" id="gEY-vI-nub"/>
+                                                                <constraint firstItem="SJE-jT-bhF" firstAttribute="centerX" secondItem="JpP-0S-h1q" secondAttribute="centerX" id="s5K-eZ-eKa"/>
                                                                 <constraint firstItem="VPa-Ss-8h4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JR0-NP-5AZ" secondAttribute="trailing" constant="5" id="ugo-dX-BJH"/>
                                                                 <constraint firstItem="l5H-zx-OMt" firstAttribute="leading" secondItem="306-zg-plh" secondAttribute="leading" constant="15" id="vaj-9f-R0G"/>
                                                                 <constraint firstAttribute="trailing" secondItem="VPa-Ss-8h4" secondAttribute="trailing" constant="3" id="xW5-Bn-E7C"/>
                                                                 <constraint firstItem="eyW-Gs-kvU" firstAttribute="leading" secondItem="XAH-uN-ZsH" secondAttribute="leading" id="yrN-yb-kI7"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="NSFWLabel" destination="SJE-jT-bhF" id="dX7-gv-Ei6"/>
                                                                 <outlet property="downArrow" destination="JpP-0S-h1q" id="ers-S5-wXx"/>
                                                                 <outlet property="postAuthor" destination="JR0-NP-5AZ" id="bkW-0j-nqb"/>
                                                                 <outlet property="postComments" destination="IUd-CH-Fxd" id="0hG-9c-QIw"/>

@@ -49,6 +49,8 @@
 
         self.poster = [[BRUser alloc] initWithUsername:dict[@"data"][@"author"] withInternalName:dict[@"data"][@"author_fullname"]];
 
+        self.NSFW = [dict[@"data"][@"over_18"] boolValue];
+
     }
     return self;
 }

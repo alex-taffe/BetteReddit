@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) IBOutlet NSTextField *postComments;
 @property (strong) IBOutlet NSTextField *postTime;
 @property (strong) IBOutlet NSTextField *postAuthor;
+@property (strong) IBOutlet NSTextField *NSFWLabel;
 @property (strong) IBOutlet NSButton *upArrow;
 @property (strong) IBOutlet NSButton *downArrow;
 @property bool isSelected;
