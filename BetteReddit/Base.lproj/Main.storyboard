@@ -1199,7 +1199,7 @@
                             <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-3n-Uxp">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                             </avPlayerView>
-                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SD-Wl3">
+                            <wkWebView wantsLayer="YES" allowsBackForwardNavigationGestures="YES" allowsMagnification="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SD-Wl3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
