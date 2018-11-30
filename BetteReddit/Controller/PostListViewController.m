@@ -88,6 +88,7 @@
     [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.postListView reloadData];
+            [self.postListView scrollRowToVisible:0];
         });
     }];
 }
