@@ -27,6 +27,8 @@
         self.postHint = dict[@"data"][@"post_hint"];
         if([self.postHint isEqualToString:@"rich:video"]){
             self.postPreviewLink = dict[@"data"][@"preview"][@"reddit_video_preview"][@"fallback_url"];
+        } else if([self.postHint isEqualToString:@"hosted:video"]){
+            self.postPreviewLink = dict[@"data"][@"media"][@"reddit_video"][@"hls_url"];
         } else if([self.postHint isEqualToString:@"image"] || [self.url containsString:@"imgur"]){
             self.postPreviewLink = dict[@"data"][@"preview"][@"images"][0][@"source"][@"url"];
         }
