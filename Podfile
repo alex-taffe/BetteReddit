@@ -10,4 +10,5 @@ target 'BetteReddit' do
 	pod 'Sparkle'
 	pod 'Fabric'
 	pod 'Crashlytics'
+    pod 'TSMarkdownParser'
 end

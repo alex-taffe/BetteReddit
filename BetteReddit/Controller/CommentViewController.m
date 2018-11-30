@@ -11,6 +11,7 @@
 #import "BRComment.h"
 #import "CommentTableViewCell.h"
 @import Masonry;
+@import TSMarkdownParser;
 
 @interface CommentViewController () <NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (strong) IBOutlet NSTextField *postTitle;
@@ -74,7 +75,9 @@
 -(void)changedPost:(NSNotification *)notification{
     self.current = notification.object;
     self.postTitle.stringValue = self.current.title;
-    self.postSelfText.stringValue = self.current.selfText;
+
+    NSAttributedString *selfText = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:self.current.selfText];
+    self.postSelfText.attributedStringValue = selfText;
 }
 
 #pragma mark - OutlineView data
