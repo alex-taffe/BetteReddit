@@ -58,7 +58,7 @@
     [self.view addSubview:self.indicator];
 
     [self.indicator mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.equalTo(@50);
+        make.width.height.equalTo(@35);
         make.centerX.equalTo(self.view.mas_centerX);
         make.centerY.equalTo(self.view.mas_centerY);
     }];
