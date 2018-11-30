@@ -30,7 +30,7 @@
 
 -(void)changedPost:(NSNotification *)notification{
     self.current = notification.object;
-    if(self.current.url){
+    if(!self.current.isSelf){
         [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_CONTENT_VIEW object:nil];
         if([self.current.postHint isEqualToString:@"rich:video"] ||
            [self.current.postHint isEqualToString:@"video"] ||

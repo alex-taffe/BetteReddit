@@ -9,7 +9,7 @@
 #import "ContentSplitViewController.h"
 
 @interface ContentSplitViewController ()
-
+@property (nonatomic) CGFloat previousPosition;
 @end
 
 @implementation ContentSplitViewController
@@ -26,16 +26,16 @@
                                              selector:@selector(showContentView)
                                                  name:SHOW_CONTENT_VIEW
                                                object:nil];
+    self.previousPosition = self.splitViewItems[0].viewController.view.frame.size.height;
 }
 
 -(void)hideContentView{
-    ((NSView *)self.splitViewItems[0]).hidden = true;
+    self.previousPosition = self.splitViewItems[0].viewController.view.frame.size.height;
     [self.splitView setPosition:0 ofDividerAtIndex:0];
-    NSLog(@"Hide Content View");
 }
 
 -(void)showContentView{
-    NSLog(@"Show Content View");
+    [self.splitView setPosition:self.previousPosition ofDividerAtIndex:0];
 }
 
 @end
