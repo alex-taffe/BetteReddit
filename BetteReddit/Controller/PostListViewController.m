@@ -13,11 +13,13 @@
 #import "NSString+NumberShortner.h"
 #import "NSString+TimeSince.h"
 @import SDWebImage;
+@import Masonry;
 
 @interface PostListViewController ()<NSTableViewDataSource, NSTableViewDelegate>
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, atomic) BRSubreddit *current;
 @property (strong, nonatomic) NSNumber *isLoading;
+@property (strong, nonatomic) NSProgressIndicator *indicator;
 @end
 
 @implementation PostListViewController
@@ -50,6 +52,17 @@
 
     self.isLoading = [NSNumber numberWithBool:false];
 
+    self.indicator = [[NSProgressIndicator alloc] init];
+    [self.indicator setStyle:NSProgressIndicatorStyleSpinning];
+    self.indicator.hidden = true;
+    [self.view addSubview:self.indicator];
+
+    [self.indicator mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.equalTo(@50);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY);
+    }];
+
 }
 
 -(void)changedSubreddit:(NSNotification *)notification{
@@ -60,8 +73,12 @@
         row.isSelected = false;
         row.needsDisplay = true;
     }
+    [self.indicator startAnimation:nil];
+    self.indicator.hidden = false;
     [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
         dispatch_async(dispatch_get_main_queue(),^(void){
+            self.indicator.hidden = true;
+            [self.indicator stopAnimation:nil];
             [self.postListView reloadData];
         });
     }];
