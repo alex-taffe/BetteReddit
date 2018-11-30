@@ -31,8 +31,8 @@
             <objects>
                 <tabViewController tabStyle="toolbar" id="Ms3-0j-EDu" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem identifier="" id="4t8-Sb-FZJ"/>
-                        <tabViewItem identifier="" id="oLa-rF-ll3"/>
+                        <tabViewItem label="General" identifier="" image="SettingsGear" id="4t8-Sb-FZJ"/>
+                        <tabViewItem label="Viewing" image="SettingsMonitor" id="oLa-rF-ll3"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="VsS-fd-FjB">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -82,6 +82,19 @@
                     <view key="view" id="iO3-Bm-vBp">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-ZV-vvx">
+                                <rect key="frame" x="18" y="264" width="149" height="18"/>
+                                <buttonCell key="cell" type="check" title="Blur NSFW Previews:" bezelStyle="regularSquare" imagePosition="right" alignment="center" state="on" inset="2" id="2tJ-bV-XYf">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XbC-ZV-vvx" firstAttribute="leading" secondItem="iO3-Bm-vBp" secondAttribute="leading" constant="20" id="Y9G-CL-yks"/>
+                            <constraint firstItem="XbC-ZV-vvx" firstAttribute="top" secondItem="iO3-Bm-vBp" secondAttribute="top" constant="20" id="j4D-7y-foL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="4cq-Bq-npB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -89,4 +102,8 @@
             <point key="canvasLocation" x="506" y="-133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SettingsGear" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="SettingsMonitor" width="51.200000762939453" height="51.200000762939453"/>
+    </resources>
 </document>
