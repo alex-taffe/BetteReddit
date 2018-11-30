@@ -39,8 +39,9 @@
  Loads in all of the subreddits the user is subscribed to
 
  @param onComplete completion callback
+ @param initial A callback that gives the home subreddit immediately to facilitate faster initial launch
  */
--(void)loadSubscriptions:(void (^)(void))onComplete;
+-(void)loadSubscriptions:(void (^)(void))onComplete withInitial:(void (^)(BRSubreddit *initial))initial;
 
 @end
 

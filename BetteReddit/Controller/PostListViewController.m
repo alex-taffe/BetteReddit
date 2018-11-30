@@ -66,22 +66,25 @@
 }
 
 -(void)changedSubreddit:(NSNotification *)notification{
-    self.current = notification.object;
-    NSInteger selection = self.postListView.selectedRow;
-    if(selection != -1){
-        PostTableViewCell *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
-        row.isSelected = false;
-        row.needsDisplay = true;
-    }
-    [self.indicator startAnimation:nil];
-    self.indicator.hidden = false;
-    [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
-        dispatch_async(dispatch_get_main_queue(),^(void){
-            self.indicator.hidden = true;
-            [self.indicator stopAnimation:nil];
-            [self.postListView reloadData];
-        });
-    }];
+    dispatch_async(dispatch_get_main_queue(),^(void){
+        self.current = notification.object;
+        NSInteger selection = self.postListView.selectedRow;
+        if(selection != -1){
+            PostTableViewCell *row = [self.postListView viewAtColumn:0 row:selection makeIfNecessary:false];
+            row.isSelected = false;
+            row.needsDisplay = true;
+        }
+        [self.indicator startAnimation:nil];
+        self.indicator.hidden = false;
+        [self.current loadMoreSubredditPosts:false onComplete:^(NSArray * _Nullable newPosts){
+            dispatch_async(dispatch_get_main_queue(),^(void){
+                self.indicator.hidden = true;
+                [self.indicator stopAnimation:nil];
+                [self.postListView reloadData];
+            });
+        }];
+    });
+
 }
 
 -(void)refreshFeed{

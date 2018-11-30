@@ -63,9 +63,15 @@
 
 
 
--(void)loadSubscriptions:(void (^)(void))onComplete{
+-(void)loadSubscriptions:(void (^)(void))onComplete withInitial:(void (^)(BRSubreddit *initial))initial{
     [self.subscriptions removeAllObjects];
     [BROAuthHelper performOAuthAction:^(NSString *authToken) {
+        BRSubreddit *home = [[BRSubreddit alloc] init];
+        home.title = @"Home";
+        home.endpoint = @"/";
+        //facilitate faster initial launch
+        initial(home);
+
         __block bool doneLoading = false;
         __block NSString *after = @"";
 
@@ -113,10 +119,6 @@
             NSString *name2 = ((BRSubreddit *)obj2).title;
             return [name1 compare:name2];
         }];
-
-        BRSubreddit *home = [[BRSubreddit alloc] init];
-        home.title = @"Home";
-        home.endpoint = @"/";
 
         [self.subscriptions insertObject:home atIndex:0];
 

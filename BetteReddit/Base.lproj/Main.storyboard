@@ -1186,14 +1186,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="Tmm-vK-3Ub"/>
                                 </constraints>
-                                <gestureRecognizers>
-                                    <clickGestureRecognizer delaysSecondaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="omC-3t-D8s">
-                                        <buttonMask key="buttonMask" secondary="YES"/>
-                                        <connections>
-                                            <action selector="rightClickImage:" target="9DA-OG-A47" id="sx7-XX-pZw"/>
-                                        </connections>
-                                    </clickGestureRecognizer>
-                                </gestureRecognizers>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" id="P0Q-sq-2YA"/>
                             </imageView>
                             <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-3n-Uxp">

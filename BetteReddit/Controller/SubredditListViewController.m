@@ -17,6 +17,7 @@
 @interface SubredditListViewController () <NSTableViewDelegate, NSTableViewDataSource>
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSProgressIndicator *indicator;
+@property (nonatomic) bool hasSelectedFirst;
 @end
 
 @implementation SubredditListViewController
@@ -58,6 +59,8 @@
             [self.indicator stopAnimation:nil];
             [self.subscriptionListView reloadData];
         });
+    } withInitial:^(BRSubreddit *initial) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_SUBREDDIT object:initial];
     }];
 }
 
@@ -78,6 +81,11 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification{
+    //first selection is done for us for faster initial launch
+    if(!self.hasSelectedFirst){
+        self.hasSelectedFirst = true;
+        return;
+    }
     NSInteger selection = self.subscriptionListView.selectedRow;
     BRSubreddit *current = self.appDelegate.currentUser.subscriptions[selection];
     [[NSNotificationCenter defaultCenter] postNotificationName:CHANGED_SUBREDDIT object:current];
