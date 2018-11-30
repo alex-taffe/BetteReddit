@@ -45,7 +45,7 @@
         self.isSelf = [dict[@"data"][@"is_self"] boolValue];
         self.prefixedSubredditName = dict[@"data"][@"subreddit_name_prefixed"];
 
-        self.numComments = [dict[@"data"][@"num_comments"] integerValue];
+        self.numComments = [dict[@"data"][@"num_comments"] intValue];
 
         NSNumber *created = dict[@"data"][@"created_utc"];
         self.dateCreated = [NSDate dateWithTimeIntervalSince1970:[created doubleValue]];

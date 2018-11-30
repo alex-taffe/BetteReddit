@@ -10,7 +10,7 @@
 
 @implementation NSImage (Resize)
 
-+ (NSImage *)resizedImage:(NSImage *)sourceImage toPixelDimensions:(NSSize)newSize{
++ (NSImage *_Nullable)resizedImage:(NSImage *)sourceImage toPixelDimensions:(NSSize)newSize{
     if (! sourceImage.isValid) return nil;
 
     NSBitmapImageRep *rep = [[NSBitmapImageRep alloc]
