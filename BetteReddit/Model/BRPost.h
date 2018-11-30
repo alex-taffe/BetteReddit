@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (strong, nonatomic) NSString *title; //example: Nothing to see here, just some valid java code
+@property (strong, nonatomic) NSString *selfText; //only used when isSelf is true
 @property (strong, nonatomic) NSString *internalName; //example: t3_a13lbn
 @property (strong, nonatomic) NSString *itemID; //example: a13lbn
 @property (strong, atomic) NSMutableArray<BRComment *> *children;

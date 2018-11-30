@@ -1241,13 +1241,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICc-T4-AvG">
-                                <rect key="frame" x="7" y="0.0" width="621" height="358"/>
+                                <rect key="frame" x="7" y="0.0" width="621" height="346"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="C6W-96-mlM">
-                                    <rect key="frame" x="0.0" y="0.0" width="621" height="358"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="621" height="346"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="15" usesAutomaticRowHeights="YES" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="UDh-r0-hvm" id="lwI-vE-R2L">
-                                            <rect key="frame" x="0.0" y="0.0" width="621" height="358"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="621" height="346"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="5"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1379,8 +1379,16 @@
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="O1O-rb-JvO">
-                                <rect key="frame" x="3" y="378" width="629" height="17"/>
+                                <rect key="frame" x="3" y="376" width="629" height="19"/>
                                 <textFieldCell key="cell" selectable="YES" title="POST TITLE" id="SQ8-TM-Lai">
+                                    <font key="font" metaFont="systemSemibold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-92-iKN">
+                                <rect key="frame" x="3" y="351" width="629" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" title="SELF TEXT" id="MXX-2m-CQV">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1389,16 +1397,20 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ICc-T4-AvG" secondAttribute="bottom" id="2we-Ek-lqY"/>
+                            <constraint firstItem="i0a-92-iKN" firstAttribute="top" secondItem="O1O-rb-JvO" secondAttribute="bottom" constant="8" id="4vq-E6-vaN"/>
+                            <constraint firstAttribute="trailing" secondItem="i0a-92-iKN" secondAttribute="trailing" constant="5" id="Aci-LU-15r"/>
                             <constraint firstAttribute="trailing" secondItem="ICc-T4-AvG" secondAttribute="trailing" constant="7" id="CcK-eY-ogC"/>
+                            <constraint firstItem="i0a-92-iKN" firstAttribute="leading" secondItem="O1O-rb-JvO" secondAttribute="leading" id="DmA-8e-E0H"/>
+                            <constraint firstItem="ICc-T4-AvG" firstAttribute="top" secondItem="i0a-92-iKN" secondAttribute="bottom" constant="5" id="IIR-qX-khk"/>
                             <constraint firstItem="O1O-rb-JvO" firstAttribute="leading" secondItem="vNt-zI-2WV" secondAttribute="leading" constant="5" id="QXR-lT-EIF"/>
                             <constraint firstItem="ICc-T4-AvG" firstAttribute="leading" secondItem="vNt-zI-2WV" secondAttribute="leading" constant="7" id="cL3-fz-Ebk"/>
                             <constraint firstItem="O1O-rb-JvO" firstAttribute="top" secondItem="vNt-zI-2WV" secondAttribute="top" constant="5" id="fI2-aq-FgJ"/>
                             <constraint firstAttribute="trailing" secondItem="O1O-rb-JvO" secondAttribute="trailing" constant="5" id="gog-k9-x4N"/>
-                            <constraint firstItem="ICc-T4-AvG" firstAttribute="top" secondItem="O1O-rb-JvO" secondAttribute="bottom" constant="20" id="qCs-Hm-w59"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="outlineView" destination="lwI-vE-R2L" id="3Ls-nw-D2q"/>
+                        <outlet property="postSelfText" destination="i0a-92-iKN" id="aUO-IL-Jic"/>
                         <outlet property="postTitle" destination="O1O-rb-JvO" id="GgL-sh-GDu"/>
                     </connections>
                 </viewController>

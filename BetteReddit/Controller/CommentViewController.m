@@ -14,6 +14,7 @@
 
 @interface CommentViewController () <NSOutlineViewDelegate, NSOutlineViewDataSource>
 @property (strong) IBOutlet NSTextField *postTitle;
+@property (strong) IBOutlet NSTextField *postSelfText;
 @property (strong, atomic) BRPost *current;
 @property (strong, nonatomic) NSProgressIndicator* indicator;
 @end
@@ -73,6 +74,7 @@
 -(void)changedPost:(NSNotification *)notification{
     self.current = notification.object;
     self.postTitle.stringValue = self.current.title;
+    self.postSelfText.stringValue = self.current.selfText;
 }
 
 #pragma mark - OutlineView data

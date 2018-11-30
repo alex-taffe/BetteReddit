@@ -19,6 +19,7 @@
     if(self){
         self.children = [[NSMutableArray alloc] init];
         self.title = dict[@"data"][@"title"];
+        self.selfText = dict[@"data"][@"selftext"];
         self.internalName = dict[@"data"][@"name"];
         self.itemID = dict[@"data"][@"id"];
         self.permalink = dict[@"data"][@"permalink"];
