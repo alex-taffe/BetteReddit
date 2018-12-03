@@ -8,6 +8,7 @@
 
 #import "ContentViewController.h"
 #import "BRPost.h"
+#import "CopyableImageView.h"
 @import SDWebImage;
 
 @interface ContentViewController ()
@@ -49,6 +50,7 @@
             self.imageView.hidden = false;
             self.imageScrollView.hidden = false;
             [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
+            ((CopyableImageView *) self.imageView).post = self.current;
             return;
         } else if([self.current.postHint isEqualToString:@"link"] ||
                   [self.current.postHint isEqualToString:@"hosted:video"]){
@@ -63,16 +65,6 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:HIDE_CONTENT_VIEW object:nil];
     }
     [self.imageView setImage:nil];
-}
-- (IBAction)rightClickImage:(id)sender {
-
-    NSMenu *theMenu = [[NSMenu alloc] initWithTitle:@"Contextual Menu"];
-
-    [theMenu insertItemWithTitle:@"Beep" action:@selector(beep:) keyEquivalent:@"" atIndex:0];
-
-    [theMenu insertItemWithTitle:@"Honk" action:@selector(honk:) keyEquivalent:@"" atIndex:1];
-
-    [NSMenu popUpContextMenu:theMenu withEvent:nil forView:self.view];
 }
 
 @end

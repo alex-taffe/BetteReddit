@@ -76,11 +76,15 @@
 - (void)rightMouseUp:(NSEvent *)event{
     NSMenu *theMenu = [[NSMenu alloc] initWithTitle:@"Contextual Menu"];
 
-//    [theMenu insertItemWithTitle:@"Copy Link" action:[NSBlockOperation blockOperationWithBlock:^{
-//        
-//    }] keyEquivalent:@"" atIndex:0];
+    [theMenu insertItemWithTitle:@"Copy Link" action:@selector(copyLink) keyEquivalent:@"" atIndex:0];
 
 
     [NSMenu popUpContextMenu:theMenu withEvent:event forView:self];
+}
+
+#pragma mark - Right click options
+-(void)copyLink{
+    [[NSPasteboard generalPasteboard] clearContents];
+    [[NSPasteboard generalPasteboard] setString:self.post.url forType:NSPasteboardTypeString];
 }
 @end
