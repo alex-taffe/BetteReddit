@@ -61,10 +61,26 @@
     }
 
 
-    self.upArrow.contentTintColor = upColor;
-    self.downArrow.contentTintColor = downColor;
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext * _Nonnull context) {
+        context.duration = 100.0;
+        context.allowsImplicitAnimation = true;
+        self.upArrow.animator.contentTintColor = upColor;
+        self.downArrow.animator.contentTintColor = downColor;
+        self.postLikes.animator.textColor = labelColor;
+    }];
 
-    self.postLikes.textColor = labelColor;
     self.postLikes.stringValue = [NSString shortenedStringWithInt:[self.post.score integerValue]];
+}
+
+
+- (void)rightMouseUp:(NSEvent *)event{
+    NSMenu *theMenu = [[NSMenu alloc] initWithTitle:@"Contextual Menu"];
+
+//    [theMenu insertItemWithTitle:@"Copy Link" action:[NSBlockOperation blockOperationWithBlock:^{
+//        
+//    }] keyEquivalent:@"" atIndex:0];
+
+
+    [NSMenu popUpContextMenu:theMenu withEvent:event forView:self];
 }
 @end

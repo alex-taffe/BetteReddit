@@ -1178,43 +1178,67 @@
             <objects>
                 <viewController id="9DA-OG-A47" customClass="ContentViewController" sceneMemberID="viewController">
                     <view key="view" id="9tJ-ZJ-1ac">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="KBY-hK-zkE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="Tmm-vK-3Ub"/>
-                                </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" id="P0Q-sq-2YA"/>
-                            </imageView>
                             <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-3n-Uxp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
                             </avPlayerView>
                             <wkWebView wantsLayer="YES" allowsBackForwardNavigationGestures="YES" allowsMagnification="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SD-Wl3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="8" minMagnification="1" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-UN-yKv">
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
+                                <clipView key="contentView" id="P61-gI-U38">
+                                    <rect key="frame" x="1" y="1" width="600" height="498"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="KBY-hK-zkE">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="498"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="600" id="Tmm-vK-3Ub"/>
+                                            </constraints>
+                                            <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" id="P0Q-sq-2YA"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KBY-hK-zkE" firstAttribute="leading" secondItem="P61-gI-U38" secondAttribute="leading" id="17J-w1-Enj"/>
+                                        <constraint firstItem="KBY-hK-zkE" firstAttribute="top" secondItem="P61-gI-U38" secondAttribute="top" id="6zf-9V-nOz"/>
+                                        <constraint firstAttribute="trailing" secondItem="KBY-hK-zkE" secondAttribute="trailing" id="Du7-Kt-Te1"/>
+                                        <constraint firstAttribute="bottom" secondItem="KBY-hK-zkE" secondAttribute="bottom" id="ki3-EQ-RnD"/>
+                                    </constraints>
+                                </clipView>
+                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="VrZ-rG-8Tq">
+                                    <rect key="frame" x="1" y="483" width="600" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="0fZ-ee-4ZO">
+                                    <rect key="frame" x="585" y="1" width="16" height="498"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Ta3-SD-Wl3" secondAttribute="bottom" id="08m-KU-XlG"/>
-                            <constraint firstAttribute="bottom" secondItem="KBY-hK-zkE" secondAttribute="bottom" id="Ak7-xW-YIt"/>
+                            <constraint firstAttribute="trailing" secondItem="0dK-UN-yKv" secondAttribute="trailing" id="4aL-F6-qmR"/>
                             <constraint firstAttribute="trailing" secondItem="Ta3-SD-Wl3" secondAttribute="trailing" id="BWK-Ne-8DS"/>
                             <constraint firstItem="gF5-3n-Uxp" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="EXo-A2-gM6"/>
                             <constraint firstAttribute="trailing" secondItem="gF5-3n-Uxp" secondAttribute="trailing" id="Pjd-pF-GL2"/>
-                            <constraint firstAttribute="trailing" secondItem="KBY-hK-zkE" secondAttribute="trailing" id="Xgm-tJ-XIB"/>
+                            <constraint firstAttribute="bottom" secondItem="0dK-UN-yKv" secondAttribute="bottom" id="Shn-xH-pCo"/>
                             <constraint firstItem="Ta3-SD-Wl3" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="ZqQ-3w-j6g"/>
-                            <constraint firstItem="KBY-hK-zkE" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="ijY-Kj-jzh"/>
-                            <constraint firstItem="KBY-hK-zkE" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="rfS-i4-kpV"/>
+                            <constraint firstItem="0dK-UN-yKv" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="b1V-hh-bkm"/>
                             <constraint firstAttribute="bottom" secondItem="gF5-3n-Uxp" secondAttribute="bottom" id="sPh-t8-ybp"/>
                             <constraint firstItem="Ta3-SD-Wl3" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="uh5-FV-ve5"/>
                             <constraint firstItem="gF5-3n-Uxp" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="ukW-9z-VwY"/>
+                            <constraint firstItem="0dK-UN-yKv" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="wwM-cE-goe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageScrollView" destination="0dK-UN-yKv" id="8lf-uZ-vOY"/>
                         <outlet property="imageView" destination="KBY-hK-zkE" id="YUE-zi-E7W"/>
                         <outlet property="videoView" destination="gF5-3n-Uxp" id="7Jo-mM-cdE"/>
                         <outlet property="webView" destination="Ta3-SD-Wl3" id="8CC-q4-0o9"/>

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ContentViewController : NSViewController
 @property (strong) IBOutlet NSImageView *imageView;
+@property (strong) IBOutlet NSScrollView *imageScrollView;
 @property (strong) IBOutlet AVPlayerView *videoView;
 @property (strong) IBOutlet WKWebView *webView;
 

@@ -38,6 +38,7 @@
             self.webView.hidden = true;
             self.videoView.hidden = false;
             self.imageView.hidden = true;
+            self.imageScrollView.hidden = true;
             self.videoView.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
             [self.videoView.player play];
             return;
@@ -46,6 +47,7 @@
             self.webView.hidden = true;
             self.videoView.hidden = true;
             self.imageView.hidden = false;
+            self.imageScrollView.hidden = false;
             [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
             return;
         } else if([self.current.postHint isEqualToString:@"link"] ||
@@ -53,6 +55,7 @@
             self.webView.hidden = false;
             self.videoView.hidden = true;
             self.imageView.hidden = true;
+            self.imageScrollView.hidden = true;
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.current.url]]];
             return;
         }
