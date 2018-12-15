@@ -23,7 +23,15 @@
         self.internalName = dict[@"data"][@"name"];
         self.itemID = dict[@"data"][@"id"];
         self.permalink = dict[@"data"][@"permalink"];
-        self.thumbnailURL = dict[@"data"][@"thumbnail"];
+        self.NSFW = [dict[@"data"][@"over_18"] boolValue];
+
+        if(self.NSFW){
+            self.thumbnailURL = dict[@"data"][@"preview"][@"images"][0][@"variants"][@"nsfw"][@"resolutions"][0][@"url"];
+        } else {
+            self.thumbnailURL = dict[@"data"][@"thumbnail"];
+        }
+
+
         self.url = dict[@"data"][@"url"];
         self.postHint = dict[@"data"][@"post_hint"];
         if([self.postHint isEqualToString:@"rich:video"]){
@@ -52,7 +60,7 @@
 
         self.poster = [[BRUser alloc] initWithUsername:dict[@"data"][@"author"] withInternalName:dict[@"data"][@"author_fullname"]];
 
-        self.NSFW = [dict[@"data"][@"over_18"] boolValue];
+
 
     }
     return self;
