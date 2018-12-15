@@ -49,6 +49,7 @@
             self.videoView.hidden = true;
             self.imageView.hidden = false;
             self.imageScrollView.hidden = false;
+            self.imageScrollView.magnification = 1.0;
             [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
             ((CopyableImageView *) self.imageView).post = self.current;
             return;

@@ -1191,9 +1191,9 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="8" minMagnification="1" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-UN-yKv">
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="8" minMagnification="1" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-UN-yKv">
                                 <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
-                                <clipView key="contentView" id="P61-gI-U38">
+                                <clipView key="contentView" drawsBackground="NO" id="P61-gI-U38">
                                     <rect key="frame" x="1" y="1" width="600" height="498"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -1211,6 +1211,7 @@
                                         <constraint firstAttribute="trailing" secondItem="KBY-hK-zkE" secondAttribute="trailing" id="Du7-Kt-Te1"/>
                                         <constraint firstAttribute="bottom" secondItem="KBY-hK-zkE" secondAttribute="bottom" id="ki3-EQ-RnD"/>
                                     </constraints>
+                                    <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="VrZ-rG-8Tq">
                                     <rect key="frame" x="1" y="483" width="600" height="16"/>
