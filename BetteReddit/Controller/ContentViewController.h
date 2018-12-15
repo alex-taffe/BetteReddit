@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong) IBOutlet NSScrollView *imageScrollView;
 @property (strong) IBOutlet AVPlayerView *videoView;
 @property (strong) IBOutlet WKWebView *webView;
+@property (strong) IBOutlet NSProgressIndicator *progressIndicator;
 
 @end
 

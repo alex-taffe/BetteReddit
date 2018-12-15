@@ -26,6 +26,10 @@
                                                object:nil];
     self.videoView.hidden = true;
     self.webView.hidden = true;
+    self.progressIndicator.hidden = true;
+
+    [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    [self.webView addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
 
 }
 
@@ -50,7 +54,16 @@
             self.imageView.hidden = false;
             self.imageScrollView.hidden = false;
             self.imageScrollView.magnification = 1.0;
-            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink]];
+            self.progressIndicator.hidden = false;
+            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.current.postPreviewLink] placeholderImage:nil options:SDWebImageHighPriority progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.progressIndicator.doubleValue = receivedSize * 100.0 / expectedSize;
+                });
+            } completed:^(NSImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.progressIndicator.hidden = true;
+                });
+            }];
             ((CopyableImageView *) self.imageView).post = self.current;
             return;
         } else if([self.current.postHint isEqualToString:@"link"] ||
@@ -59,6 +72,7 @@
             self.videoView.hidden = true;
             self.imageView.hidden = true;
             self.imageScrollView.hidden = true;
+            self.progressIndicator.hidden = false;
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.current.url]]];
             return;
         }
@@ -66,6 +80,17 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:HIDE_CONTENT_VIEW object:nil];
     }
     [self.imageView setImage:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString: @"estimatedProgress"]) {
+        self.progressIndicator.doubleValue = self.webView.estimatedProgress * 100;
+    } else if([keyPath isEqualToString: @"loading"]){
+        if(!self.webView.loading)
+            self.progressIndicator.hidden = true;
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

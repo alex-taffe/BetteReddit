@@ -1184,13 +1184,24 @@
                             <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-3n-Uxp">
                                 <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
                             </avPlayerView>
-                            <wkWebView wantsLayer="YES" allowsBackForwardNavigationGestures="YES" allowsMagnification="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SD-Wl3">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Msb-L4-JRn">
                                 <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <subviews>
+                                    <wkWebView wantsLayer="YES" allowsBackForwardNavigationGestures="YES" allowsMagnification="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SD-Wl3">
+                                        <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ta3-SD-Wl3" secondAttribute="trailing" id="ATF-Io-PS4"/>
+                                    <constraint firstItem="Ta3-SD-Wl3" firstAttribute="top" secondItem="Msb-L4-JRn" secondAttribute="top" id="gDh-ZS-oMf"/>
+                                    <constraint firstItem="Ta3-SD-Wl3" firstAttribute="leading" secondItem="Msb-L4-JRn" secondAttribute="leading" id="iKp-Nf-Su4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ta3-SD-Wl3" secondAttribute="bottom" id="zNc-FI-i2j"/>
+                                </constraints>
+                            </customView>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="8" minMagnification="1" translatesAutoresizingMaskIntoConstraints="NO" id="0dK-UN-yKv">
                                 <rect key="frame" x="0.0" y="0.0" width="602" height="500"/>
                                 <clipView key="contentView" drawsBackground="NO" id="P61-gI-U38">
@@ -1222,18 +1233,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="v0G-IC-SlA">
+                                <rect key="frame" x="0.0" y="481" width="602" height="20"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Ta3-SD-Wl3" secondAttribute="bottom" id="08m-KU-XlG"/>
+                            <constraint firstItem="Msb-L4-JRn" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="1hK-38-Ed9"/>
+                            <constraint firstAttribute="trailing" secondItem="Msb-L4-JRn" secondAttribute="trailing" id="23g-y1-kYY"/>
                             <constraint firstAttribute="trailing" secondItem="0dK-UN-yKv" secondAttribute="trailing" id="4aL-F6-qmR"/>
-                            <constraint firstAttribute="trailing" secondItem="Ta3-SD-Wl3" secondAttribute="trailing" id="BWK-Ne-8DS"/>
                             <constraint firstItem="gF5-3n-Uxp" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="EXo-A2-gM6"/>
                             <constraint firstAttribute="trailing" secondItem="gF5-3n-Uxp" secondAttribute="trailing" id="Pjd-pF-GL2"/>
                             <constraint firstAttribute="bottom" secondItem="0dK-UN-yKv" secondAttribute="bottom" id="Shn-xH-pCo"/>
-                            <constraint firstItem="Ta3-SD-Wl3" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="ZqQ-3w-j6g"/>
+                            <constraint firstItem="Msb-L4-JRn" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="T6k-7x-vvL"/>
+                            <constraint firstItem="v0G-IC-SlA" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="XS9-iH-33j"/>
+                            <constraint firstAttribute="trailing" secondItem="v0G-IC-SlA" secondAttribute="trailing" id="Ziw-js-eo5"/>
                             <constraint firstItem="0dK-UN-yKv" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="b1V-hh-bkm"/>
+                            <constraint firstAttribute="bottom" secondItem="Msb-L4-JRn" secondAttribute="bottom" id="dRP-8c-IAm"/>
+                            <constraint firstItem="v0G-IC-SlA" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="pe6-Wz-ZZM"/>
                             <constraint firstAttribute="bottom" secondItem="gF5-3n-Uxp" secondAttribute="bottom" id="sPh-t8-ybp"/>
-                            <constraint firstItem="Ta3-SD-Wl3" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="uh5-FV-ve5"/>
                             <constraint firstItem="gF5-3n-Uxp" firstAttribute="top" secondItem="9tJ-ZJ-1ac" secondAttribute="top" id="ukW-9z-VwY"/>
                             <constraint firstItem="0dK-UN-yKv" firstAttribute="leading" secondItem="9tJ-ZJ-1ac" secondAttribute="leading" id="wwM-cE-goe"/>
                         </constraints>
@@ -1241,6 +1258,7 @@
                     <connections>
                         <outlet property="imageScrollView" destination="0dK-UN-yKv" id="8lf-uZ-vOY"/>
                         <outlet property="imageView" destination="KBY-hK-zkE" id="YUE-zi-E7W"/>
+                        <outlet property="progressIndicator" destination="v0G-IC-SlA" id="cWt-0q-3qp"/>
                         <outlet property="videoView" destination="gF5-3n-Uxp" id="7Jo-mM-cdE"/>
                         <outlet property="webView" destination="Ta3-SD-Wl3" id="8CC-q4-0o9"/>
                     </connections>
