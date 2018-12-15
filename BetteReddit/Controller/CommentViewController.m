@@ -134,10 +134,12 @@
 
         BRComment *temp = item;
         NSData *data = [temp.body dataUsingEncoding:NSUTF8StringEncoding];
-        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithHTML:data options:@{
-                                                                       NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                                       NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)
-                                                                       } documentAttributes:nil];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithHTML:data
+                                                                                              options:@{
+                                                                                                        NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                                        NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)
+                                                                                                        }
+                                                                                   documentAttributes:nil];
 
         NSRange range = NSMakeRange(0, attributedString.length - 1);
         [attributedString addAttributes:@{
@@ -145,8 +147,6 @@
                                           NSForegroundColorAttributeName: NSColor.textColor
                                           } range:range];
 
-
-        //NSAttributedString *attributedString = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:temp.body];
 
         cell.commentText.attributedStringValue = attributedString;
         cell.comment = temp;
