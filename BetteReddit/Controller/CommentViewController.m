@@ -134,8 +134,10 @@
 
         BRComment *temp = item;
         NSData *data = [temp.body dataUsingEncoding:NSUTF8StringEncoding];
-        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithHTML:data
-                                                                     documentAttributes:nil];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithHTML:data options:@{
+                                                                       NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                       NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)
+                                                                       } documentAttributes:nil];
 
         NSRange range = NSMakeRange(0, attributedString.length - 1);
         [attributedString addAttributes:@{
