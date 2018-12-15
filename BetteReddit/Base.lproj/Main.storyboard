@@ -930,27 +930,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="koZ-Sy-EnM">
-                                <rect key="frame" x="0.0" y="253" width="350" height="23"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="smallSquare" trackingMode="selectOne" id="bfK-XF-oQJ">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="Best" selected="YES"/>
-                                        <segment label="Hot" tag="1"/>
-                                        <segment label="New"/>
-                                        <segment label="Top"/>
-                                        <segment label="Controversial"/>
-                                    </segments>
-                                </segmentedCell>
-                            </segmentedControl>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrh-HJ-CGk">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="254"/>
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="247"/>
                                 <clipView key="contentView" id="FYT-r0-cWv">
-                                    <rect key="frame" x="1" y="1" width="348" height="252"/>
+                                    <rect key="frame" x="1" y="1" width="348" height="245"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" usesAutomaticRowHeights="YES" viewBased="YES" id="WJG-rC-Oec">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="252"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="245"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1129,15 +1116,83 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1S-o0-TKq">
+                                <rect key="frame" x="5" y="252" width="222" height="22"/>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="HXB-k3-H94">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                            </searchField>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pIh-i2-jTf">
+                                <rect key="frame" x="230" y="250" width="118" height="25"/>
+                                <popUpButtonCell key="cell" type="push" title="Best" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="LI7-ZU-Fxr" id="hlQ-Nx-6Y3">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="TSm-9x-dnd">
+                                        <items>
+                                            <menuItem title="Best" state="on" id="LI7-ZU-Fxr"/>
+                                            <menuItem title="Hot" id="OUz-Us-kF8"/>
+                                            <menuItem title="New" id="PkC-be-j2S"/>
+                                            <menuItem title="Controversial" id="O09-Ej-jNJ">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                <menu key="submenu" title="Controversial" id="4JQ-B3-vSo">
+                                                    <items>
+                                                        <menuItem title="Past Hour" id="WxO-fT-iOc">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Past 24 Hours" id="bDj-8L-BND">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Past Month" id="s94-cm-AXJ">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Past Year" id="XZ7-up-ZCl">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="All Time" id="rOz-rg-tz5">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </menuItem>
+                                            <menuItem title="Top" id="Xuh-Lp-VJz">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                <menu key="submenu" title="Top" id="Yrq-9H-Apw">
+                                                    <items>
+                                                        <menuItem title="Past Hour" id="TYV-0y-ekX">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Past 24 Hours" id="S2R-xC-zX4">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Past Month" id="RJ0-Wv-qjF">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="Past Year" id="W79-FP-0Z7">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="All Time" id="IQ2-gy-mW7">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="xrh-HJ-CGk" firstAttribute="top" secondItem="w1S-o0-TKq" secondAttribute="bottom" constant="5" id="2DO-Pa-llf"/>
                             <constraint firstAttribute="trailing" secondItem="xrh-HJ-CGk" secondAttribute="trailing" id="7Lj-9D-3px"/>
                             <constraint firstAttribute="bottom" secondItem="xrh-HJ-CGk" secondAttribute="bottom" id="92H-HI-eYg"/>
-                            <constraint firstItem="xrh-HJ-CGk" firstAttribute="top" secondItem="koZ-Sy-EnM" secondAttribute="bottom" id="Aim-hy-dHR"/>
+                            <constraint firstItem="pIh-i2-jTf" firstAttribute="centerY" secondItem="w1S-o0-TKq" secondAttribute="centerY" id="Bvx-dV-QCd"/>
+                            <constraint firstItem="w1S-o0-TKq" firstAttribute="top" secondItem="Kuu-G2-EGR" secondAttribute="top" constant="26" id="KfG-Ar-f4R"/>
                             <constraint firstItem="xrh-HJ-CGk" firstAttribute="leading" secondItem="Kuu-G2-EGR" secondAttribute="leading" id="NNF-6U-fmL"/>
-                            <constraint firstItem="koZ-Sy-EnM" firstAttribute="top" secondItem="Kuu-G2-EGR" secondAttribute="top" constant="25" id="PiP-tA-o4n"/>
-                            <constraint firstItem="koZ-Sy-EnM" firstAttribute="leading" secondItem="Kuu-G2-EGR" secondAttribute="leading" id="scx-mJ-dLZ"/>
-                            <constraint firstAttribute="trailing" secondItem="koZ-Sy-EnM" secondAttribute="trailing" id="uKq-hO-m74"/>
+                            <constraint firstItem="pIh-i2-jTf" firstAttribute="leading" secondItem="w1S-o0-TKq" secondAttribute="trailing" constant="5" id="ch3-0G-Vy8"/>
+                            <constraint firstAttribute="trailing" secondItem="pIh-i2-jTf" secondAttribute="trailing" constant="5" id="hK9-ej-3Hq"/>
+                            <constraint firstItem="w1S-o0-TKq" firstAttribute="leading" secondItem="Kuu-G2-EGR" secondAttribute="leading" constant="5" id="yJN-mg-WHa"/>
                         </constraints>
                     </view>
                     <connections>
