@@ -18,6 +18,7 @@ const NSString *OAUTH_BASE = @"https://oauth.reddit.com/";
 static BRClient *shared = nil;
 
 
+
 +(BRClient *)sharedInstance {
     @synchronized([BRClient class]) {
         if (!shared)
@@ -38,7 +39,7 @@ static BRClient *shared = nil;
 
 -(void)makeRequestWithEndpoint:(NSString *)endpoint withMethod:(NSString *)method withArguments:(nullable NSDictionary *)arguments withToken:(nullable NSString *)token success:(void (^)(id result))successBlock failure:(void (^)(NSError *error))failureBlock{
 
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    AFHTTPSessionManager *manager = [BRClient manager];
     NSString *url = [[NSString alloc] initWithFormat:@"%@%@", token ? OAUTH_BASE : API_BASE, endpoint];
 
     NSMutableDictionary *addedArguments = [[NSMutableDictionary alloc] initWithDictionary:arguments];
@@ -49,6 +50,9 @@ static BRClient *shared = nil;
     if(token){
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"oauth.reddit.com"] forHTTPHeaderField:@"Host"];
+    } else {
+        [manager.requestSerializer setValue:nil forHTTPHeaderField:@"Authorization"];
+        [manager.requestSerializer setValue:nil forHTTPHeaderField:@"Host"];
     }
 
     if([method isEqualToString:@"GET"]){
@@ -68,6 +72,16 @@ static BRClient *shared = nil;
     } else{
         [NSException raise:@"HTTPMethodNotImplemented" format:@"The HTTP method you passed is not supported, please use GET or POST"];
     }
+}
+
++ (AFHTTPSessionManager*) manager{
+    static dispatch_once_t onceToken;
+    static AFHTTPSessionManager *manager = nil;
+    dispatch_once(&onceToken, ^{
+        manager = [AFHTTPSessionManager manager];
+    });
+
+    return manager;
 }
 
 @end
