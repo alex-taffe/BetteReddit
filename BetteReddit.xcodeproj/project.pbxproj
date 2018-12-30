@@ -18,6 +18,7 @@
 		FA4CA82321A8871600181389 /* NSString+NumberShortner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82221A8871600181389 /* NSString+NumberShortner.m */; };
 		FA4CA82621A9195F00181389 /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA82521A9195F00181389 /* NSImage+Resize.m */; };
 		FA4FE6E8219F5264004CC677 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */; };
+		FA55310421C839700011F7AC /* BRSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55310321C839700011F7AC /* BRSearch.m */; };
 		FA579F7321AF155D006FE4F4 /* NSString+TimeSince.m in Sources */ = {isa = PBXBuildFile; fileRef = FA579F7221AF155D006FE4F4 /* NSString+TimeSince.m */; };
 		FA67776021B5915B00384FD9 /* CopyableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67775F21B5915B00384FD9 /* CopyableImageView.m */; };
 		FA8F394F20BB759C007CAC55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8F394E20BB759C007CAC55 /* AppDelegate.m */; };
@@ -80,6 +81,8 @@
 		FA4CA82521A9195F00181389 /* NSImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Resize.m"; sourceTree = "<group>"; };
 		FA4FE6E6219F5264004CC677 /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		FA4FE6E7219F5264004CC677 /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		FA55310221C839700011F7AC /* BRSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRSearch.h; sourceTree = "<group>"; };
+		FA55310321C839700011F7AC /* BRSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSearch.m; sourceTree = "<group>"; };
 		FA579F7121AF155D006FE4F4 /* NSString+TimeSince.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+TimeSince.h"; sourceTree = "<group>"; };
 		FA579F7221AF155D006FE4F4 /* NSString+TimeSince.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeSince.m"; sourceTree = "<group>"; };
 		FA67775E21B5915B00384FD9 /* CopyableImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyableImageView.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				FA08A27A219BC36500E49E71 /* BRPost.m */,
 				FA0C4A72219C68180022FEA2 /* BRComment.h */,
 				FA0C4A73219C68180022FEA2 /* BRComment.m */,
+				FA55310221C839700011F7AC /* BRSearch.h */,
+				FA55310321C839700011F7AC /* BRSearch.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				FAE2391A219B239900C9F683 /* BRClient.m in Sources */,
 				FAAC7CDB219CA83300E9219D /* PostTableViewCell.m in Sources */,
 				FAAC7CC9219C9B7000E9219D /* PostListViewController.m in Sources */,
+				FA55310421C839700011F7AC /* BRSearch.m in Sources */,
 				FAAC7CCC219C9BBD00E9219D /* SubredditListViewController.m in Sources */,
 				FA08A27B219BC36500E49E71 /* BRPost.m in Sources */,
 				FAAC7CD5219C9EFD00E9219D /* SubredditTableCellView.m in Sources */,

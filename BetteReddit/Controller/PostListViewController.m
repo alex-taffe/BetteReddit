@@ -95,6 +95,11 @@
         });
     }];
 }
+- (IBAction)didType:(id)sender {
+    NSSearchField *searcher = sender;
+    NSLog(@"%@", searcher.stringValue);
+
+}
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return self.current ? self.current.posts.count : 0;
