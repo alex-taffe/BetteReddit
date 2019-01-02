@@ -37,9 +37,11 @@
     self.current = notification.object;
     if(!self.current.isSelf){
         [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_CONTENT_VIEW object:nil];
-        if([self.current.postHint isEqualToString:@"rich:video"] ||
+        if(([self.current.postHint isEqualToString:@"rich:video"] ||
            [self.current.postHint isEqualToString:@"video"] ||
-           [self.current.postHint isEqualToString:@"hosted:video"]){
+           [self.current.postHint isEqualToString:@"hosted:video"]) &&
+           !([self.current.url containsString:@"youtube"] ||
+            [self.current.url containsString:@"youtu.be"])){
             self.webView.hidden = true;
             self.videoView.hidden = false;
             self.imageView.hidden = true;
@@ -67,7 +69,8 @@
             ((CopyableImageView *) self.imageView).post = self.current;
             return;
         } else if([self.current.postHint isEqualToString:@"link"] ||
-                  [self.current.postHint isEqualToString:@"hosted:video"]){
+                  [self.current.postHint isEqualToString:@"hosted:video"] ||
+                  [self.current.postHint isEqualToString:@"rich:video"]){
             self.webView.hidden = false;
             self.videoView.hidden = true;
             self.imageView.hidden = true;
