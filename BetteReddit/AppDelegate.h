@@ -15,6 +15,8 @@
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 @property (strong, atomic) NSMutableArray<BRUser *> *loggedinUsers;
 @property (strong, atomic) BRUser *currentUser;
+@property (strong) IBOutlet NSMenu *accountsMenu;
+@property (strong) IBOutlet NSMenu *signOutMenu;
 
 @end
 

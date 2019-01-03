@@ -50,7 +50,21 @@
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
             self.currentUser = self.loggedinUsers.firstObject;
             [[NSNotificationCenter defaultCenter] postNotificationName:LOGGED_IN object:weakSelf];
+            for(BRUser *user in self.loggedinUsers){
+                NSMenuItem *chooseItem = [[NSMenuItem alloc] init];
+                chooseItem.title = user.username;
+                if(self.currentUser == user)
+                    chooseItem.state = NSControlStateValueOn;
+
+                [self.accountsMenu insertItem:chooseItem atIndex:0];
+
+                NSMenuItem *signoutItem = [[NSMenuItem alloc] init];
+                signoutItem.title = user.username;
+                [self.signOutMenu insertItem:signoutItem atIndex:0];
+            }
         });
+    } else {
+        self.accountsMenu.itemArray[0].state = NSControlStateValueOn;
     }
 
 }

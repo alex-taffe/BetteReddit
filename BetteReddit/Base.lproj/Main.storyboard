@@ -360,11 +360,19 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Accounts" id="keU-0M-lEL">
                                     <items>
+                                        <menuItem title="Guest" id="5Zn-Lb-zDT">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="r9E-48-mfO"/>
                                         <menuItem title="Sign In" id="8eY-Iw-yuD">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="newSignin:" target="Voe-Tx-rLC" id="xhV-Df-nNg"/>
                                             </connections>
+                                        </menuItem>
+                                        <menuItem title="Sign Out" id="D52-Vr-pfi">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Sign Out" id="QKI-Rg-LLx"/>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -723,7 +731,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+                    <connections>
+                        <outlet property="accountsMenu" destination="keU-0M-lEL" id="tqc-az-m4F"/>
+                        <outlet property="signOutMenu" destination="QKI-Rg-LLx" id="5OR-IQ-WUD"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="xnH-i6-PHB" customClass="SUUpdater"/>
