@@ -51,10 +51,12 @@
             self.currentUser = self.loggedinUsers.firstObject;
             [[NSNotificationCenter defaultCenter] postNotificationName:LOGGED_IN object:weakSelf];
             for(BRUser *user in self.loggedinUsers){
-                NSMenuItem *chooseItem = [[NSMenuItem alloc] init];
-                chooseItem.title = user.username;
+                NSMenuItem *chooseItem = [[NSMenuItem alloc] initWithTitle:user.username action:@selector(chooseUser:) keyEquivalent:@""];
+                chooseItem.target = self;
                 if(self.currentUser == user)
                     chooseItem.state = NSControlStateValueOn;
+                else
+                    chooseItem.state = NSControlStateValueOff;
 
                 [self.accountsMenu insertItem:chooseItem atIndex:0];
 
@@ -68,6 +70,11 @@
     }
 
 }
+
+-(void)chooseUser:(id)sender{
+
+}
+
 - (IBAction)newSignin:(id)sender {
     static NSString *const kSuccessURLString = @"alextaffe.BetteReddit://oauth2redirect/example-provider";
     NSURL *successURL = [NSURL URLWithString:kSuccessURLString];

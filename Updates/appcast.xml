@@ -31,6 +31,13 @@
 <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
 <enclosure url="https://raw.githubusercontent.com/alex-taffe/BetteReddit/master/Updates/BetteReddit-2018-11-27%2020-30-53.zip" sparkle:version="7" sparkle:shortVersionString="0.16" length="3408329" type="application/octet-stream"/>
 </item>
+<item>
+<title>0.17</title>
+<pubDate>Tue, 29 Jan 2019 10:17:33 -0500</pubDate>
+<sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
+<enclosure url="https://raw.githubusercontent.com/alex-taffe/BetteReddit/master/Updates/BetteReddit%202019-01-29%2010-17-06.zip" sparkle:version="8" sparkle:shortVersionString="0.17" length="3753365" type="application/octet-stream"/>
+</item>
+
 
 
 
